@@ -17,7 +17,6 @@ public class ISQLListItem {
     
     public ISQLListItem (){
         this.ConnectionManager = new ConnectionManager();
-        this.Table = 
     }
     
 }
