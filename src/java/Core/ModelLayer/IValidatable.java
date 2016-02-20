@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Core.ModelLayer;
+import java.util.List;
 
 /**
  *
@@ -11,7 +12,7 @@ package Core.ModelLayer;
  */
 interface IValidatable {
     
-    void GetValidationErrors();
+    List<String> GetValidationErrors();
     void IsValid();
     
 }
