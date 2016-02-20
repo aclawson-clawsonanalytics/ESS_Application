@@ -11,36 +11,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import Core.Authentication.User;
 
 /**
  *
  * @author andrewclawson
  */
 public class UserTest {
-    
+    public User SUT;
     public UserTest() {
+        
+        
     }
     
     @BeforeClass
     public static void setUpClass() {
+        SUT = new User();
     }
     
     @AfterClass
     public static void tearDownClass() {
     }
     
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
+
+    
     
 }

@@ -9,6 +9,11 @@ package Core.Database;
  *
  * @author andrewclawson
  */
-public class IWritable {
+public class Loader {
+    public String TableName;
+    
+    public Loader(String _TableName){
+        TableName = _TableName;
+    }
     
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Core.Database;
-import java.sql.DriverManager;
+//import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,22 +12,24 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
+import Core.Database.Settings;
 /**
  *
  * @author andrewclawson
  */
 public class ConnectionManager {
-    public String host = "jdbc:mysql://localhost:3306/SSN_SchoolManagement_Master";
-    public String userName = "SSN_DB_Admin";
-    public String password = "ssndbadmin";
-    public Connection connection = this.GetConnection();
+    public Settings settings = new Settings();
+    public String host = settings.host;
+    public String userName = settings.username;
+    public String password = settings.password;
+    public Connection connection;
     public Statement statement = null;
     public PreparedStatement preparedStatement;
     public ResultSet resultSet;
     public String errorMessage = null;
     
     public ConnectionManager(){
-        
+        connection = this.GetConnection();
     }
     
     public Connection GetConnection (){
@@ -39,6 +41,7 @@ public class ConnectionManager {
             System.out.println(errorMessage);
             connection = null;
         }
+        
         return connection;
     }
     
