@@ -18,7 +18,7 @@ import Core.Authentication.User;
  * @author andrewclawson
  */
 public class UserTest {
-    public User SUT;
+    public static User SUT;
     public UserTest() {
         
         
@@ -33,7 +33,6 @@ public class UserTest {
     public static void tearDownClass() {
     }
     
-    @Test
     
 
     
