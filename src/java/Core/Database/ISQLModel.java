@@ -25,7 +25,12 @@ interface ISQLModel {
     /* Returns all objects of the parent class from
     the SQL Database
     */
+    void Save();
+    
+    void Delete();
+    
     ArrayList GetAll();
+    
     
     
     

@@ -13,6 +13,6 @@ import java.util.List;
 interface IValidatable {
     
     List<String> GetValidationErrors();
-    void IsValid();
+    boolean IsValid();
     
 }
