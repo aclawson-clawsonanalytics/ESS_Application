@@ -8,12 +8,12 @@ import java.util.*;
 import java.util.ArrayList;
 import Core.Database.SQLList;
 import java.sql.Array;
-import Core.Database.ISQLModel;
+import Core.Database.ISQLInterface;
 /**
  *
  * @author andrewclawson
  */
-public class SQLList<T extends ISQLModel> extends ArrayList {
+public class SQLList<T extends ISQLInterface> extends ArrayList {
     public ArrayList Items;
     
     // Constructor method
@@ -22,7 +22,7 @@ public class SQLList<T extends ISQLModel> extends ArrayList {
         
     }
     
-    public void Add(ISQLModel aListItem){
+    public void Add(ISQLInterface aListItem){
         
     }
 }

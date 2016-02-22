@@ -13,14 +13,14 @@ import java.util.ArrayList;
  *
  * @author andrewclawson
  */
-interface ISQLModel {
+public interface ISQLInterface {
     
     // SetID method
     // Sets the primary key for the SQLListItem
-    void SetID(int id);
+    public void SetID();
     
     // Returns the Item's Primary Key
-    void GetID();
+    int GetID();
     
     /* Returns all objects of the parent class from
     the SQL Database

@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author andrewclawson
  */
-interface IValidatable {
+public interface IValidatable {
     
     List<String> GetValidationErrors();
     boolean IsValid();
