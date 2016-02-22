@@ -29,7 +29,8 @@ public interface ISQLInterface {
     
     void Delete();
     
-    ArrayList GetAll();
+    
+    abstract ArrayList GetAll();
     
     
     

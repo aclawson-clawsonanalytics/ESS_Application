@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Core.ModelLayer;
+import java.util.ArrayList;
 import Core.Database.SQLModel;
 
 /**
@@ -11,5 +12,39 @@ import Core.Database.SQLModel;
  * @author andrewclawson
  */
 public class User extends SQLModel {
+    // Class variables
+    
+    
+    // Constructor
+    public User(){
+        
+    }
+    
+    @Override
+    public void SetID(){
+        
+    }
+    
+    @Override
+    public int GetID(){
+        return ID;
+    }
+    
+    @Override
+    public void Save(){
+        
+    }
+    
+    @Override
+    public void Delete(){
+        
+    }
+    
+    @Override
+    public ArrayList GetAll(){
+        ArrayList _userObjects = new ArrayList<User> ();
+        return _userObjects;
+    }
+    
     
 }
