@@ -21,6 +21,7 @@ public class RegistrationRequestForm extends org.apache.struts.action.ActionForm
     private String LastName;
     private String Email;
     private String DistrictName;
+    private String Phone;
     private int number;
 
     /**
@@ -37,18 +38,36 @@ public class RegistrationRequestForm extends org.apache.struts.action.ActionForm
         FirstName = string;
     }
 
-    /**
-     * @return
-     */
-    public int getNumber() {
-        return number;
+    public String getLastName(){
+        return LastName;
     }
-
-    /**
-     * @param i
-     */
-    public void setNumber(int i) {
-        number = i;
+    
+    public void setLastName(String string){
+        LastName = string;
+    }
+    
+    public String getEmail(){
+        return Email;
+    }
+    
+    public void setEmail(String string){
+        Email = string;
+    }
+    
+    public String getDistrictName(){
+        return DistrictName;
+    }
+    
+    public void setDistrictName(String string){
+        DistrictName = string;
+    }
+    
+    public String getPhone(){
+        return Phone;
+    }
+    
+    public void setPhone(String string){
+        Phone = string;
     }
 
     /**
