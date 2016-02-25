@@ -68,7 +68,7 @@ public class RegistrationRequestForm extends org.apache.struts.action.ActionForm
      */
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
-        if (getName() == null || getName().length() < 1) {
+        if (getFirstName() == null || getFirstName().length() < 1) {
             errors.add("name", new ActionMessage("error.name.required"));
             // TODO: add 'error.name.required' key to your resources
         }
