@@ -13,6 +13,7 @@ import Core.Database.SQLModel;
  */
 public class User extends SQLModel {
     // Class variables
+    //public String TableName = "User";
     
     
     // Constructor
@@ -45,6 +46,8 @@ public class User extends SQLModel {
         ArrayList _userObjects = new ArrayList<User> ();
         return _userObjects;
     }
+    
+    
     
     
 }
