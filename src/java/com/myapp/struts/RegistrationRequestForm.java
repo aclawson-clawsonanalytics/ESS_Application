@@ -19,6 +19,8 @@ public class RegistrationRequestForm extends org.apache.struts.action.ActionForm
     
     private String FirstName;
     private String LastName;
+    private String Email;
+    Private String DistrictName;
     private int number;
 
     /**

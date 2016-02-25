@@ -31,6 +31,10 @@
                         <td><html:text property="Email" /></td>
                     </tr>
                     <tr>
+                        <td>District: </td>
+                        <td><html:text property="DistrictName"/></td>
+                    </tr>
+                    <tr>
                         <td>Phone: </td>
                         <td><html:text property="Phone" /></td>
                     </tr>
