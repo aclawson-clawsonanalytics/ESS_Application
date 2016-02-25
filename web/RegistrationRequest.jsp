@@ -15,5 +15,8 @@
     </head>
     <body>
         <h1>Registration Request Form:</h1>
+        <html:form action="/SubmitRegistration">
+            <html:submit value="Submit Registration" />
+        </html:form>
     </body>
 </html>
