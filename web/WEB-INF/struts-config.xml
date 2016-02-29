@@ -8,7 +8,6 @@
 <struts-config>
     <form-beans>
         <form-bean name="RegistrationRequestForm" type="com.myapp.struts.RegistrationRequestForm"/>
-    
     </form-beans>
     
     <global-exceptions>
@@ -20,6 +19,14 @@
     </global-forwards>
 
     <action-mappings>
+        <action name="RegistrationRequestForm" path="/RegistrationRequestForm" scope="request" type="com.myapp.struts.RegistrationFormAction" validate="false">
+            <forward name="valid_registration" path="/WEB-INF/RegistrationSubmitSuccess.jsp"/>
+            <forward name="missing_fields" path="/RegistrationRequest.jsp"/>
+            <forward name="unconfirmed_password" path="/RegistrationRequest.jsp"/>
+        </action>
+        <action name="RegistrationSubmitAction" path="/RegistrationSubmitAction" scope="request" type="com.myapp.struts.RegistrationSubmitAction" validate="false">
+           
+        </action>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
     
