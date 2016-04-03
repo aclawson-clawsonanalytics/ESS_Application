@@ -17,7 +17,7 @@ public interface ISQLInterface {
     
     // SetID method
     // Sets the primary key for the SQLListItem
-    public void SetID();
+    public void SetIDBySQL(String mode, String tablename);
     
     // Returns the Item's Primary Key
     int GetID();
@@ -27,10 +27,11 @@ public interface ISQLInterface {
     */
     void Save();
     
+    void Save(String mode);
     void Delete();
     
     
-    abstract ArrayList GetAll();
+    //abstract ArrayList GetAll();
     
     
     

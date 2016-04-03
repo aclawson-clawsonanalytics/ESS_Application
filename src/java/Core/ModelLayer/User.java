@@ -22,16 +22,6 @@ public class User extends SQLModel {
     }
     
     @Override
-    public void SetID(){
-        
-    }
-    
-    @Override
-    public int GetID(){
-        return ID;
-    }
-    
-    @Override
     public void Save(){
         
     }

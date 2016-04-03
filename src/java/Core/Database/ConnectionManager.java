@@ -19,7 +19,7 @@ import Core.Database.Settings;
  */
 public class ConnectionManager {
     public Settings settings = new Settings();
-    public String host = settings.host;
+    public String host;
     public String userName = settings.username;
     public String password = settings.password;
     public Connection connection;
@@ -28,14 +28,23 @@ public class ConnectionManager {
     public ResultSet resultSet;
     public String errorMessage = null;
     
-    public ConnectionManager(){
+    public ConnectionManager(String mode){
+        if (mode.equals("TEST_MODE")){
+            host = settings.testHost;
+        }
+        
+        if (mode.equals("PRODUCTION")){
+            host = settings.host;
+        }
         connection = this.GetConnection();
     }
     
     public Connection GetConnection (){
         try {
+            //Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(host, userName, password);
-        } catch (SQLException err){
+        } catch (SQLException  | ClassNotFoundException err){
             errorMessage = err.getMessage()+"\n";
             errorMessage = errorMessage + "Connection set to null value.";
             System.out.println(errorMessage);

@@ -10,7 +10,8 @@ package Core.Database;
  * @author andrewclawson
  */
 public class Settings {
-    public String host = "jdbc:mysql://localhost:3306/SSN_SchoolManagement_Master";
-    public String username = "SSN_DB_Admin";
-    public String password = "ssndbadmin";
+    public String host = "jdbc:mysql://localhost:3306/DSS_Dataportal";
+    public String testHost = "jdbc:mysql://localhost:3306/DSS_Dataportal_Test";
+    public String username = "DSS_DB_Admin";
+    public String password = "dssdbadmin";
 }
