@@ -2,7 +2,7 @@
 
  <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
-       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 
 <!--
@@ -36,7 +36,9 @@
 
     end samples -->
 
-    <definition name="${YOUR_DEFINITION_HERE}">
+    <definition name="classicTemplate" template="/WEB-INF/template/classicTemplate.jsp">
+        <put-attribute name="header" value="/WEB-INF/template/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/template/footer.jsp"/>
     </definition>
 
 </tiles-definitions>

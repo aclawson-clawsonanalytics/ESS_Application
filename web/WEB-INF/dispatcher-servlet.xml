@@ -35,5 +35,8 @@
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
+    <bean name="registrationController"
+        class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+        p:viewName="RegistrationRequest"/>
 
 </beans>

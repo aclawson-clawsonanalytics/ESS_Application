@@ -5,8 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
-<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +13,7 @@
         <title>Registration Request Form</title>
     </head>
     <body>
+        
         <h1>Registration Request Form:</h1>
         <html:form action="/RegistrationRequestForm">
             <table border="1">
