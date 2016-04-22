@@ -5,9 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
-<tiles:insertDefinition template="classicTemplate">
+<tiles:insertDefinition name="startup" template="classicTemplate">
         <tiles:putAttribute name="title" value="Startup"/>
         <tiles:putAttribute name="content" value="/jsp/startup_content.jsp"/>
         <tiles:putAttribute name="side_menu" value="/tiles/login_menu.jsp"/>
