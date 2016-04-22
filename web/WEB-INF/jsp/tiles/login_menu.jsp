@@ -12,7 +12,11 @@
         
     </head>
     <body>
-        <h1>Login Menu</h1>
-        Insert login fields here.
+        <h1>Login Menu</h1><br>
+        <form action="#">
+            <br>Email: </br> <input/><br>
+            <br>Password: </br> <input/> <br>
+            <input type="submit"/>
+        </form>
     </body>
 </html>

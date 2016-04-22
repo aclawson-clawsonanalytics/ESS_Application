@@ -12,6 +12,6 @@
         
     </head>
     <body>
-        STARTUP CONTENT
+        <button></button>
     </body>
 </html>

@@ -31,7 +31,7 @@ xmlns="http://www.springframework.org/schema/beans"
 
 
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <!--<property name="order" value="1" /> this resolver will be used if the view can't be resolved by tiles resolver  hence order=1-->
+    <property name="order" value="1" /> <!--this resolver will be used if the view can't be resolved by tiles resolver  hence order=1-->
     <property name="prefix" value="/WEB-INF/views/" />
     <property name="suffix" value=".jsp" />
 </bean>
@@ -44,21 +44,19 @@ xmlns="http://www.springframework.org/schema/beans"
     </property>
 </bean>
 
+
 <!--
 <bean id="tilesViewResolver"
     class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-    <property name="viewClass">
-        <value>
-            org.springframework.web.servlet.view.tiles3.TilesView
-        </value>
-    </property>
+    <property name="viewClass"
+        value="org.springframework.web.servlet.view.tiles3.TilesView"/>
 </bean>
+
 
 <bean id="tilesConfigurer"  
     class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-    <list>
-        <property name="definitions" value="/WEB-INF/tiles-def.xml" /> 
-    </list>
+        <property name="definitions" value="/WEB-INF/tiles.xml" />
+    
 </bean>
 -->
 
@@ -66,4 +64,5 @@ xmlns="http://www.springframework.org/schema/beans"
       class="org.springframework.web.servlet.mvc.ParameterizableViewController">
       <property name="viewName" value="login"/>
 </bean>
+
 </beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC  
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<tiles-definitions>
+    <definition name="login" template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/WEB-INF/basefragments/header.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/basefragments/loginmenu.jsp"/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/basefragments/footer.jsp"/>
+    </definition>
+    
+    <definition name="homepage" template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="Home Page"/>
+        <put-attribute name="content" value="/WEB-INF/contentfragments/home.jsp"/>
+    </definition>
+    
+    <definition name="contactus" extends="base.definition">
+        <put-attribute name="title" value="Contact Us"/>
+        <put-attribute name="content" value="/WEB-INF/contentfragments/contactus.jsp"/>
+    </definition>
+</tiles-definitions>
+
+
