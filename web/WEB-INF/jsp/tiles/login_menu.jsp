@@ -7,16 +7,25 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-    </head>
-    <body>
-        <h1>Login Menu</h1><br>
+    <div class='side_menu'>
+        <h2>Login</h2>
         <form action="#">
-            <br>Email: </br> <input/><br>
-            <br>Password: </br> <input/> <br>
-            <input type="submit"/>
+            <table>
+                <tr>
+                    <td><b>Email: </td>
+                    <td><input/></td>
+                </tr>
+                <tr>
+                    <td><b>Password: </td>
+                    <td><input/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Login"/></td>
+                </tr>
+                   
+            </table>
         </form>
-    </body>
+    </div>
 </html>
+

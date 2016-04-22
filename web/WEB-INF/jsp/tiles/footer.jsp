@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<html>
-This is the footer.
-</html>
+<div class="footer">
+Developed by: Clawson Analytics, LLC. Copywrite 2016.
+
+</div>
