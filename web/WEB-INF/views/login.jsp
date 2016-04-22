@@ -17,8 +17,9 @@
     </head>
     <body>
         <!-- Header -->
-        <div class="row" style="height:200px width:100%">
+        <div class="row" style="height:200px; width:100%">
             <div class="large-12 columns" align="center">
+            
                 <jsp:include page="/WEB-INF/jsp/tiles/header.jsp"/>
             </div>
             
