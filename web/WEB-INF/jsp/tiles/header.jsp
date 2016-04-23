@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <div class="header" id="gradHeader">
     <h1><b>WELCOME</b></h1><br>
-    <b style='color:green'>Street School Network Gradebook</b>
+    <b style='color:blue'>ViTa - School Manager</b>
 </div>
 <!--
 <html>
