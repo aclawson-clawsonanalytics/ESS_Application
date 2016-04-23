@@ -8,6 +8,6 @@
 <!DOCTYPE html>
 
 <div class="footer">
-Developed by: Clawson Analytics, LLC. Copyright 2016.
+Clawson Analytics, LLC. Copyright 2016.
 
 </div>
