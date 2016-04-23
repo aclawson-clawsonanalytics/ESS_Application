@@ -26,6 +26,7 @@
                    
             </table>
         </form>
+        Click <a href="#">here</a> to submit a registration request to subscribe to ViTaL School Management.<br>
     </div>
 </html>
 
