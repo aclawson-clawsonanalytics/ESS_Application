@@ -30,7 +30,7 @@
             </table>
             
         </form>
-        Click <a>here</a> to submit a registration request to subscribe to ViTaL School Management.<br>
+        Click <a href="${pageContext.request.contextPath}/subscribe.htm">here</a> to submit a registration request to subscribe to ViTaL School Management.<br>
     </div>
 </html>
 

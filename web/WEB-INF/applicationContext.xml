@@ -23,5 +23,7 @@
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
 
 
+<bean name="startupService" class="Controllers.StartupController"/>
+<bean name="registration" class="Controllers.RegistrationController"/>
 
 </beans>

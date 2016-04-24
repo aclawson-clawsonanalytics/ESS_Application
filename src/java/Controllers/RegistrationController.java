@@ -16,7 +16,7 @@ import org.springframework.ui.ModelMap;
  */
 @Controller
 public class RegistrationController {
-    @RequestMapping(value="/Subscribe", method=RequestMethod.GET)
+    @RequestMapping(value="/subscribe")
     public String RequestSubscription(){
         return "registrationRequest";
     }

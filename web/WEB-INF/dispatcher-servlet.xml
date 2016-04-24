@@ -40,10 +40,14 @@ xmlns="http://www.springframework.org/schema/beans"
     <property name="mappings">
         <props>
             <prop key="login.htm">loginController</prop>
-            <prop key="startup.htm">startupController</prop>
+            <prop key="startup.htm">StartupController</prop>
+            <prop key="subscribe">RegistrationController</prop>
         </props>
     </property>
 </bean>
+
+<bean name="StartupController" class="Controllers.StartupController"/>
+<bean name="RegistrationController" class="Controllers.RegistrationController"/>
 
 
 <!--
@@ -60,13 +64,13 @@ xmlns="http://www.springframework.org/schema/beans"
     
 </bean>
 -->
-
+<!--
 <bean name="startupController"
     class="org.springframework.web.servlet.mvc.ParameterizableViewController">
     <property name="viewName" value="startup"/>
     
 </bean>
-
+-->
 <bean name="subscriptionController"
     class="org.springframework.web.servlet.mvc.ParameterizableViewController">
     <property name="viewName" value="registrationRequest"/>
