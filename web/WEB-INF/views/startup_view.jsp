@@ -21,7 +21,7 @@
             
         </style>
         <div id="mainImage" class="row" style="height:200px"/>
-        <img src="/images/vital.jpg" style="width:100%;height:200px"/>
+        <img src="/web/WEB-INF/resources/images/vital.jpg" style="width:100%;height:200px" alt="Logo"/>
             
         </div>
         <div class="row">

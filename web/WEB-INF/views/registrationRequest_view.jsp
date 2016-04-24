@@ -9,9 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!--<link rel="stylesheet" href="foundation.css"/>-->
         <title>Subscribe</title>
     </head>
     <body>
-        <h1>Subscribe to ViTaL School Management Today!</h1>
+        <div class="row" style="height:300px">
+            <div class="large-6" align="centered">
+                <jsp:include page="/WEB-INF/jsp/content/registrationForm_content.jsp"/>
+            </div>
+        </div>
+        
+            
     </body>
 </html>
