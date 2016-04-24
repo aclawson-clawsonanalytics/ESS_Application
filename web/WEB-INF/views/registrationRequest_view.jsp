@@ -18,6 +18,10 @@
                 <jsp:include page="/WEB-INF/jsp/content/registrationForm_content.jsp"/>
             </div>
         </div>
+            
+            <div class="row">
+                <jsp:include page="/WEB-INF/jsp/tiles/footer.jsp"/>
+            </div>
         
             
     </body>
