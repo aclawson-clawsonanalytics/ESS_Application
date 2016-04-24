@@ -60,6 +60,7 @@ xmlns="http://www.springframework.org/schema/beans"
     
 </bean>
 -->
+
 <bean name="startupController"
     class="org.springframework.web.servlet.mvc.ParameterizableViewController">
     <property name="viewName" value="startup"/>
