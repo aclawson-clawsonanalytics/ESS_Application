@@ -5,9 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
+    
     <div class='side_menu'>
+        
         <h2>Login</h2>
         <form action="#">
             <table>
@@ -25,8 +28,9 @@
                 </tr>
                    
             </table>
+            
         </form>
-        Click <a href="#">here</a> to submit a registration request to subscribe to ViTaL School Management.<br>
+        Click <a>here</a> to submit a registration request to subscribe to ViTaL School Management.<br>
     </div>
 </html>
 

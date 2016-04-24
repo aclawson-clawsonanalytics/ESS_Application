@@ -65,9 +65,17 @@ xmlns="http://www.springframework.org/schema/beans"
     <property name="viewName" value="startup"/>
     
 </bean>
+
+<bean name="subscriptionController"
+    class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    <property name="viewName" value="registrationRequest"/>
+</bean>
+
 <bean name="loginController"
       class="org.springframework.web.servlet.mvc.ParameterizableViewController">
       <property name="viewName" value="login"/>
 </bean>
+
+
 
 </beans>
