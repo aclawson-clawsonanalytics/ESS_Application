@@ -9,8 +9,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles/general/formComponents.css"/>
+        <!--<script src="registration.js"/>-->
     </head>
-    <form action="#" method="POST">
+    <form action="${pageContext.request.contextPath}/submitRegistration.htm" method="POST">
     <div class="large-6 columns">
         
         
@@ -25,7 +26,8 @@
         District name: <input type="text" name="districtName"><br>
         Phone: <input type="text" name="districtPhone"><br>
         Fax: <input type="text" name="districtFax"><br>
-        <input type="submit" value="Submit"/>
+        <button class="small button" type="submit">Submit Registration</button>
     </div>
+        
     </form>
 </html>

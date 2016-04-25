@@ -20,4 +20,9 @@ public class RegistrationController {
     public String RequestSubscription(){
         return "/registration_request/registrationRequest";
     }
+    
+    @RequestMapping(value="/submitRegistration")
+    public String SubmitRegistration(){
+        return "/registration_request/submissionSuccess";
+    }
 }

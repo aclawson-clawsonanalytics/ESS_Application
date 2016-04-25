@@ -19,9 +19,9 @@
     <body>
         <div class="row" style="height:150px">
             <div class="large-10 large-centered columns">
-                <h2>
+                <h3>
                     Welcome to <app:AppName/> by <app:Developer/>!
-                </h2>
+                </h3>
                 <p>
                 We are excited to meet your school management needs. Complete the following form in order to subscribe to ViTaL School Solutions.
                 An email will be sent once your request is approved with the account details included.
@@ -33,7 +33,7 @@
         </div>
         <div class="row" style="height:400px; padding:100px">
             <div class="large-12 large-centered columns">
-                <jsp:include page="/WEB-INF/views//registration_request/registrationForm_content.jsp"/>
+                <jsp:include page="/WEB-INF/views/registration_request/registrationForm_content.jsp"/>
             </div>
         </div>
             
