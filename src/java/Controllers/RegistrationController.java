@@ -20,4 +20,6 @@ public class RegistrationController {
     public String RequestSubscription(){
         return "/registration_request/registrationRequest";
     }
+    
+    
 }
