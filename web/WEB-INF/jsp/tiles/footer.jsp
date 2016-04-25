@@ -5,9 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="/WEB-INF/tlds/AppInformation" prefix="app"%>
 <!DOCTYPE html>
 
 <div class="footer">
-Clawson Analytics, LLC. Copyright 2016.
+    <app:Developer/>. Copyright 2016.
 
 </div>

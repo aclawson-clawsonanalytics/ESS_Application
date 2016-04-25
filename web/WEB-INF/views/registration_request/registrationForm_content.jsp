@@ -7,14 +7,25 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <table>
-        <tr>
-            <td colspan="2">Account Manager Information</td>
-        <tr>
-            <td>First name</td><td><input type="text"></td>
-            <td>Last name</td><td><input type="text"></td>
-        </tr>
-            
-      
-    </table>
+    <head>
+        <link rel="stylesheet" href="styles/general/formComponents.css"/>
+    </head>
+    <form action="#" method="POST">
+    <div class="large-6 columns">
+        
+        
+        <b>Account Manager</b><br>
+        First name: <input type="text" name="accountFirst"><br>
+        Last name: <input type="text" name="accountLast"><br>
+        Email: <input type="text" name="accountEmail">
+        Password: <input type="text" name="accountPassword">
+    </div>
+    <div class="large-6 columns">
+        <b>District Information</b><br>
+        District name: <input type="text" name="districtName"><br>
+        Phone: <input type="text" name="districtPhone"><br>
+        Fax: <input type="text" name="districtFax"><br>
+        <input type="submit" value="Submit"/>
+    </div>
+    </form>
 </html>

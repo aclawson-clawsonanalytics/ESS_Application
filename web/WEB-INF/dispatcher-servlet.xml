@@ -37,21 +37,7 @@ xmlns="http://www.springframework.org/schema/beans"
 </bean>
 
 
-<!--
-<bean name="StartupMapping" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="order" value="1"/>
-    <property name="prefix" value="/WEB-INF/views/startup/"/>
-    <property name="suffix" value="_view.jsp"/>
-</bean>
--->
 
-<!--
-<bean name="SubscriptionMapping" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="order" value="2"/>
-    <property name="prefix" value="/WEB-INF/views/registration_request"/>
-    <property name="suffix" value="_view.jsp"/>
-</bean>
--->
 
 
 <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">

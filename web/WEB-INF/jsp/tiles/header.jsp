@@ -5,10 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app" %>
 <!DOCTYPE html>
 <div class="header" id="gradHeader">
     <h1><b>WELCOME</b></h1><br>
-    <b style='color:blue'>ViTaL - School Management</b>
+    <b style='color:blue'><app:AppName/></b>
 </div>
 <!--
 <html>
