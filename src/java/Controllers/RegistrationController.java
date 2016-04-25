@@ -18,6 +18,6 @@ import org.springframework.ui.ModelMap;
 public class RegistrationController {
     @RequestMapping(value="/subscribe")
     public String RequestSubscription(){
-        return "registrationRequest";
+        return "/registration_request/registrationRequest";
     }
 }

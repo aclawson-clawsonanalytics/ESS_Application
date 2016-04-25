@@ -32,6 +32,6 @@ public class StartupController {
     
     @RequestMapping(value="/startup")
     public String startup(Model model){
-        return "startup";
+        return "startup/startup";
     }
 }

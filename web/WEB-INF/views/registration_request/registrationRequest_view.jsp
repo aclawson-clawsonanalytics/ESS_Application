@@ -9,13 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--<link rel="stylesheet" href="foundation.css"/>-->
+        <link rel="stylesheet" href="foundation.css"/>
         <title>Subscribe</title>
     </head>
     <body>
         <div class="row" style="height:300px">
-            <div class="large-6" align="centered">
-                <jsp:include page="/WEB-INF/jsp/content/registrationForm_content.jsp"/>
+            <div class="large-6 large-centered columns">
+                <jsp:include page="/WEB-INF/views//registration_request/registrationForm_content.jsp"/>
             </div>
         </div>
             
