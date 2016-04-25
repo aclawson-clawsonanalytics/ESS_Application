@@ -25,8 +25,7 @@
         District name: <input type="text" name="districtName"><br>
         Phone: <input type="text" name="districtPhone"><br>
         Fax: <input type="text" name="districtFax"><br>
-        
+        <input type="submit" value="Submit"/>
     </div>
-        <input type="submit" value="Register!"/>
     </form>
 </html>
