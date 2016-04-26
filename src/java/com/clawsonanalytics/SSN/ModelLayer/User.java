@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Core.ModelLayer;
+package com.clawsonanalytics.SSN.ModelLayer;
 import java.util.ArrayList;
 import Core.Database.SQLModel;
 

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Core.Database;
+import com.clawsonanalytics.SSN.ModelLayer.IValidatable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
@@ -16,7 +17,6 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import Core.Database.ISQLInterface;
 import Core.Database.ConnectionManager;
-import Core.ModelLayer.*;
 
 
 
