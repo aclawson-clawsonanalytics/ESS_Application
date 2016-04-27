@@ -3,21 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Core.Database;
+package com.clawsonanalytics.SSN.DataLayer;
 
 /**
  *
  * @author andrewclawson
  */
-public class DataSource {
-    private String host;
-    private String username;
-    private String password;
+public class MySQLManager {
+    private MySQLDataSource Source;
     
-    public DataSource(){
-        
+    
+    public void setDataSource(MySQLDataSource dataSource){
+        this.Source = dataSource;
     }
-    
-    
-    
 }
