@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.DataLayer;
+package com.clawsonanalytics.SSN.DataLayer.MySQL;
 
 /**
  *
@@ -11,6 +11,7 @@ package com.clawsonanalytics.SSN.DataLayer;
  */
 public class MySQLManager {
     private MySQLDataSource Source;
+    public MySQLDataConnector Connector;
     
     
     public void setDataSource(MySQLDataSource dataSource){

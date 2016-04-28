@@ -17,7 +17,7 @@
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/src/java/Core/Database/Settings.java</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/web/WEB-INF/views/registration_request/registrationForm_content.jsp</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/src/java/com/clawsonanalytics/SSN/DataLayer/MySQLManager.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/src/java/com/clawsonanalytics/SSN/DataLayer/DataSource.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/src/java/com/clawsonanalytics/SSN/DataLayer/MySQLDataConnector.java</file>
         </group>
     </open-files>
 </project-private>
