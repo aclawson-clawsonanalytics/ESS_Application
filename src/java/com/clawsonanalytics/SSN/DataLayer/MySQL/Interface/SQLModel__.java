@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Core.Database;
+package com.clawsonanalytics.SSN.DataLayer.MySQL.Interface;
 import com.clawsonanalytics.SSN.ModelLayer.IValidatable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,8 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
-import Core.Database.ISQLInterface;
+import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.ISQLInterface;
+import Core.Database.ConnectionManager;
 import Core.Database.ConnectionManager;
 
 
@@ -24,13 +25,13 @@ import Core.Database.ConnectionManager;
  *
  * @author andrewclawson
  */
-public class SQLModel implements IValidatable, ISQLInterface {
+public class SQLModel__ implements IValidatable, ISQLInterface {
     
     //private static String tablename;
     private int ID;
     private static String tablename;
     
-    public SQLModel (){
+    public SQLModel__ (){
  
     }
     
@@ -51,9 +52,14 @@ public class SQLModel implements IValidatable, ISQLInterface {
         return this.ID;
     }
     
+    /*
+    public <T extends SQLModel__> T GetByID(){
+        
+    }
+*/
     
     @Override
-    public void SetIDBySQL(String mode, String tablename){
+    private void SetIDBySQL(String mode, String tablename){
         ConnectionManager manager = new ConnectionManager(mode);
         ArrayList idList = new ArrayList();
         String sqlString = "SELECT id from " + tablename;
@@ -179,7 +185,7 @@ public class SQLModel implements IValidatable, ISQLInterface {
         }
     }
     
-    public ArrayList<? extends SQLModel> GetAll(){
+    public ArrayList<? extends SQLModel__> GetAll(){
         ArrayList all = new ArrayList();
         
         return all;

@@ -5,7 +5,7 @@
  */
 package Core.Database;
 import Core.Database.ConnectionManager;
-import Core.Database.SQLModel;
+import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel__;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -16,7 +16,7 @@ import org.junit.Test;
  * @author andrewclawson
  */
 public class SQLModelTest {
-    public static SQLModel SUT;
+    public static SQLModel__ SUT;
     public static String testTableName = "testTableName";
     
     public SQLModelTest() {
@@ -26,7 +26,7 @@ public class SQLModelTest {
     @BeforeClass
     public static void setUp() {
         
-        SUT = new SQLModel();
+        SUT = new SQLModel__();
     }
     
     @AfterClass

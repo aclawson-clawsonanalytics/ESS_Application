@@ -3,26 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.ModelLayer;
-import java.util.ArrayList;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel__;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SqlDAO;
+package com.clawsonanalytics.SSN.DataLayer.MySQL.Interface;
 
 /**
  *
  * @author andrewclawson
  */
-public class User {
-    // Class variables
-    //public String TableName = "User";
+public class SQLModel {
+    
     
     
     // Constructor
-    public User(){
+    public SQLModel(){
         
     }
     
-    public class UserDAO implements SqlDAO{
+    public class DAO implements SqlDAO{
         
         
         @Override

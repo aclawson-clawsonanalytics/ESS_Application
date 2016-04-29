@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Core.Database;
+package com.clawsonanalytics.SSN.DataLayer.MySQL.Interface;
 import java.sql.Array;
 import Core.Database.ConnectionManager;
 import Core.Database.SQLList;
 import java.util.List;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 /**
  *
  * @author andrewclawson
@@ -17,7 +17,7 @@ public interface ISQLInterface {
     
     // SetID method
     // Sets the primary key for the SQLListItem
-    public void SetIDBySQL(String mode, String tablename);
+    void SetIDBySQL(String mode, String tablename);
     
     // Returns the Item's Primary Key
     int GetID();
@@ -25,10 +25,17 @@ public interface ISQLInterface {
     /* Returns all objects of the parent class from
     the SQL Database
     */
-    void Save();
+    public void Save();
     
-    void Save(String mode);
-    void Delete();
+    public void Save(String mode);
+    
+    public void Delete();
+    
+    public List<? extends SQLModel__> GetAll();
+    
+    public List<? extends SQLModel__> GetByID(int id);
+    
+    public class RowMapper();
     
     
     //abstract ArrayList GetAll();

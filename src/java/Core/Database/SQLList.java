@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 package Core.Database;
+import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel__;
 import java.util.*;
 import java.util.ArrayList;
 import Core.Database.SQLList;
 import java.sql.Array;
-import Core.Database.ISQLInterface;
+import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.ISQLInterface;
 import Core.Database.ConnectionManager;
 /**
  *
@@ -32,11 +33,11 @@ public class SQLList extends ArrayList {
         return tablename;
     }
     
-    public void Add(SQLModel aListItem){
+    public void Add(SQLModel__ aListItem){
         
     }
     
-    public void Delete(SQLModel aListItem){
+    public void Delete(SQLModel__ aListItem){
         
     }
     /*
