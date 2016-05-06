@@ -15,19 +15,29 @@ import java.sql.ResultSet;
  * @author andrewclawson
  */
 public class StatementManager {
-    private String statement;
+    //private Statement statement;
+    private String statementString;
+    private PreparedStatement preparedStatement;
     
     public StatementManager(){
         
     }
     
-    public void setStatement(String string){
-        this.statement = string;
+    public void setStatementString(String string){
+        this.statementString = string;
     }
     
-    public String getStatement(String string){
-        return this.statement;
+    
+    public String getStatementString(){
+        return this.statementString;
     }
+    
+    
+    public void ChangeDBStatement(){
+        this.statementString = "USE SSN_Application_Test";
+    }
+    
+    
     
     
 }

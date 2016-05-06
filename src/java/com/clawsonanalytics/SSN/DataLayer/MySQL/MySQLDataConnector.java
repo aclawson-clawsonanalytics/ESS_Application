@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.clawsonanalytics.SSN.DataLayer.MySQL;
+import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -17,26 +18,18 @@ import java.sql.ResultSet;
 public class MySQLDataConnector {
     
     private Connection connection;
-    private MySQLDataSource dataSource;
+    //private MySQLDataSource dataSource;
     
-    public MySQLDataConnector(MySQLDataSource dataSource){
-        this.setSource(dataSource);
-        this.getConnection();
+    public MySQLDataConnector(){
+        
+        this.ConnectToMySQLSource();
     }
     
-    public void setSource(MySQLDataSource dataSource){
-        this.dataSource = dataSource;
-    }
-    
-    public MySQLDataSource getSource(){
-        return this.dataSource;
-    }
-    
-    private void setConnection(){
+    private void ConnectToMySQLSource(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            this.connection = DriverManager.getConnection(this.getSource().getHost(),
-                    this.getSource().getUsername(),this.getSource().getPassword());
+            this.connection = DriverManager.getConnection(MySQLDataSource.getHost(),
+                    MySQLDataSource.getUsername(),MySQLDataSource.getPassword());
         } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
             this.connection = null;

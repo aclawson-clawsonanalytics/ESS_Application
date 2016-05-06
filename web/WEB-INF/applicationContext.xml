@@ -21,6 +21,14 @@
       <property name="password" value="ssndbadmin"/>
 </bean>
 
+<bean id="testDataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/SSN_Application_Test"/>
+    <property name="username" value="SSN_DB_Admin"/>
+    <property name="password" value="ssndbadmin"/>
+</bean>
+
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
 
 

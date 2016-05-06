@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.DataLayer.MySQL.Interface;
-import com.clawsonanalytics.SSN.ModelLayer.User;
+package com.clawsonanalytics.SSN.DataLayer.MySQL;
+import java.sql.ResultSet;
 /**
  *
  * @author andrewclawson
  */
-public interface UserDAO {
-    public Save();
-    public GetByID();
-    public Update()
+public class MySQLResult {
+    
 }

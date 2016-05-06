@@ -18,61 +18,63 @@ import java.sql.ResultSet;
 public class MySQLDataSource {
     
     
-    private String host;
-    private String username;
-    private String password;
-    private Connection connection;
+    private static String host = "jdbc:mysql://localhost:3306/SSN_Application";
+    private static String username = "SSN_DB_Admin";
+    private static String password = "ssndbadmin";
+    //private Connection connection;
     
-    private static String database;
-    private static String testDatabase;
+    private static String database = "SSN_Application";
+    private static String testDatabase = "SSN_Application_Test";
+    private static String focusDB = database;
     
     public MySQLDataSource(){
-        setHost("jdbc:mysql://localhost:3306/SSN_Application");
-        setUsername("SSN_DB_Admin");
-        setPassword("ssndbsdmin");
         
     }
     
     public void setHost(String string){
-        this.host = string;
+        host = string;
     }
     
-    public String getHost(){
-        return this.host;
+    public static String getHost(){
+        return host;
     }
     
-    public void setUsername(String string){
-        this.username = string;
+    public static void setUsername(String string){
+        username = string;
     }
     
-    public String getUsername(){
-        return this.username;
+    public static String getUsername(){
+        return username;
     }
     
-    public void setPassword(String string){
-        this.password = string;
+    public static void setPassword(String string){
+        password = string;
     }
     
-    public String getPassword(){
-        return this.password;
-    }
-    
-    
-    public void setDatabase(String string){
-        this.database = string;
-    }
-    
-    public String getDatabaseName(){
-        return this.database;
-    }
-    
-    public void setTestDatabase(String string){
-        this.testDatabase = string;
-    }
-    
-    public String getTestDatabase(){
-        return this.testDatabase;
+    public static String getPassword(){
+        return password;
     }
     
     
+    public static void setDatabaseName(String string){
+        database = string;
+    }
+    
+    public static String getTestDatabaseName(){
+        return testDatabase;
+    }
+    public static void setFocusToTestDB(){
+        MySQLDataSource.focusDB = MySQLDataSource.getTestDatabaseName();
+    }
+    
+    public static void setFocusToProduction(){
+        MySQLDataSource.focusDB = MySQLDataSource.getDatabaseName();
+    }
+    public static String getDatabaseName(){
+        return database;
+    }
+    
+    public static String getFocusDB(){
+        return MySQLDataSource.focusDB;
+    }
 }

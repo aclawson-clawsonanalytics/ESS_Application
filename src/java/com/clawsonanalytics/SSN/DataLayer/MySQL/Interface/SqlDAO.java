@@ -10,8 +10,12 @@ package com.clawsonanalytics.SSN.DataLayer.MySQL.Interface;
  * @author andrewclawson
  */
 public interface SqlDAO {
+    //public void SetupTable();
     public void GetByID(int id);
     public void Insert();
     public void Update();
     public void Delete();
+    void WriteObject();
+    void MapRowToObject();
+    
 }
