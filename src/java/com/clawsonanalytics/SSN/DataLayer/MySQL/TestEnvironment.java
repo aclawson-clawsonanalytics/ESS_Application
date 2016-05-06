@@ -38,6 +38,9 @@ public class TestEnvironment {
         //Set test mode
         mysqlManager.SetTestMode();
         
+        // Duplicate model tables to mirror production db
+        
+        
         
     }
         
