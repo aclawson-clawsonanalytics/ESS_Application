@@ -104,4 +104,10 @@ public class MySQLManager {
             }
         }
     }
+    
+    class ModelManager {
+        public ModelManager(){
+            
+        }
+    }
 }
