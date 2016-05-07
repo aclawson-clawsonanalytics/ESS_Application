@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package com.clawsonanalytics.SSN.Tests.ModelLayer;
+
+import com.clawsonanalytics.SSN.DataLayer.MySQL.TestEnvironment;
 import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.SSN.ModelLayer.User;
 
@@ -22,18 +24,25 @@ import static org.junit.Assert.*;
  */
 public class UserTest {
     private static User SUT;
+    private static TestEnvironment environment;
     
     public UserTest() {
-        //SUT = new User();
+        environment = new TestEnvironment();
+        environment.Setup("No Data");
+        environment.CreateTestTableForModelByTablename(User.getTablename());
+        
     }
     
     @BeforeClass
     public static void setUpClass() {
         SUT = new User();
+        
     }
     
     @AfterClass
     public static void tearDownClass() {
+        environment.DropTestTableForModelByTablename(User.getTablename());
+        environment.TearDown();
     }
     
     @Before
@@ -52,6 +61,7 @@ public class UserTest {
     @Test
     public void TablenameIsCorrect(){
         Assert.assertEquals("USERS",User.getTablename());
+        
     }
     
     @Test

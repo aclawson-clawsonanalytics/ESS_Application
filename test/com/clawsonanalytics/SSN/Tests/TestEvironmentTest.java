@@ -6,6 +6,8 @@
 package com.clawsonanalytics.SSN.Tests;
 
 import com.clawsonanalytics.SSN.DataLayer.MySQL.TestEnvironment;
+import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLManager;
+
 import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
 
 //import com.clawsonanalytics.SSN.ModelLayer.RegisteredModel;
@@ -24,14 +26,19 @@ import static org.junit.Assert.*;
  */
 public class TestEvironmentTest {
     public static TestEnvironment SUT;
+    public static MySQLManager mysqlManager;
     
     public TestEvironmentTest() {
+        mysqlManager = new MySQLManager();
+        
     }
     
     @BeforeClass
     public static void setUpClass() {
         SUT = new TestEnvironment();
         SUT.Setup("No Data");
+        
+        
     }
     
     @AfterClass
@@ -55,7 +62,7 @@ public class TestEvironmentTest {
     @Test
     public void SetupChangesFocusDB(){
         Assert.assertEquals(MySQLDataSource.getTestDatabaseName(),MySQLDataSource.getFocusDB());
-    }
+    } 
     
     
 }

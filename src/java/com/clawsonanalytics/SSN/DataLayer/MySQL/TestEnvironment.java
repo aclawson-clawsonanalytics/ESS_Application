@@ -6,12 +6,11 @@
 package com.clawsonanalytics.SSN.DataLayer.MySQL;
 
 import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLManager;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLManager.SQLExecutor;
 import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataConnector;
 import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
 
 import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel;
-
+import com.clawsonanalytics.SSN.ModelLayer.User;
 import java.sql.SQLException;
 
 import java.util.List;
@@ -21,7 +20,8 @@ import java.lang.Runtime;
  * @author andrewclawson
  */
 public class TestEnvironment {
-    private MySQLManager mysqlManager = new MySQLManager();
+    public MySQLManager mysqlManager = new MySQLManager();
+    
     
     public TestEnvironment() {
         
@@ -34,19 +34,49 @@ public class TestEnvironment {
     }
     
     public void Setup(String command){
-        String createStatement;
+        
         //Set test mode
         mysqlManager.SetTestMode();
         
         // Duplicate model tables to mirror production db
-        
-        
+    }
+    
+    public void CreateTestTableForModelByTablename(String aTablename){
+        mysqlManager.SetTestMode();
+        String createString;
+        createString = "CREATE TABLE " + aTablename + " LIKE "
+                + MySQLDataSource.getDatabaseName()+ "."
+                + aTablename + ";";
+        mysqlManager.PrepareStatement(createString);
+        try {
+            mysqlManager.getPreparedStatement().executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+            
+    }
+    
+    public void DropTestTableForModelByTablename(String aTablename){
+        String dropStatement = "DROP TABLE " + aTablename + ";";
+        mysqlManager.PrepareStatement(dropStatement);
+        try{
+            mysqlManager.getPreparedStatement().executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        String useStatement = "USE " + MySQLDataSource.getDatabaseName()+";";
+        try{
+            mysqlManager.getPreparedStatement().executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
         
     }
         
         //Select Test DB
         
     public void TearDown(){
+        mysqlManager.SetProductionMode();
         
     }
     

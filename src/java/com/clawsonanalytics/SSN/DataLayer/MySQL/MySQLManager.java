@@ -36,6 +36,13 @@ public class MySQLManager {
     
     public void SetTestMode(){
         MySQLDataSource.setFocusToTestDB();
+        String useString = "USE " + MySQLDataSource.getTestDatabaseName() + ";";
+        PrepareStatement(useString);
+        try{
+            this.getPreparedStatement().execute();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
     }
     
     public void SetProductionMode(){
@@ -94,6 +101,8 @@ public class MySQLManager {
         }
     }
     
+    
+    
     public void ExectueUpdate(){
         String statement = statementManager.getStatementString();
         if (this.getPreparedStatement() != null){
@@ -105,9 +114,5 @@ public class MySQLManager {
         }
     }
     
-    class ModelManager {
-        public ModelManager(){
-            
-        }
-    }
+    
 }
