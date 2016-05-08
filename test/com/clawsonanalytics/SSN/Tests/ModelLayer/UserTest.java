@@ -25,6 +25,10 @@ import static org.junit.Assert.*;
 public class UserTest {
     private static User SUT;
     private static TestEnvironment environment;
+    private String first = "sutFirst";
+    private String last = "sutLast";
+    private String email = "sutEmail";
+    private String password = "sutPassword";
     
     public UserTest() {
         environment = new TestEnvironment();
@@ -35,7 +39,7 @@ public class UserTest {
     
     @BeforeClass
     public static void setUpClass() {
-        SUT = new User();
+        
         
     }
     
@@ -47,10 +51,12 @@ public class UserTest {
     
     @Before
     public void setUp() {
+        SUT = new User();
     }
     
     @After
     public void tearDown() {
+        SUT = null;
     }
 
     // TODO add test methods here.
@@ -67,6 +73,31 @@ public class UserTest {
     @Test
     public void CanSetModelName(){
         Assert.assertEquals(User.getModelName(), User.class.getSimpleName());
+    }
+    
+    @Test
+    public void CanSetFirstName(){
+        SUT.setFirstname(first);
+        Assert.assertEquals(SUT.getFirstname(),first);
+        
+    }
+    
+    @Test
+    public void CanSetLastName(){
+        SUT.setLastname(last);
+        Assert.assertEquals(SUT.getLastname(),last);
+    }
+    
+    @Test
+    public void CanSetEmail(){
+        SUT.setEmail(email);
+        Assert.assertEquals(SUT.getEmail(), email);
+    }
+    
+    @Test
+    public void CanSetPassword(){
+        SUT.setPassword(password);
+        Assert.assertEquals(SUT.getPassword(),password);
     }
     
     

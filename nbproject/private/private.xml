@@ -14,10 +14,10 @@
         <group>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/src/java/com/clawsonanalytics/SSN/DataLayer/MySQL/MySQLManager.java</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/test/com/clawsonanalytics/SSN/Tests/TestEvironmentTest.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/src/java/com/clawsonanalytics/SSN/DataLayer/MySQL/StatementManager.java</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/src/java/com/clawsonanalytics/SSN/DataLayer/MySQL/TestEnvironment.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/web/WEB-INF/DB_Scripts/SetupTestEnvironment.sql</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/test/com/clawsonanalytics/SSN/Tests/DataLayer/MySQLManagerTest.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/src/java/com/clawsonanalytics/SSN/DataLayer/MySQL/MySQLDataSource.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/test/com/clawsonanalytics/SSN/Tests/ModelLayer/UserTest.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/SSN/WebApplication/src/java/com/clawsonanalytics/SSN/ModelLayer/User.java</file>
         </group>
     </open-files>
 </project-private>

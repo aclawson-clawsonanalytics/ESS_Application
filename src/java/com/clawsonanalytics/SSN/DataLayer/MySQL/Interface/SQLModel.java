@@ -10,7 +10,7 @@ import com.clawsonanalytics.SSN.ModelLayer.Interface.IValidatable;
 import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
 import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SqlDAO;
 import java.util.List;
-
+import java.sql.ResultSet;
 
 /**
  *
@@ -23,6 +23,8 @@ public class SQLModel implements SqlDAO, IValidatable {
     
     private static String modelName;
     
+    private int ID;
+    
     
     
     // Constructor
@@ -32,6 +34,7 @@ public class SQLModel implements SqlDAO, IValidatable {
     }
     
     public static void setTablename(String string){
+        
         tablename = string;
     }
     
@@ -49,8 +52,9 @@ public class SQLModel implements SqlDAO, IValidatable {
     }
     
     
-    public void GetByID(int id){
+    public SQLModel GetByID(int id){
         
+        return this;
     }
     
     public void Insert(){
@@ -69,7 +73,7 @@ public class SQLModel implements SqlDAO, IValidatable {
         
     }
     
-    public void MapRowToObject(){
+    public void MapRowToObject(ResultSet result){
         
     }
     
