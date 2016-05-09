@@ -6,6 +6,7 @@
 package com.clawsonanalytics.SSN.ModelLayer;
 import java.util.List;
 import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 //import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel__;
 import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel;
@@ -61,18 +62,13 @@ public class User extends SQLModel {
     }
     
     //SQL DAO methods
-    @Override
-    public SQLModel GetByID(int id){
-        MySQLManager mysqlManager = new MySQLManager();
-        String selectString = "SELECT * FROM " + User.getTablename()
-                +" WHERE id = " + Integer.toString(id) + ";";
-        mysqlManager.PrepareStatement(selectString);
-        mysqlManager.setResultSet(selectString);
-        return this;
-    }
+    
+    
+    
     
     @Override
     public void Insert(){
+        
         
     }
     
@@ -87,16 +83,19 @@ public class User extends SQLModel {
     }
     
     @Override
-    public void WriteObject(){
+    public PreparedStatement WriteObject(PreparedStatement preparedStatement){
+        return preparedStatement;
         
     }
     
     @Override
     public void MapRowToObject(ResultSet result){
         try{
-            
+            this.setID(result.getInt("id"));
             this.setFirstname(result.getString("firstname"));
             this.setLastname(result.getString("lastname"));
+            this.setEmail(result.getString("email"));
+            this.setPassword(result.getString("password"));
         }catch(SQLException e){
             
         }

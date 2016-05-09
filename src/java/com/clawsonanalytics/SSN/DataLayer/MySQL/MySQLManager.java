@@ -114,7 +114,7 @@ public class MySQLManager {
         }
     }
     
-    public void setResultSet(String statementString){
+    public void setResultSet(String statementString)throws SQLException {
         PrepareStatement(statementString);
         try{
             this.resultSet = this.getPreparedStatement().executeQuery();

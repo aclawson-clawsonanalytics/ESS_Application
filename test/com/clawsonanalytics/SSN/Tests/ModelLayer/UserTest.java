@@ -7,6 +7,7 @@ package com.clawsonanalytics.SSN.Tests.ModelLayer;
 
 import com.clawsonanalytics.SSN.DataLayer.MySQL.TestEnvironment;
 import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel;
+import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
 import com.clawsonanalytics.SSN.ModelLayer.User;
 
 import java.util.List;
@@ -99,6 +100,8 @@ public class UserTest {
         SUT.setPassword(password);
         Assert.assertEquals(SUT.getPassword(),password);
     }
+    
+    
     
     
 }

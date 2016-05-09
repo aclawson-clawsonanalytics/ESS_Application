@@ -4,19 +4,25 @@
  * and open the template in the editor.
  */
 package com.clawsonanalytics.SSN.DataLayer.MySQL.Interface;
+import java.util.List;
 import java.lang.Object;
 import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 /**
  *
  * @author andrewclawson
  */
 public interface SqlDAO {
     //public void SetupTable();
-    public Object GetByID(int id);
+    public void setID(int id);
+    public void SetIDBySQL();
+    
+    //public List GetAll();
+    
     public void Insert();
     public void Update();
     public void Delete();
-    void WriteObject();
+    PreparedStatement WriteObject(PreparedStatement preparedStatement);
     void MapRowToObject(ResultSet result);
     
 }
