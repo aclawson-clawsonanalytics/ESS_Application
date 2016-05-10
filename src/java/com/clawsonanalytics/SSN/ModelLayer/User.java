@@ -5,9 +5,11 @@
  */
 package com.clawsonanalytics.SSN.ModelLayer;
 import java.util.List;
+import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 //import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel__;
 import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SqlDAO;
@@ -65,10 +67,32 @@ public class User extends SQLModel {
     
     
     
+    public static List<User> GetAll(){
+        List<User> all = new ArrayList<User>();
+        String selectString = "SELECT * FROM " + User.getTablename() + ";";
+        MySQLManager mysqlManager = new MySQLManager();
+        mysqlManager.PrepareStatement(selectString);
+        mysqlManager.ExecuteQuery();
+        try{
+            while(mysqlManager.getResultSet().next()){
+                User newUser = User.MapRowToObject(mysqlManager.getResultSet());
+                all.add(newUser);
+                
+            }
+        }catch(SQLException e){
+            
+        }
+        return all;
+    }
     
     @Override
     public void Insert(){
-        
+        String insertString = "INSERT INTO " + getTablename()
+                + " VALUES (?,?,?,?);";
+        MySQLManager mysql = new MySQLManager();
+        mysql.PrepareStatement(insertString);
+        PrepareStatementForInsert(mysql.getPreparedStatement());
+        mysql.ExecuteQuery();
         
     }
     
@@ -82,31 +106,55 @@ public class User extends SQLModel {
         
     }
     
-    @Override
-    public PreparedStatement WriteObject(PreparedStatement preparedStatement){
+    
+    public PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
+        try{
+            preparedStatement.setString(1, this.getFirstname());
+            preparedStatement.setString(2, this.getLastname());
+            preparedStatement.setString(3, this.getEmail());
+            preparedStatement.setString(4, this.getPassword());
+        }catch (SQLException e){
+            
+        }
         return preparedStatement;
         
     }
     
-    @Override
-    public void MapRowToObject(ResultSet result){
+    
+    private static User MapRowToObject(ResultSet result){
+        User newUser = new User();
         try{
-            this.setID(result.getInt("id"));
-            this.setFirstname(result.getString("firstname"));
-            this.setLastname(result.getString("lastname"));
-            this.setEmail(result.getString("email"));
-            this.setPassword(result.getString("password"));
+            newUser.setID(result.getInt("id"));
+            newUser.setFirstname(result.getString("firstname"));
+            newUser.setLastname(result.getString("lastname"));
+            newUser.setEmail(result.getString("email"));
+            newUser.setPassword(result.getString("password"));
         }catch(SQLException e){
             
         }
+        return newUser;
     }
     
     @Override
     public List<String> GetValidationErrors(){
-        List<String> _validationErrors = null;
-        
+        List<String> _validationErrors = new ArrayList<String>();
+        if (this.getFirstname() == null){
+            _validationErrors.add("User must have a firstname.");
+        }
+        if (this.getLastname() == null){
+            _validationErrors.add("User must have a lastname.");
+        }
+        if (this.getEmail() == null){
+            _validationErrors.add("User must have an email.");
+        }
+        if (this.getPassword() == null){
+            _validationErrors.add("User must have a password.");
+        }
         return _validationErrors;
     }
+    
+    
+    
     
     
     

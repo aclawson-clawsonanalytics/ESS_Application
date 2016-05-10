@@ -66,6 +66,7 @@ public class TestEnvironment {
         }
         String useStatement = "USE " + MySQLDataSource.getDatabaseName()+";";
         try{
+            mysqlManager.PrepareStatement(useStatement);
             mysqlManager.getPreparedStatement().executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();
@@ -115,6 +116,7 @@ public class TestEnvironment {
     }
     
     private void DeleteTestDB(){
+        
         /*
         String deleteString = "DROP " + MySQLDataSource.getTestDatabaseName() +";";
         mysqlManager.statementManager.setStatement(deleteString);

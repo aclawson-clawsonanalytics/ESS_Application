@@ -22,7 +22,7 @@ public interface SqlDAO {
     public void Insert();
     public void Update();
     public void Delete();
-    PreparedStatement WriteObject(PreparedStatement preparedStatement);
-    void MapRowToObject(ResultSet result);
+    //PreparedStatement WriteObject(PreparedStatement preparedStatement);
+    //void MapRowToObject(ResultSet result);
     
 }

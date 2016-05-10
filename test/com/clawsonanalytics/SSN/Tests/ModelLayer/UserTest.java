@@ -59,6 +59,13 @@ public class UserTest {
     public void tearDown() {
         SUT = null;
     }
+    
+    public void SetupValidUser(){
+        SUT.setFirstname(first);
+        SUT.setLastname(last);
+        SUT.setEmail(email);
+        SUT.setPassword(password);
+    }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
@@ -101,7 +108,54 @@ public class UserTest {
         Assert.assertEquals(SUT.getPassword(),password);
     }
     
+    @Test
+    public void MissingFirstReturnsMessage(){
+        SUT.setLastname(last);
+        SUT.setEmail(email);
+        SUT.setPassword(password);
+        Assert.assertEquals(SUT.GetValidationErrors().contains("User must have a firstname."), true);
+        Assert.assertEquals(SUT.IsValid(),false);
+    }
     
+    @Test
+    public void MissingLastReturnsMessage(){
+        SUT.setFirstname(first);
+        SUT.setEmail(email);
+        SUT.setPassword(password);
+        Assert.assertEquals(SUT.GetValidationErrors().contains("User must have a lastname."),true);
+        Assert.assertEquals(SUT.IsValid(), false);
+    }
+    
+    @Test
+    public void MissingEmailReturnsMessage(){
+        SUT.setFirstname(first);
+        SUT.setLastname(last);
+        SUT.setPassword(password);
+        Assert.assertEquals(SUT.GetValidationErrors().contains("User must have an email."),true);
+        Assert.assertFalse(SUT.IsValid());
+    }
+    
+    @Test
+    public void MissingPasswordReturnsMessage(){
+        SUT.setFirstname(first);
+        SUT.setLastname(last);
+        SUT.setEmail(email);
+        Assert.assertTrue(SUT.GetValidationErrors().contains("User must have a password."));
+        Assert.assertFalse(SUT.IsValid());
+    }
+    
+    //@Test
+    public void CanInsertIntoDB(){
+        int firstCount = User.Count();
+        SUT.setFirstname(first);
+        SUT.setLastname(last);
+        SUT.setEmail(email);
+        SUT.setPassword(last);
+        SUT.Insert();
+        int secondCount = User.Count();
+        Assert.assertEquals(secondCount, firstCount + 1);
+        
+    }
     
     
 }

@@ -82,13 +82,13 @@ public class SQLModel implements SqlDAO, IValidatable {
     }
     
     
-    
+    /*
     public static List<SQLModel> GetAll(){
         List<SQLModel> all = new ArrayList();
         
         
         return all;
-    }
+    }*/
     
     public static int Count(){
         int count = 0;
@@ -117,13 +117,9 @@ public class SQLModel implements SqlDAO, IValidatable {
         
     }
     
-    public PreparedStatement WriteObject(PreparedStatement preparedStatement){
-        return preparedStatement;
-    }
     
-    public void MapRowToObject(ResultSet result){
-        
-    }
+    
+    
     
     public List<String> GetValidationErrors(){
         List<String> _validationErrors = null;
