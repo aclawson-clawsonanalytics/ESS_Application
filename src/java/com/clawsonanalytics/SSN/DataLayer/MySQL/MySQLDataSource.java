@@ -18,7 +18,7 @@ import java.sql.ResultSet;
 public class MySQLDataSource {
     
     
-    private static String host = "jdbc:mysql://localhost:3306/SSN_Application";
+    private static String host = "jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com";//"jdbc:mysql://localhost:3306/SSN_Application";
     private static String username = "SSN_DB_Admin";
     private static String password = "ssndbadmin";
     //private Connection connection;

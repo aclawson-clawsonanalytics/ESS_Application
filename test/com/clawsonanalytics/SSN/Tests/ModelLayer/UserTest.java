@@ -46,8 +46,8 @@ public class UserTest {
     
     @AfterClass
     public static void tearDownClass() {
-        environment.DropTestTableForModelByTablename(User.getTablename());
-        environment.TearDown();
+        //environment.DropTestTableForModelByTablename(User.getTablename());
+        //environment.TearDown();
     }
     
     @Before
@@ -144,7 +144,7 @@ public class UserTest {
         Assert.assertFalse(SUT.IsValid());
     }
     
-    //@Test
+    
     public void CanInsertIntoDB(){
         int firstCount = User.Count();
         SUT.setFirstname(first);

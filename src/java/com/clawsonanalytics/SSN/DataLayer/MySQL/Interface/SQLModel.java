@@ -89,7 +89,7 @@ public class SQLModel implements SqlDAO, IValidatable {
         
         return all;
     }*/
-    
+    /*
     public static int Count(){
         int count = 0;
         String selectString = "SELECT * FROM " + getTablename() + ";";
@@ -104,7 +104,7 @@ public class SQLModel implements SqlDAO, IValidatable {
             
         }
         return count; 
-    }
+    }*/
     public void Insert(){
         
     }

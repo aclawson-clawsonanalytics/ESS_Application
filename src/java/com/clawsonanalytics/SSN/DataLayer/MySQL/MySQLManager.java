@@ -90,7 +90,17 @@ public class MySQLManager {
         return this.preparedStatement;
     }
     
-    public void ExecuteQuery(){
+    public void Execute() throws SQLException {
+        if (this.getPreparedStatement() != null){
+            try{
+                resultSet = this.getPreparedStatement().executeQuery();
+            }catch (SQLException e){
+                
+            }
+        }
+    }
+    
+    public void ExecuteQuery() throws SQLException {
         String statementString = statementManager.getStatementString();
         if (this.getPreparedStatement() != null){
             try{

@@ -19,6 +19,8 @@ import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLManager;
  * @author andrewclawson
  */
 public class User extends SQLModel {
+    private static String tablename = "USERS";
+    private static String modelName = "User";
     private String firstname;
     private String lastname;
     private String email;
@@ -27,8 +29,8 @@ public class User extends SQLModel {
     
     // Constructor
     public User() {
-        User.setTablename("USERS");
-        User.setModelName(User.class.getSimpleName());
+        //User.setTablename("USERS");
+        //User.setModelName(User.class.getSimpleName());
     }
     // property getters and setters
     public void setFirstname(String string){
@@ -66,13 +68,40 @@ public class User extends SQLModel {
     //SQL DAO methods
     
     
+    public static String getTablename(){
+        return User.tablename;
+    }
+    
+    public static int Count(){
+        int count = 0;
+        String selectString = "SELECT * FROM " + getTablename() + ";";
+        MySQLManager mysqlManager = new MySQLManager();
+        mysqlManager.PrepareStatement(selectString);
+        try{
+            mysqlManager.ExecuteQuery();
+        }catch(SQLException e){
+            
+        }
+        try{
+            while(mysqlManager.getResultSet().next()){
+                count = count + 1;
+            }
+        }catch (SQLException e){
+            
+        }
+        return count; 
+    }
     
     public static List<User> GetAll(){
         List<User> all = new ArrayList<User>();
         String selectString = "SELECT * FROM " + User.getTablename() + ";";
         MySQLManager mysqlManager = new MySQLManager();
         mysqlManager.PrepareStatement(selectString);
-        mysqlManager.ExecuteQuery();
+        try{
+            mysqlManager.ExecuteQuery();
+        }catch(SQLException e){
+            
+        }
         try{
             while(mysqlManager.getResultSet().next()){
                 User newUser = User.MapRowToObject(mysqlManager.getResultSet());
@@ -92,7 +121,12 @@ public class User extends SQLModel {
         MySQLManager mysql = new MySQLManager();
         mysql.PrepareStatement(insertString);
         PrepareStatementForInsert(mysql.getPreparedStatement());
-        mysql.ExecuteQuery();
+        try{
+            mysql.ExecuteQuery();
+        }catch(SQLException e){
+            
+        }
+        mysql.Connector.CloseResources();
         
     }
     

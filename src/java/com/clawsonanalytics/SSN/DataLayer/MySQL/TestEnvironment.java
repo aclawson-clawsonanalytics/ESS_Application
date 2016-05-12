@@ -44,12 +44,13 @@ public class TestEnvironment {
     public void CreateTestTableForModelByTablename(String aTablename){
         mysqlManager.SetTestMode();
         String createString;
-        createString = "CREATE TABLE " + aTablename + " LIKE "
-                + MySQLDataSource.getDatabaseName()+ "."
-                + aTablename + ";";
+        String firstDBString = MySQLDataSource.getTestDatabaseName() + "." + aTablename;
+        String secondDBString = MySQLDataSource.getDatabaseName() + "." +aTablename;
+        createString = "CREATE TABLE " + firstDBString + " LIKE " + secondDBString + ";";
         mysqlManager.PrepareStatement(createString);
         try {
-            mysqlManager.getPreparedStatement().executeUpdate();
+            //mysqlManager.getPreparedStatement().executeUpdate();
+            mysqlManager.getPreparedStatement().execute(createString);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -112,7 +113,11 @@ public class TestEnvironment {
         String selectString = "USE " + MySQLDataSource.getTestDatabaseName() +";";
         //Add string to mysqlManager.statementManager
         mysqlManager.statementManager.setStatementString(selectString);
-        mysqlManager.ExecuteQuery();
+        try{
+            mysqlManager.ExecuteQuery();
+        }catch(SQLException e){
+            
+        }
     }
     
     private void DeleteTestDB(){
