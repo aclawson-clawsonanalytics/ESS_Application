@@ -78,10 +78,7 @@ public class UserTest {
         
     }
     
-    @Test
-    public void CanSetModelName(){
-        Assert.assertEquals(User.getModelName(), User.class.getSimpleName());
-    }
+    
     
     @Test
     public void CanSetFirstName(){
