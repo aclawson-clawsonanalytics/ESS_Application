@@ -33,7 +33,7 @@ public class UserTest {
     
     public UserTest() {
         environment = new TestEnvironment();
-        environment.Setup("No Data");
+        environment.Setup();
         environment.CreateTestTableForModelByTablename(User.getTablename());
         
     }
@@ -48,6 +48,8 @@ public class UserTest {
     public static void tearDownClass() {
         //environment.DropTestTableForModelByTablename(User.getTablename());
         //environment.TearDown();
+        environment.DropTestTableForModelByTablename(User.getTablename());
+        environment.TearDown();
     }
     
     @Before
@@ -58,6 +60,9 @@ public class UserTest {
     @After
     public void tearDown() {
         SUT = null;
+        //environment.DropTestTableForModelByTablename(User.getTablename());
+        //environment.TearDown();
+        environment.DropRecordsForTestTable(User.getTablename());
     }
     
     public void SetupValidUser(){
@@ -141,7 +146,7 @@ public class UserTest {
         Assert.assertFalse(SUT.IsValid());
     }
     
-    
+    @Test
     public void CanInsertIntoDB(){
         int firstCount = User.Count();
         SUT.setFirstname(first);

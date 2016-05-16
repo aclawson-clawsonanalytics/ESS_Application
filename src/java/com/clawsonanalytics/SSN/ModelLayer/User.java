@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.SQLException;
 
 //import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel__;
@@ -74,22 +75,26 @@ public class User extends SQLModel {
     
     public static int Count(){
         int count = 0;
+        ResultSet results;
+        Statement statement;
         String selectString = "SELECT * FROM " + getTablename() + ";";
         MySQLManager mysqlManager = new MySQLManager();
-        mysqlManager.PrepareStatement(selectString);
+        
+        //mysqlManager.PrepareStatement(selectString);
         try{
-            mysqlManager.ExecuteQuery();
-        }catch(SQLException e){
+            statement = mysqlManager.Connector.getConnection().createStatement();
+            results = statement.executeQuery(selectString);
             
-        }
-        try{
-            while(mysqlManager.getResultSet().next()){
-                count = count + 1;
+            while(results.next()){
+                count = count+1;
             }
-        }catch (SQLException e){
+            
+        }catch(SQLException e){
+            e.getErrorCode();
+            //e.printStackTrace();
             
         }
-        return count; 
+        return count;
     }
     
     public static List<User> GetAll(){
@@ -119,14 +124,15 @@ public class User extends SQLModel {
         String insertString = "INSERT INTO " + getTablename()
                 + " VALUES (?,?,?,?);";
         MySQLManager mysql = new MySQLManager();
-        mysql.PrepareStatement(insertString);
-        PrepareStatementForInsert(mysql.getPreparedStatement());
+        PreparedStatement preparedStatement;
+        ResultSet results;
         try{
-            mysql.ExecuteQuery();
+            preparedStatement = mysql.Connector.getConnection().prepareStatement(insertString);
+            int rowsInserted = preparedStatement.executeUpdate();
         }catch(SQLException e){
             
         }
-        mysql.Connector.CloseResources();
+        //mysql.Connector.CloseResources();
         
     }
     

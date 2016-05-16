@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 /**
@@ -24,9 +25,9 @@ import java.sql.PreparedStatement;
 public class MySQLManager {
     public MySQLDataConnector Connector = new MySQLDataConnector();
     public StatementManager statementManager = new StatementManager();
-    private Statement statement;
-    private PreparedStatement preparedStatement;
-    private ResultSet resultSet;
+    public Statement statement;
+    public PreparedStatement preparedStatement;
+    public ResultSet resultSet;
     
     
     public MySQLManager(){
@@ -37,16 +38,24 @@ public class MySQLManager {
     public void SetTestMode(){
         MySQLDataSource.setFocusToTestDB();
         String useString = "USE " + MySQLDataSource.getTestDatabaseName() + ";";
-        PrepareStatement(useString);
         try{
-            this.getPreparedStatement().execute();
+            Statement statement = Connector.getConnection().createStatement();
+            statement.executeQuery(useString);
         }catch(SQLException e){
-            e.printStackTrace();
+            
         }
     }
     
     public void SetProductionMode(){
         MySQLDataSource.setFocusToProduction();
+        String useString = "USE " + MySQLDataSource.getDatabaseName() + ";";
+        try{
+            Statement statement = Connector.getConnection().createStatement();
+            statement.executeQuery(useString);
+        }catch(SQLException e){
+            
+        }
+        
     }
     
     public ResultSet getResultSet(){
@@ -90,16 +99,19 @@ public class MySQLManager {
         return this.preparedStatement;
     }
     
-    public void Execute() throws SQLException {
+    public void Execute(String sql) throws SQLException {
         if (this.getPreparedStatement() != null){
             try{
-                resultSet = this.getPreparedStatement().executeQuery();
+                resultSet = this.Connector.getConnection().prepareStatement(sql).executeQuery(sql);
             }catch (SQLException e){
                 
             }
         }
     }
     
+    public void setResultSet(ResultSet results){
+        this.resultSet = results;
+    }
     public void ExecuteQuery() throws SQLException {
         String statementString = statementManager.getStatementString();
         if (this.getPreparedStatement() != null){
@@ -122,6 +134,34 @@ public class MySQLManager {
                 e.printStackTrace();
             }
         }
+    }
+    
+    public void runInsert(String sqlString) throws SQLException {
+        Connection connection = Connector.getConnection();
+        
+        
+        try{
+            statementManager.setStatement(Connector.getConnection().createStatement());
+            statementManager.getStatement().executeUpdate(sqlString);
+            Connector.CloseResources();
+        }catch(SQLException e){
+            
+        }
+        
+    }
+    
+    
+    
+    public ResultSet runSelectAll(String sqlString) throws SQLException {
+        ResultSet results = null;
+        Connection connection = Connector.getConnection();
+        try{
+            Statement statement = connection.createStatement();
+            results = statement.executeQuery(sqlString);
+        }catch(SQLException e){
+            
+        }
+        return results;
     }
     
     public void setResultSet(String statementString)throws SQLException {

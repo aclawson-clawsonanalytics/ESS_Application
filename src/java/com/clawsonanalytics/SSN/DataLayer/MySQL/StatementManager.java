@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 public class StatementManager {
     //private Statement statement;
     private String statementString;
+    private Statement statement;
     private PreparedStatement preparedStatement;
     
     public StatementManager(){
@@ -35,6 +36,14 @@ public class StatementManager {
     
     public void ChangeDBStatement(){
         this.statementString = "USE SSN_Application_Test";
+    }
+    
+    public void setStatement(Statement aStatement){
+        this.statement = aStatement;
+    }
+    
+    public Statement getStatement(){
+        return this.statement;
     }
     
     

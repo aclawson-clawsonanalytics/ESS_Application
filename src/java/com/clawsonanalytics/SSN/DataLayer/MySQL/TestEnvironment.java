@@ -11,6 +11,10 @@ import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
 
 import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.SSN.ModelLayer.User;
+
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import java.util.List;
@@ -33,13 +37,15 @@ public class TestEnvironment {
         
     }
     
-    public void Setup(String command){
+    public void Setup(){
         
         //Set test mode
         mysqlManager.SetTestMode();
-        
+        this.UseTestDB();
         // Duplicate model tables to mirror production db
     }
+    
+    
     
     public void CreateTestTableForModelByTablename(String aTablename){
         mysqlManager.SetTestMode();
@@ -59,18 +65,34 @@ public class TestEnvironment {
     
     public void DropTestTableForModelByTablename(String aTablename){
         String dropStatement = "DROP TABLE " + aTablename + ";";
-        mysqlManager.PrepareStatement(dropStatement);
+        
+        //mysqlManager.PrepareStatement(dropStatement);
         try{
-            mysqlManager.getPreparedStatement().executeUpdate();
+            Statement statement = mysqlManager.Connector.getConnection().createStatement();
+            statement.executeQuery(dropStatement);
+            
         }catch(SQLException e){
             e.printStackTrace();
         }
+        /*
         String useStatement = "USE " + MySQLDataSource.getDatabaseName()+";";
         try{
             mysqlManager.PrepareStatement(useStatement);
             mysqlManager.getPreparedStatement().executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();
+        }
+        */
+    }
+    
+    public void DropRecordsForTestTable(String aTablename){
+        String dropStatement = "TRUNCATE " + aTablename + ";";
+        
+        try{
+            Statement statement = mysqlManager.Connector.getConnection().createStatement();
+            statement.executeQuery(dropStatement);
+        }catch(SQLException e){
+            
         }
         
     }
@@ -79,7 +101,8 @@ public class TestEnvironment {
         
     public void TearDown(){
         mysqlManager.SetProductionMode();
-        
+        this.UseProductionDB();
+        //mysqlManager.Connector.CloseResources();
     }
     
     
@@ -111,15 +134,25 @@ public class TestEnvironment {
     private void UseTestDB(){
         // Create String for select command
         String selectString = "USE " + MySQLDataSource.getTestDatabaseName() +";";
-        //Add string to mysqlManager.statementManager
-        mysqlManager.statementManager.setStatementString(selectString);
         try{
-            mysqlManager.ExecuteQuery();
+            Statement statement = mysqlManager.Connector.getConnection().createStatement();
+            statement.executeQuery(selectString);
+        }catch(SQLException e){
+            
+        }
+        //Add string to mysqlManager.statementManager
+        
+    }
+    
+    private void UseProductionDB(){
+        String selectString = "USE " + MySQLDataSource.getDatabaseName() + ";";
+        try{
+            Statement statment = mysqlManager.Connector.getConnection().createStatement();
+            statment.executeQuery(selectString);
         }catch(SQLException e){
             
         }
     }
-    
     private void DeleteTestDB(){
         
         /*

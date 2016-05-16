@@ -36,7 +36,7 @@ public class TestEvironmentTest {
     @BeforeClass
     public static void setUpClass() {
         SUT = new TestEnvironment();
-        SUT.Setup("No Data");
+        SUT.Setup();
         
         
     }
@@ -61,8 +61,17 @@ public class TestEvironmentTest {
     // public void hello() {}
     @Test
     public void SetupChangesFocusDB(){
+        SUT.Setup();
         Assert.assertEquals(MySQLDataSource.getTestDatabaseName(),MySQLDataSource.getFocusDB());
-    } 
+    }
+    
+    @Test
+    public void TearDownChangesFocusDB(){
+        SUT.TearDown();
+        String test = MySQLDataSource.getDatabaseName();
+        String db = MySQLDataSource.getFocusDB();
+        Assert.assertEquals(MySQLDataSource.getDatabaseName(),MySQLDataSource.getFocusDB());
+    }
     
     
 }
