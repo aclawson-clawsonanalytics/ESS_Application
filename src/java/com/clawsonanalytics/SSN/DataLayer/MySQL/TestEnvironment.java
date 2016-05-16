@@ -48,15 +48,17 @@ public class TestEnvironment {
     
     
     public void CreateTestTableForModelByTablename(String aTablename){
-        mysqlManager.SetTestMode();
+        //mysqlManager.SetTestMode();
         String createString;
         String firstDBString = MySQLDataSource.getTestDatabaseName() + "." + aTablename;
         String secondDBString = MySQLDataSource.getDatabaseName() + "." +aTablename;
         createString = "CREATE TABLE " + firstDBString + " LIKE " + secondDBString + ";";
-        mysqlManager.PrepareStatement(createString);
+        
         try {
             //mysqlManager.getPreparedStatement().executeUpdate();
-            mysqlManager.getPreparedStatement().execute(createString);
+            Statement statement = mysqlManager.Connector.getConnection().createStatement();
+            statement.execute(createString);
+            //mysqlManager.getPreparedStatement().execute(createString);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -69,7 +71,7 @@ public class TestEnvironment {
         //mysqlManager.PrepareStatement(dropStatement);
         try{
             Statement statement = mysqlManager.Connector.getConnection().createStatement();
-            statement.executeQuery(dropStatement);
+            statement.execute(dropStatement);
             
         }catch(SQLException e){
             e.printStackTrace();
@@ -90,7 +92,7 @@ public class TestEnvironment {
         
         try{
             Statement statement = mysqlManager.Connector.getConnection().createStatement();
-            statement.executeQuery(dropStatement);
+            statement.execute(dropStatement);
         }catch(SQLException e){
             
         }
@@ -136,7 +138,7 @@ public class TestEnvironment {
         String selectString = "USE " + MySQLDataSource.getTestDatabaseName() +";";
         try{
             Statement statement = mysqlManager.Connector.getConnection().createStatement();
-            statement.executeQuery(selectString);
+            statement.execute(selectString);
         }catch(SQLException e){
             
         }
@@ -148,7 +150,7 @@ public class TestEnvironment {
         String selectString = "USE " + MySQLDataSource.getDatabaseName() + ";";
         try{
             Statement statment = mysqlManager.Connector.getConnection().createStatement();
-            statment.executeQuery(selectString);
+            statment.execute(selectString);
         }catch(SQLException e){
             
         }

@@ -37,10 +37,10 @@ public class MySQLManager {
     
     public void SetTestMode(){
         MySQLDataSource.setFocusToTestDB();
-        String useString = "USE " + MySQLDataSource.getTestDatabaseName() + ";";
+        String useString = "USE " + MySQLDataSource.getFocusDB() + ";";
         try{
-            Statement statement = Connector.getConnection().createStatement();
-            statement.executeQuery(useString);
+            Statement aStatement = Connector.getConnection().createStatement();
+            aStatement.execute(useString);
         }catch(SQLException e){
             
         }
@@ -48,10 +48,10 @@ public class MySQLManager {
     
     public void SetProductionMode(){
         MySQLDataSource.setFocusToProduction();
-        String useString = "USE " + MySQLDataSource.getDatabaseName() + ";";
+        String useString = "USE " + MySQLDataSource.getFocusDB() + ";";
         try{
-            Statement statement = Connector.getConnection().createStatement();
-            statement.executeQuery(useString);
+            Statement aStatement = Connector.getConnection().createStatement();
+            aStatement.execute(useString);
         }catch(SQLException e){
             
         }

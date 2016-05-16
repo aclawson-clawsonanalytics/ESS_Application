@@ -91,8 +91,9 @@ public class User extends SQLModel {
             
         }catch(SQLException e){
             e.getErrorCode();
-            //e.printStackTrace();
             
+            e.printStackTrace();
+            e.getMessage();
         }
         return count;
     }
@@ -132,7 +133,6 @@ public class User extends SQLModel {
         }catch(SQLException e){
             
         }
-        //mysql.Connector.CloseResources();
         
     }
     

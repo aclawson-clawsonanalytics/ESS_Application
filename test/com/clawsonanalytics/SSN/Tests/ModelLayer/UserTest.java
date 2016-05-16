@@ -32,15 +32,15 @@ public class UserTest {
     private String password = "sutPassword";
     
     public UserTest() {
-        environment = new TestEnvironment();
-        environment.Setup();
-        environment.CreateTestTableForModelByTablename(User.getTablename());
+        
         
     }
     
     @BeforeClass
     public static void setUpClass() {
-        
+        environment = new TestEnvironment();
+        environment.Setup();
+        environment.CreateTestTableForModelByTablename(User.getTablename());
         
     }
     

@@ -23,8 +23,8 @@ public class MySQLDataSource {
     private static String password = "ssndbadmin";
     //private Connection connection;
     
-    private static String database = "SSN_Application";
-    private static String testDatabase = "SSN_Application_Test";
+    private static String database = "MAX_Application";
+    private static String testDatabase = "MAX_Application_Test";
     private static String focusDB = database;
     
     public MySQLDataSource(){

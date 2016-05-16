@@ -31,10 +31,11 @@ public class MySQLDataConnector {
             this.connection = DriverManager.getConnection(MySQLDataSource.getHost(),
                     MySQLDataSource.getUsername(),MySQLDataSource.getPassword());
         } catch (SQLException | ClassNotFoundException e){
-            e.printStackTrace();
+            //e.printStackTrace();
             this.connection = null;
         }
     }
+    
     
     public Connection getConnection(){
         return this.connection;
