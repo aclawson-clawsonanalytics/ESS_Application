@@ -5,10 +5,10 @@
  */
 package com.clawsonanalytics.SSN.Tests.ModelLayer;
 
-import com.clawsonanalytics.SSN.DataLayer.MySQL.TestEnvironment;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
-import com.clawsonanalytics.SSN.ModelLayer.User;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface.SQLModel;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataSource;
+import com.clawsonanalytics.MAX.App.ModelLayer.User;
 
 import java.util.List;
 import org.junit.After;
@@ -48,7 +48,7 @@ public class UserTest {
     public static void tearDownClass() {
         //environment.DropTestTableForModelByTablename(User.getTablename());
         //environment.TearDown();
-        environment.DropTestTableForModelByTablename(User.getTablename());
+        //environment.DropTestTableForModelByTablename(User.getTablename());
         environment.TearDown();
     }
     

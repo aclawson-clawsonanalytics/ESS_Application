@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.DataLayer.MySQL;
+package com.clawsonanalytics.MAX.App.DataLayer.MySQL;
 
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLManager;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataConnector;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataConnector;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataSource;
 
-import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel;
-import com.clawsonanalytics.SSN.ModelLayer.User;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface.SQLModel;
+import com.clawsonanalytics.MAX.App.ModelLayer.User;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -41,7 +41,7 @@ public class TestEnvironment {
         
         //Set test mode
         mysqlManager.SetTestMode();
-        this.UseTestDB();
+        //this.UseTestDB();
         // Duplicate model tables to mirror production db
     }
     
@@ -66,7 +66,7 @@ public class TestEnvironment {
     }
     
     public void DropTestTableForModelByTablename(String aTablename){
-        String dropStatement = "DROP TABLE " + aTablename + ";";
+        String dropStatement = "DROP TABLE " + MySQLDataSource.getTestDatabaseName()+"."+aTablename + ";";
         
         //mysqlManager.PrepareStatement(dropStatement);
         try{
@@ -138,7 +138,7 @@ public class TestEnvironment {
         String selectString = "USE " + MySQLDataSource.getTestDatabaseName() +";";
         try{
             Statement statement = mysqlManager.Connector.getConnection().createStatement();
-            statement.execute(selectString);
+            statement.executeUpdate(selectString);
         }catch(SQLException e){
             
         }

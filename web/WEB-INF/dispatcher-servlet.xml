@@ -51,8 +51,8 @@ xmlns="http://www.springframework.org/schema/beans"
     </property>
 </bean>
 
-<bean name="StartupController" class="Controllers.StartupController"/>
-<bean name="RegistrationController" class="Controllers.RegistrationController"/>
+<bean name="StartupController" class="com.clawsonanalytics.MAX.App.Controllers.StartupController"/>
+<bean name="RegistrationController" class="com.clawsonanalytics.MAX.App.Controllers.RegistrationController"/>
 
 
 <!--

@@ -5,10 +5,9 @@
  */
 package com.clawsonanalytics.SSN.Tests;
 
-import com.clawsonanalytics.SSN.DataLayer.MySQL.TestEnvironment;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLManager;
-
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataSource;
 
 //import com.clawsonanalytics.SSN.ModelLayer.RegisteredModel;
 

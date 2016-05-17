@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.ModelLayer;
+package com.clawsonanalytics.MAX.App.ModelLayer;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.ResultSet;
@@ -12,9 +12,9 @@ import java.sql.Statement;
 import java.sql.SQLException;
 
 //import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel__;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SQLModel;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.Interface.SqlDAO;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLManager;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface.SQLModel;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface.SqlDAO;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
 /**
  *
  * @author andrewclawson

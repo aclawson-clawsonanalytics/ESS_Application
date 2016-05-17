@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.DataLayer.MySQL;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
+package com.clawsonanalytics.MAX.App.DataLayer.MySQL;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,14 +15,21 @@ import java.sql.ResultSet;
  *
  * @author andrewclawson
  */
-public class MySQLDataConnector {
+public final class MySQLDataConnector {
     
     private Connection connection;
     //private MySQLDataSource dataSource;
     
     public MySQLDataConnector(){
         
-        this.ConnectToMySQLSource();
+        //this.ConnectToMySQLSource();
+        /*
+        try{
+            connectToFocusDB();
+        }catch(SQLException e){
+            
+        }
+*/
     }
     
     private void ConnectToMySQLSource(){
@@ -36,6 +43,25 @@ public class MySQLDataConnector {
         }
     }
     
+    private void ConnectToMySQLTestSource(){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            this.connection = DriverManager.getConnection(MySQLDataSource.getTestHost(),
+                    MySQLDataSource.getUsername(),MySQLDataSource.getPassword());
+        }catch(SQLException | ClassNotFoundException e){
+            
+        }
+        
+    }
+    
+    public void connectToFocusDB() throws SQLException {
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            this.connection = DriverManager.getConnection(MySQLDataSource.getFocusHost(),MySQLDataSource.getUsername(),MySQLDataSource.getPassword());
+        }catch(SQLException | ClassNotFoundException e){
+            
+        }
+    }
     
     public Connection getConnection(){
         return this.connection;

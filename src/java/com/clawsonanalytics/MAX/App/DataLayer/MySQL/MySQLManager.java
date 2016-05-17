@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.DataLayer.MySQL;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.StatementManager;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataConnector;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
+package com.clawsonanalytics.MAX.App.DataLayer.MySQL;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.StatementManager;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataConnector;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataSource;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -36,11 +36,14 @@ public class MySQLManager {
     }
     
     public void SetTestMode(){
-        MySQLDataSource.setFocusToTestDB();
-        String useString = "USE " + MySQLDataSource.getFocusDB() + ";";
+        //MySQLDataSource.setFocusToTestDB();
+        //String useString = "USE " + MySQLDataSource.getFocusDB() + ";";
         try{
+            MySQLDataSource.setFocusToTestDB();
+            Connector.connectToFocusDB();
+            /*
             Statement aStatement = Connector.getConnection().createStatement();
-            aStatement.execute(useString);
+            aStatement.execute(useString);*/
         }catch(SQLException e){
             
         }

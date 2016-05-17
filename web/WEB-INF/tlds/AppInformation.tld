@@ -22,12 +22,12 @@
     -->
   <tag>
     <name>AppName</name>
-    <tag-class>com.clawsonanalytics.SSN.AppTags.AppName</tag-class>
+    <tag-class>com.clawsonanalytics.MAX.App.Tags.AppName</tag-class>
     <body-content>empty</body-content>
   </tag>
   <tag>
     <name>Developer</name>
-    <tag-class>com.clawsonanalytics.SSN.AppTags.Developer</tag-class>
+    <tag-class>com.clawsonanalytics.MAX.App.Tags.Developer</tag-class>
     <body-content>empty</body-content>
   </tag>
 </taglib>

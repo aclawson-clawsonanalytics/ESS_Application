@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.DataLayer.MySQL.Interface;
+package com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface;
 import java.util.List;
 import java.lang.Object;
 import java.sql.ResultSet;

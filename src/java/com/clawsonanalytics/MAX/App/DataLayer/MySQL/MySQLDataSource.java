@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.DataLayer.MySQL;
+package com.clawsonanalytics.MAX.App.DataLayer.MySQL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,7 +18,8 @@ import java.sql.ResultSet;
 public class MySQLDataSource {
     
     
-    private static String host = "jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com";//"jdbc:mysql://localhost:3306/SSN_Application";
+    private static String host = "jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application";//"jdbc:mysql://localhost:3306/SSN_Application";
+    private static String testHost = "jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application_Test";
     private static String username = "SSN_DB_Admin";
     private static String password = "ssndbadmin";
     //private Connection connection;
@@ -39,6 +40,14 @@ public class MySQLDataSource {
         return host;
     }
     
+    public static String getFocusHost(){
+        String focusHost = "jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/" + getFocusDB();
+        return focusHost;
+    }
+    
+    public static String getTestHost(){
+        return testHost;
+    }
     public static void setUsername(String string){
         username = string;
     }

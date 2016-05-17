@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.AppTags;
+package com.clawsonanalytics.MAX.App.Tags;
 import javax.servlet.jsp.tagext.*;
 import javax.servlet.jsp.*;
 import java.io.*;

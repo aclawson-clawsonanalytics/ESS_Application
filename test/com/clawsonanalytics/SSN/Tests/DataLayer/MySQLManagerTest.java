@@ -5,8 +5,8 @@
  */
 package com.clawsonanalytics.SSN.Tests.DataLayer;
 
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLManager;
-import com.clawsonanalytics.SSN.DataLayer.MySQL.MySQLDataSource;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
+import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataSource;
 import org.junit.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -50,20 +50,20 @@ public class MySQLManagerTest {
     @Test
     public void DefaultModeIsProduction(){
         
-        Assert.assertEquals("SSN_Application", MySQLDataSource.getDatabaseName());
+        Assert.assertEquals("MAX_Application", MySQLDataSource.getFocusDB());
         
     }
     @Test
     public void TestModeSetsDB(){
         //MySQLManager SUT = new MySQLManager();
         SUT.SetTestMode();
-        Assert.assertEquals("SSN_Application_Test", MySQLDataSource.getFocusDB());
+        Assert.assertEquals("MAX_Application_Test", MySQLDataSource.getFocusDB());
     }
     
     @Test
     public void ChangeDBStatementIsCorrect(){
         SUT.statementManager.ChangeDBStatement();
-        Assert.assertEquals(SUT.statementManager.getStatementString(), "USE SSN_Application_Test");
+        Assert.assertEquals(SUT.statementManager.getStatementString(), "USE MAX_Application_Test");
     }
     
     @Test
