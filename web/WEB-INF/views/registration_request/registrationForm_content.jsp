@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles/general/formComponents.css"/>
+        
         <!--<script src="registration.js"/>-->
+        <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/foundation.css"/>
     </head>
     <form action="${pageContext.request.contextPath}/submitRegistration.htm" method="POST">
     <div class="large-6 columns">
