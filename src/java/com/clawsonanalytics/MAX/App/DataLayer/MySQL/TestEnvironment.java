@@ -74,7 +74,7 @@ public class TestEnvironment {
             statement.execute(dropStatement);
             
         }catch(SQLException e){
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         /*
         String useStatement = "USE " + MySQLDataSource.getDatabaseName()+";";
@@ -121,7 +121,7 @@ public class TestEnvironment {
             //Runtime.getRuntime().exec(ConstructMySQLDumpCommandNoData());
             //Runtime.getRuntime().exec(ConstructRestoreDBCommand());
         }catch (Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
   
@@ -129,7 +129,7 @@ public class TestEnvironment {
         try{
             
         }catch(Exception e){
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
     
