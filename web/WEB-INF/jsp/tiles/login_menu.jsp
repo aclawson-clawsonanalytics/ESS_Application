@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app" %>
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,7 @@
             </table>
             
         </form>
-        Click <a href="${pageContext.request.contextPath}/subscribe.htm">here</a> to submit a registration request to subscribe to ViTaL School Management.<br>
+        Click <a href="${pageContext.request.contextPath}/subscribe.htm">here</a> to submit a registration request to subscribe to <app:AppName/>.<br>
     </div>
 </html>
 

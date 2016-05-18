@@ -9,8 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
-        <link rel="stylesheet" type="text/css" href="/resources/foundation/css/foundation.css"/>
+        <title>Login</title>
+        <!--<link rel="stylesheet" type="text/css" href="/resources/foundation/css/foundation.css"/>-->
         <!--<link rel="stylesheet" type="text/css" href="/resources/stylesheet.css"/>-->
     </head>
     <body>

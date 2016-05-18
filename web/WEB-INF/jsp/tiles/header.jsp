@@ -6,10 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app" %>
+
 <!DOCTYPE html>
-<div class="header" id="gradHeader">
-    <h1><b>WELCOME</b></h1><br>
-    <b style='color:blue'><app:AppName/></b>
+<div class="header">
+    <h1><b class="welcomeLabel">WELCOME</b></h1><br>
+    <h2><b class="appLabel"><app:AppName/></b></h2>
 </div>
 <!--
 <html>

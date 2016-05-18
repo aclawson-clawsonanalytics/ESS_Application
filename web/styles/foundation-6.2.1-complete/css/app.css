@@ -1,4 +1,40 @@
-input
+
+
+input[type=text]
 {
-    height:15px;
+    height:25px;
+    display:inline-block;
+    border-radius:4px;
+}
+
+input[type=password]
+{
+    height:25px;
+    display:inline-block;
+    border-radius:4px;
+}
+
+div.header
+{
+    background:linear-gradient(to bottom right,blue,green);
+}
+
+div.side_menu
+{
+    background:linear-gradient(to bottom left,blue,green);
+    height:400px;
+}
+
+div.footer
+{
+    height:100px;
+}
+
+b.appLabel
+{
+    color:green;
+}
+
+b.appLabel{
+    color:green;
 }
