@@ -92,7 +92,7 @@ public class User extends SQLModel {
         }catch(SQLException e){
             e.getErrorCode();
             
-            e.printStackTrace();
+            //e.printStackTrace();
             e.getMessage();
         }
         return count;
@@ -123,15 +123,16 @@ public class User extends SQLModel {
     @Override
     public void Insert(){
         String insertString = "INSERT INTO " + getTablename()
-                + " VALUES (?,?,?,?);";
+                + " VALUES (?,?,?,?,?);";
         MySQLManager mysql = new MySQLManager();
         PreparedStatement preparedStatement;
         ResultSet results;
         try{
             preparedStatement = mysql.Connector.getConnection().prepareStatement(insertString);
+            preparedStatement = PrepareStatementForInsert(preparedStatement);
             int rowsInserted = preparedStatement.executeUpdate();
         }catch(SQLException e){
-            
+            e.getMessage();
         }
         
     }
@@ -147,12 +148,13 @@ public class User extends SQLModel {
     }
     
     
-    public PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
+    private PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
         try{
-            preparedStatement.setString(1, this.getFirstname());
-            preparedStatement.setString(2, this.getLastname());
-            preparedStatement.setString(3, this.getEmail());
-            preparedStatement.setString(4, this.getPassword());
+            preparedStatement.setInt(1,0);
+            preparedStatement.setString(2, this.getFirstname());
+            preparedStatement.setString(3, this.getLastname());
+            preparedStatement.setString(4, this.getEmail());
+            preparedStatement.setString(5, this.getPassword());
         }catch (SQLException e){
             
         }

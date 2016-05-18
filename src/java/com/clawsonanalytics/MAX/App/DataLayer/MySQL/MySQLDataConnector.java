@@ -21,7 +21,11 @@ public final class MySQLDataConnector {
     //private MySQLDataSource dataSource;
     
     public MySQLDataConnector(){
-        
+        try{
+            this.connectToFocusDB();
+        }catch(SQLException e){
+            
+        }
         //this.ConnectToMySQLSource();
         /*
         try{
