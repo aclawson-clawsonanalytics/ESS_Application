@@ -16,25 +16,21 @@ input[type=password]
 
 div.header
 {
-    background:linear-gradient(to bottom right,blue,green);
+    background:linear-gradient(to bottom right,white,green);
 }
 
 div.side_menu
 {
-    background:linear-gradient(to bottom left,blue,green);
-    height:400px;
+    background:linear-gradient(to bottom left,blue,white);
+    height:450px;
 }
 
 div.footer
 {
-    height:100px;
+    height:60px;
 }
 
 b.appLabel
 {
-    color:green;
-}
-
-b.appLabel{
-    color:green;
+    color:blue;
 }
