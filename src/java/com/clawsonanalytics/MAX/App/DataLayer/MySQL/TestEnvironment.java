@@ -24,7 +24,7 @@ import java.lang.Runtime;
  * @author andrewclawson
  */
 public class TestEnvironment {
-    public MySQLManager mysqlManager = new MySQLManager();
+    public MySQLManager mysqlManager;
     
     
     public TestEnvironment() {
@@ -38,7 +38,7 @@ public class TestEnvironment {
     }
     
     public void Setup(){
-        
+        mysqlManager = new MySQLManager();
         //Set test mode
         mysqlManager.SetTestMode();
         //this.UseTestDB();

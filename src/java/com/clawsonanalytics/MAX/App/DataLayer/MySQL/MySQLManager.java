@@ -31,7 +31,7 @@ public class MySQLManager {
     
     
     public MySQLManager(){
-        this.setStatement();
+        //this.setStatement();
         
     }
     

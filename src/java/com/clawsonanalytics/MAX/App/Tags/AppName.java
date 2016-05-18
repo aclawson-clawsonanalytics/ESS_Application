@@ -14,6 +14,6 @@ import java.io.*;
 public class AppName extends SimpleTagSupport{
     public void doTag() throws JspException, IOException {
         JspWriter out = getJspContext().getOut();
-        out.println("ViTaL School Solutions");
+        out.println("MAX S.S.");
     }
 }

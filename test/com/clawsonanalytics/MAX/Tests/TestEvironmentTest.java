@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.SSN.Tests;
+package com.clawsonanalytics.MAX.Tests;
 
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
