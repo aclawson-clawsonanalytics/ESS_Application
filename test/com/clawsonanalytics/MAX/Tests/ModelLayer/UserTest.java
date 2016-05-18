@@ -63,6 +63,8 @@ public class UserTest {
         //environment.DropTestTableForModelByTablename(User.getTablename());
         //environment.TearDown();
         environment.DropRecordsForTestTable(User.getTablename());
+        environment.DropTestTableForModelByTablename(User.getTablename());
+        environment.TearDown();
     }
     
     public void SetupValidUser(){

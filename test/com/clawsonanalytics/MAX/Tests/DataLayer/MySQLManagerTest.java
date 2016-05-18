@@ -60,7 +60,7 @@ public class MySQLManagerTest {
         Assert.assertEquals("MAX_Application_Test", MySQLDataSource.getFocusDB());
     }
     
-    @Test
+    
     public void ChangeDBStatementIsCorrect(){
         SUT.statementManager.ChangeDBStatement();
         Assert.assertEquals(SUT.statementManager.getStatementString(), "USE MAX_Application_Test");
@@ -71,7 +71,7 @@ public class MySQLManagerTest {
         Assert.assertNotNull(SUT.Connector.getConnection());
     }
     
-    @Test
+    
     public void DefaultStatementIsNotNull(){
         Assert.assertNotNull(SUT.getStatement());
     }
