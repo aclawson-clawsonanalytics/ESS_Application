@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app" %>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@
     <div class='side_menu'>
         
         <h2>Login</h2>
-        <form action="#">
+        <form:form action="${pageContext.request.contextPath}/dashboard.htm">
             <table>
                 <tr>
                     <td><b>Email: </td>
@@ -30,7 +31,7 @@
                    
             </table>
             
-        </form>
+        </form:form>
         Click <a href="${pageContext.request.contextPath}/subscribe.htm">here</a> to submit a registration request to subscribe to <app:AppName/>.<br>
     </div>
 </html>

@@ -43,17 +43,22 @@ xmlns="http://www.springframework.org/schema/beans"
 <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
     <property name="mappings">
         <props>
-            <prop key="login.htm">loginController</prop>
+            <prop key="login.htm">LoginController</prop>
             <prop key="startup.htm">StartupController</prop>
             <prop key="subscribe.htm">RegistrationController</prop>
             <prop key="submitRegistration.htm">RegistrationController</prop>
+            <prop key="dashboard.htm">DashboardController</prop>
         </props>
     </property>
 </bean>
 
 <bean name="StartupController" class="com.clawsonanalytics.MAX.App.Controllers.StartupController"/>
+<bean name="LoginController" class="com.clawsonanalytics.MAX.App.Controllers.LoginController"/>
 <bean name="RegistrationController" class="com.clawsonanalytics.MAX.App.Controllers.RegistrationController"/>
+<bean name="DashboardController" class="com.clawsonanalytics.MAX.App.Controllers.DashboardController"/>
 
+
+</beans>
 
 <!--
 <bean id="tilesViewResolver"
@@ -76,16 +81,3 @@ xmlns="http://www.springframework.org/schema/beans"
 
 </bean>
 -->
-<bean name="subscriptionController"
-    class="org.springframework.web.servlet.mvc.ParameterizableViewController">
-    <property name="viewName" value="registrationRequest"/>
-</bean>
-
-<bean name="loginController"
-      class="org.springframework.web.servlet.mvc.ParameterizableViewController">
-      <property name="viewName" value="login"/>
-</bean>
-
-
-
-</beans>
