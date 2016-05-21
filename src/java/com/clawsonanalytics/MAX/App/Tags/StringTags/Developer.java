@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.MAX.App.Tags;
+package com.clawsonanalytics.MAX.App.Tags.StringTags;
 import javax.servlet.jsp.tagext.*;
 import javax.servlet.jsp.*;
 import java.io.*;
@@ -11,9 +11,9 @@ import java.io.*;
  *
  * @author andrewclawson
  */
-public class AppName extends SimpleTagSupport{
+public class Developer extends SimpleTagSupport{
     public void doTag() throws JspException, IOException {
         JspWriter out = getJspContext().getOut();
-        out.println("MAX S.S.");
+        out.println("Clawson Analytics, LLC");
     }
 }

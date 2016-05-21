@@ -29,27 +29,31 @@
         -->
         
         <div class="row header">
-            <div class="large-12 columns" align="center">
-                <jsp:include page="/WEB-INF/jsp/tiles/header.jsp"/>
+            <div class="small-12 columns" align="center">
+                <jsp:include page="/WEB-INF/jsp/fragments/header.jsp"/>
             </div>
         </div>
         
             <div class="row">
-                <div class="large-4 columns" align="center">
+                <div class="small-4 columns" align="center">
                     <jsp:include page="/WEB-INF/jsp/tiles/login_menu.jsp"/>
                 </div>
-                <div class="large-8 columns">
+                <div class="small-8 columns">
                     <!--Startup Content here-->
                     <h1>Startup Content here</h1>
                 </div>
             </div>
             
                 <div class="row footer" align="center">
-                    <jsp:include page="/WEB-INF/jsp/tiles/footer.jsp"/>
+                    <jsp:include page="/WEB-INF/jsp/fragments/footer.jsp"/>
                 </div>
                 
                 
         
-        
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script>
+      $(document).foundation();
+    </script>
     </body>
 </html>

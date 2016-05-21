@@ -31,8 +31,8 @@
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
 
-
+<!--
 <bean name="startupService" class="com.clawsonanalytics.MAX.App.Controllers.StartupController"/>
 <bean name="registration" class="com.clawsonanalytics.MAX.App.Controllers.RegistrationController"/>
-
+-->
 </beans>

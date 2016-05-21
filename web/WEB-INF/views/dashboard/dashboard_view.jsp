@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +16,7 @@
         
         <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/foundation.css"/>
         <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/app.css"/>
+        <!--<script src="WEB-INF/resources/js/dashboard.js"/>-->
         
         <title>MAX Dashboard</title>
         
@@ -20,19 +24,34 @@
     </head>
     <body>
         <div class="row header">
-            <div class="large-12 columns" align="center">
-                <jsp:include page="/WEB-INF/jsp/tiles/header.jsp"/>
+            <div class="small-12 columns" align="center">
+                <jsp:include page="/WEB-INF/jsp/fragments/header.jsp"/>
             </div>
         </div>
+            <div class="row">
+                <jsp:include page="/WEB-INF/jsp/fragments/dashboard_topbar.jsp"/>
+            </div>
             
-        <div class="row">
-            <div class="large-4 columns" align="center">
-                <jsp:include page="/WEB-INF/jsp/tiles/dashboard_menu.jsp"/>
-            </div>
-            <div class="large-8 columns">
+        <div class="row dashboard_content">
+            
+            <div class="small-12 columns">
                 <!--Startup Content here-->
-                <h1>Dashboard Content here</h1>
+                <h1 id="contentBody">Dashboard Content here</h1>
             </div>
         </div>
+        <div class="row footer" align="center">
+            <jsp:include page="/WEB-INF/jsp/fragments/footer.jsp"/>
+        </div>
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    
+    <script>
+      $(document).foundation();
+    </script>
+    <script src="dashboard.js">
+        
+        
+    </script>
     </body>
 </html>

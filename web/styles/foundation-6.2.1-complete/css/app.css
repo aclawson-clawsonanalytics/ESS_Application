@@ -1,5 +1,44 @@
 
 
+/*
+bold faced style guides.
+*/
+b.appLabel
+{
+    color:blue;
+}
+
+/*
+DIV style guides.
+
+*/
+
+/*Header*/
+div.header
+{
+    background:linear-gradient(to bottom right,white,green);
+}
+
+/*Menus*/
+div.side_menu
+{
+    background:linear-gradient(to bottom left,blue,white);
+    height:600px;
+}
+
+dashboard_content
+{
+    height: 450px;
+}
+/*Footer*/
+div.footer
+{
+    height:60px;
+}
+
+/*
+Input styles guides
+*/
 input[type=text]
 {
     height:25px;
@@ -14,23 +53,5 @@ input[type=password]
     border-radius:4px;
 }
 
-div.header
-{
-    background:linear-gradient(to bottom right,white,green);
-}
 
-div.side_menu
-{
-    background:linear-gradient(to bottom left,blue,white);
-    height:450px;
-}
 
-div.footer
-{
-    height:60px;
-}
-
-b.appLabel
-{
-    color:blue;
-}

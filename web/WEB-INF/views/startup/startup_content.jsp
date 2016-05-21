@@ -25,7 +25,7 @@
         
         
         <!-- Content -->
-        <div class="row" style="height:300px" >
+        <div class="row side_menu" >
             <div class="large-4 columns">
                 <jsp:include page="/WEB-INF/jsp/tiles/login_menu.jsp"/>
             </div>
