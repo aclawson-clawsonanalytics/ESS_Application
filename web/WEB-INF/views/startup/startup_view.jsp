@@ -30,13 +30,13 @@
         
         <div class="row header">
             <div class="small-12 columns" align="center">
-                <jsp:include page="/WEB-INF/jsp/fragments/header.jsp"/>
+                <jsp:include page="/WEB-INF/fragments/header.jsp"/>
             </div>
         </div>
         
             <div class="row">
                 <div class="small-4 columns" align="center">
-                    <jsp:include page="/WEB-INF/jsp/tiles/login_menu.jsp"/>
+                    <jsp:include page="/WEB-INF/fragments/login_menu.jsp"/>
                 </div>
                 <div class="small-8 columns">
                     <!--Startup Content here-->
@@ -45,7 +45,7 @@
             </div>
             
                 <div class="row footer" align="center">
-                    <jsp:include page="/WEB-INF/jsp/fragments/footer.jsp"/>
+                    <jsp:include page="/WEB-INF/fragments/footer.jsp"/>
                 </div>
                 
                 

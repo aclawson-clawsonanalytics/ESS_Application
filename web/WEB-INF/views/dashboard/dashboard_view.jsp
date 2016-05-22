@@ -26,11 +26,11 @@
     <body>
         <div class="row header">
             <div class="small-12 columns" align="center">
-                <jsp:include page="/WEB-INF/jsp/fragments/header.jsp"/>
+                <jsp:include page="/WEB-INF/fragments/header.jsp"/>
             </div>
         </div>
             <div class="row">
-                <jsp:include page="/WEB-INF/jsp/fragments/dashboard_topbar.jsp"/>
+                <jsp:include page="/WEB-INF/fragments/dashboard_topbar.jsp"/>
             </div>
             
         <div class="row dashboard_content">
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="row footer" align="center">
-            <jsp:include page="/WEB-INF/jsp/fragments/footer.jsp"/>
+            <jsp:include page="/WEB-INF/fragments/footer.jsp"/>
         </div>
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
