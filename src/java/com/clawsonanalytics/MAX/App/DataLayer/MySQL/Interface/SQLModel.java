@@ -60,6 +60,9 @@ public class SQLModel implements SqlDAO, IValidatable {
         ID = id;
     }
     
+    public int getID(){
+        return this.ID;
+    }
     
     public void SetIDBySQL(){
         int maxID = 0;

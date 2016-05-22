@@ -161,5 +161,27 @@ public class UserTest {
         
     }
     
+    @Test
+    public void InsertUpdatesID(){
+        SetupValidUser();
+        SUT.Insert();
+        Assert.assertNotNull(SUT.getID());
+    }
+    
+    public void CanUpdateFirstname(){
+        
+    }
+    
+    public void CanUpdateLastname(){
+        
+    }
+    
+    public void CanUpdateEmail(){
+        
+    }
+    
+    public void CanUpdatePassword(){
+        
+    }
     
 }

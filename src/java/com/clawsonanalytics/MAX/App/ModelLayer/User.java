@@ -32,6 +32,7 @@ public class User extends SQLModel {
     public User() {
         //User.setTablename("USERS");
         //User.setModelName(User.class.getSimpleName());
+        
     }
     // property getters and setters
     public void setFirstname(String string){
@@ -126,11 +127,17 @@ public class User extends SQLModel {
                 + " VALUES (?,?,?,?,?);";
         MySQLManager mysql = new MySQLManager();
         PreparedStatement preparedStatement;
-        ResultSet results;
+        ResultSet keys;
         try{
             preparedStatement = mysql.Connector.getConnection().prepareStatement(insertString);
             preparedStatement = PrepareStatementForInsert(preparedStatement);
             int rowsInserted = preparedStatement.executeUpdate();
+            keys = preparedStatement.getGeneratedKeys();
+            keys.next();
+            int id = keys.getInt(1);
+            this.setID(id);
+            mysql.Connector.CloseResources();
+            
         }catch(SQLException e){
             e.getMessage();
         }
