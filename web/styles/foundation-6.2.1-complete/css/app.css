@@ -26,9 +26,9 @@ div.side_menu
     height:600px;
 }
 
-dashboard_content
+div.dashboard_content
 {
-    height: 450px;
+    height:450px;
 }
 /*Footer*/
 div.footer

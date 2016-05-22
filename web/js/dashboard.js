@@ -5,6 +5,6 @@
  */
 
 function LoadGradebook(){
-    document.getElementById("contentBody").innerHTML = "Gradebook Loaded";
+    document.getElementById("contentBody").innerHTML = "Gradbook content loaded.";
 }
 
