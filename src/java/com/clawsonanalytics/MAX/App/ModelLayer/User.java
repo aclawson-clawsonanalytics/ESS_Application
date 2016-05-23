@@ -142,43 +142,47 @@ public class User extends SQLModel {
         
     @Override
     public void Insert(){
-        String insertString = "INSERT INTO " + getTablename()
-                + " VALUES (?,?,?,?,?);";
-        MySQLManager mysql = new MySQLManager();
-        PreparedStatement preparedStatement;
-        ResultSet keys;
-        try{
-            preparedStatement = mysql.Connector.getConnection().prepareStatement(insertString,Statement.RETURN_GENERATED_KEYS);
-            preparedStatement = PrepareStatementForInsert(preparedStatement);
-            int rowsInserted = preparedStatement.executeUpdate();
-            keys = preparedStatement.getGeneratedKeys();
-            keys.next();
-            int id = keys.getInt(1);
-            this.setID(id);
-            mysql.Connector.CloseResources();
-            
-        }catch(SQLException e){
-            //e.getMessage();
+        if (this.IsValid()){
+            String insertString = "INSERT INTO " + getTablename()
+                    + " VALUES (?,?,?,?,?);";
+            MySQLManager mysql = new MySQLManager();
+            PreparedStatement preparedStatement;
+            ResultSet keys;
+            try{
+                preparedStatement = mysql.Connector.getConnection().prepareStatement(insertString,Statement.RETURN_GENERATED_KEYS);
+                preparedStatement = PrepareStatementForInsert(preparedStatement);
+                int rowsInserted = preparedStatement.executeUpdate();
+                keys = preparedStatement.getGeneratedKeys();
+                keys.next();
+                int id = keys.getInt(1);
+                this.setID(id);
+                mysql.Connector.CloseResources();
+
+            }catch(SQLException e){
+                //e.getMessage();
+            }
         }
         
     }
     
     @Override
     public void Update(){
-        MySQLManager mysql = new MySQLManager();
-        PreparedStatement preparedStatement;
-        
-        String updateString = "UPDATE USERS SET "
-                + "first_name = ?, "
-                + "last_name = ?, "
-                + "email = ?, "
-                + "password = ? WHERE id = ?;";
-        try{
-            preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
-            preparedStatement = PrepareStatementForUpdate(preparedStatement);
-            preparedStatement.executeUpdate();
-        }catch(SQLException e){
-            e.printStackTrace();
+        if (this.IsValid()){
+            MySQLManager mysql = new MySQLManager();
+            PreparedStatement preparedStatement;
+
+            String updateString = "UPDATE USERS SET "
+                    + "first_name = ?, "
+                    + "last_name = ?, "
+                    + "email = ?, "
+                    + "password = ? WHERE id = ?;";
+            try{
+                preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
+                preparedStatement = PrepareStatementForUpdate(preparedStatement);
+                preparedStatement.executeUpdate();
+            }catch(SQLException e){
+                e.printStackTrace();
+            }
         }
                 
         
