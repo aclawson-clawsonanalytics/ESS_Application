@@ -44,7 +44,7 @@
             
         <div class="row">
             <div class="large-12 large-centered" style="padding:100px">
-                <jsp:include page="/WEB-INF/jsp/tiles/footer.jsp"/>
+                <jsp:include page="/WEB-INF/fragments/footer.jsp"/>
             </div>
         </div>
         

@@ -121,6 +121,29 @@ public class User extends SQLModel {
         return all;
     }
     
+    public static User GetByID(int id){
+        List<User> allUsers = User.GetAll();
+        for (User user : allUsers){
+            if (user.getID() == id){
+                return user;
+            }
+        }
+        
+        return null;
+        
+    }
+    /*
+    public static User GetByID(int id){
+        List<User> allUsers = User.GetAll();
+        for (User user : allUsers){
+            if (user.getID() == id){
+                return user;
+        }
+        return null;
+        
+    }
+*/
+        
     @Override
     public void Insert(){
         String insertString = "INSERT INTO " + getTablename()
@@ -129,7 +152,7 @@ public class User extends SQLModel {
         PreparedStatement preparedStatement;
         ResultSet keys;
         try{
-            preparedStatement = mysql.Connector.getConnection().prepareStatement(insertString);
+            preparedStatement = mysql.Connector.getConnection().prepareStatement(insertString,Statement.RETURN_GENERATED_KEYS);
             preparedStatement = PrepareStatementForInsert(preparedStatement);
             int rowsInserted = preparedStatement.executeUpdate();
             keys = preparedStatement.getGeneratedKeys();

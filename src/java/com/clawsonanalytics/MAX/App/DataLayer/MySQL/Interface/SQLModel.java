@@ -64,6 +64,7 @@ public class SQLModel implements SqlDAO, IValidatable {
         return this.ID;
     }
     
+    
     public void SetIDBySQL(){
         int maxID = 0;
         String selectString = "SELECT * FROM " + getTablename() + ";";

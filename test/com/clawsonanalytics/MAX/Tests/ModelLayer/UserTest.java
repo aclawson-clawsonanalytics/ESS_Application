@@ -168,9 +168,20 @@ public class UserTest {
         Assert.assertNotNull(SUT.getID());
     }
     
+    @Test
     public void CanUpdateFirstname(){
+        SetupValidUser();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newFirst = "newFirstname";
+        SUT.setFirstname(newFirst);
+        SUT.Update();
+        SUT = null;
+        SUT = User.GetByID(sutID);
+        Assert.assertEquals(SUT.getFirstname(),newFirst);
         
     }
+    
     
     public void CanUpdateLastname(){
         
@@ -185,6 +196,10 @@ public class UserTest {
     }
     
     public void UpdateDoesNotChangeID(){
+        
+    }
+    
+    public void CanAuthenticateFromCredentials(){
         
     }
     
