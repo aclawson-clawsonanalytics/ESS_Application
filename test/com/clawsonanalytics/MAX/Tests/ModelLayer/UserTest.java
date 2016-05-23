@@ -39,8 +39,7 @@ public class UserTest {
     @BeforeClass
     public static void setUpClass() {
         environment = new TestEnvironment();
-        environment.Setup();
-        environment.CreateTestTableForModelByTablename(User.getTablename());
+        //SetupEmptyTestDatabases();
         
     }
     
@@ -50,11 +49,13 @@ public class UserTest {
         //environment.TearDown();
         //environment.DropTestTableForModelByTablename(User.getTablename());
         //environment.TearDown();
+        TearDownTestDatabases();
     }
     
     @Before
     public void setUp() {
         SUT = new User();
+        SetupEmptyTestDatabases();
     }
     
     @After
@@ -62,9 +63,7 @@ public class UserTest {
         SUT = null;
         //environment.DropTestTableForModelByTablename(User.getTablename());
         //environment.TearDown();
-        environment.DropRecordsForTestTable(User.getTablename());
-        environment.DropTestTableForModelByTablename(User.getTablename());
-        environment.TearDown();
+        TearDownTestDatabases();
     }
     
     public void SetupValidUser(){
@@ -72,6 +71,21 @@ public class UserTest {
         SUT.setLastname(last);
         SUT.setEmail(email);
         SUT.setPassword(password);
+    }
+    
+    public static void SetupEmptyTestDatabases(){
+        environment.Setup();
+        try{
+            environment.CreateTestTableForModelByTablename(User.getTablename());
+        }catch(Exception e){
+            
+        }
+    }
+    
+    public static void TearDownTestDatabases(){
+        environment.DropRecordsForTestTable(User.getTablename());
+        environment.DropTestTableForModelByTablename(User.getTablename());
+        environment.TearDown();
     }
 
     // TODO add test methods here.

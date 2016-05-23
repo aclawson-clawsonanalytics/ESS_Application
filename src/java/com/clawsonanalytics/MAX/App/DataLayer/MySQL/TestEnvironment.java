@@ -41,7 +41,7 @@ public class TestEnvironment {
         mysqlManager = new MySQLManager();
         //Set test mode
         mysqlManager.SetTestMode();
-        //this.UseTestDB();
+        this.UseTestDB();
         // Duplicate model tables to mirror production db
     }
     
@@ -60,7 +60,7 @@ public class TestEnvironment {
             statement.execute(createString);
             //mysqlManager.getPreparedStatement().execute(createString);
         } catch (SQLException e) {
-            e.printStackTrace();
+            
         }
             
     }
@@ -137,8 +137,9 @@ public class TestEnvironment {
         // Create String for select command
         String selectString = "USE " + MySQLDataSource.getTestDatabaseName() +";";
         try{
-            Statement statement = mysqlManager.Connector.getConnection().createStatement();
-            statement.executeUpdate(selectString);
+            //Statement statement = mysqlManager.Connector.getConnection().createStatement();
+            //statement.executeUpdate(selectString);
+            mysqlManager.Connector.getConnection().setCatalog(MySQLDataSource.getTestDatabaseName());
         }catch(SQLException e){
             
         }
@@ -149,8 +150,9 @@ public class TestEnvironment {
     private void UseProductionDB(){
         String selectString = "USE " + MySQLDataSource.getDatabaseName() + ";";
         try{
-            Statement statment = mysqlManager.Connector.getConnection().createStatement();
-            statment.execute(selectString);
+            //Statement statment = mysqlManager.Connector.getConnection().createStatement();
+            //statment.execute(selectString);
+            mysqlManager.Connector.getConnection().setCatalog(MySQLDataSource.getDatabaseName());
         }catch(SQLException e){
             
         }

@@ -91,10 +91,7 @@ public class User extends SQLModel {
             }
             
         }catch(SQLException e){
-            e.getErrorCode();
             
-            //e.printStackTrace();
-            e.getMessage();
         }
         return count;
     }
@@ -103,21 +100,20 @@ public class User extends SQLModel {
         List<User> all = new ArrayList<User>();
         String selectString = "SELECT * FROM " + User.getTablename() + ";";
         MySQLManager mysqlManager = new MySQLManager();
-        mysqlManager.PrepareStatement(selectString);
+        Statement statement;
+        ResultSet results;
+        MySQLManager mysql = new MySQLManager();
         try{
-            mysqlManager.ExecuteQuery();
-        }catch(SQLException e){
-            
-        }
-        try{
-            while(mysqlManager.getResultSet().next()){
-                User newUser = User.MapRowToObject(mysqlManager.getResultSet());
+            statement = mysql.Connector.getConnection().createStatement();
+            results = statement.executeQuery(selectString);
+            while(results.next()){
+                User newUser = User.MapRowToObject(results);
                 all.add(newUser);
-                
             }
         }catch(SQLException e){
             
         }
+        
         return all;
     }
     
@@ -162,13 +158,29 @@ public class User extends SQLModel {
             mysql.Connector.CloseResources();
             
         }catch(SQLException e){
-            e.getMessage();
+            //e.getMessage();
         }
         
     }
     
     @Override
     public void Update(){
+        MySQLManager mysql = new MySQLManager();
+        PreparedStatement preparedStatement;
+        
+        String updateString = "UPDATE USERS SET "
+                + "first_name = ?, "
+                + "last_name = ?, "
+                + "email = ?, "
+                + "password = ? WHERE id = ?;";
+        try{
+            preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
+            preparedStatement = PrepareStatementForUpdate(preparedStatement);
+            preparedStatement.executeUpdate();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+                
         
     }
     
@@ -192,15 +204,28 @@ public class User extends SQLModel {
         
     }
     
+    private PreparedStatement PrepareStatementForUpdate(PreparedStatement preparedStatement){
+        try{
+            preparedStatement.setString(1,this.getFirstname());
+            preparedStatement.setString(2, this.getLastname());
+            preparedStatement.setString(3, this.getEmail());
+            preparedStatement.setString(4,this.getPassword());
+            preparedStatement.setInt(5,this.getID());
+        }catch(SQLException e){
+            
+        }
+        return preparedStatement;
+    }
     
     private static User MapRowToObject(ResultSet result){
         User newUser = new User();
         try{
             newUser.setID(result.getInt("id"));
-            newUser.setFirstname(result.getString("firstname"));
-            newUser.setLastname(result.getString("lastname"));
+            newUser.setFirstname(result.getString("first_name"));
+            newUser.setLastname(result.getString("last_name"));
             newUser.setEmail(result.getString("email"));
             newUser.setPassword(result.getString("password"));
+            return newUser;
         }catch(SQLException e){
             
         }
