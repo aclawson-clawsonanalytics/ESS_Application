@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,28 +16,18 @@
     </head>
     <body>
         <!-- Header -->
-        <div class="row" style="height:200px; width:100%">
-            <div class="large-12 columns" align="center">
-            
-                <jsp:include page="/WEB-INF/jsp/tiles/header.jsp"/>
+        <div class="blog-post">
+            <h3>Check out what's new with <app:AppName/>!<small>5/24/2016</small></h3>
+            <img class="thumbnail" src="http://placehold.it/850x350">
+            <p>
+                We're introducing a new responsive gradebook!
+            </p>
+            <div class="callout">
+            <ul class="menu simple">
+                <li><a href="#">Author: Andrew Clawson, <app:Developer/></a></li>
+            <li><a href="#">Comments: 3</a></li>
+            </ul>
             </div>
-            
-        </div>
-        
-        
-        <!-- Content -->
-        <div class="row side_menu" >
-            <div class="large-4 columns">
-                <jsp:include page="/WEB-INF/jsp/tiles/login_menu.jsp"/>
-            </div>
-            <div class="large-8 columns">
-                
-            </div>
-        </div>
-        
-        <!-- Footer -->
-        <div>
-            
         </div>
         
     </body>

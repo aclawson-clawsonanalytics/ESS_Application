@@ -40,7 +40,7 @@
                 </div>
                 <div class="small-8 columns">
                     <!--Startup Content here-->
-                    <h1>Startup Content here</h1>
+                    <jsp:include page="/WEB-INF/views/startup/startup_content.jsp"/>
                 </div>
             </div>
             
