@@ -196,25 +196,54 @@ public class UserTest {
         
     }
     
-    
+    @Test
     public void CanUpdateLastname(){
-        
+        SetupValidUser();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newLast = "newLastname";
+        SUT.setLastname(newLast);
+        SUT.Update();
+        SUT = null;
+        SUT = User.GetByID(sutID);
+        Assert.assertEquals(SUT.getLastname(), newLast);
     }
     
+    @Test
     public void CanUpdateEmail(){
+        SetupValidUser();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newEmail = "newEmail";
+        SUT.setEmail(newEmail);
+        SUT.Update();
+        SUT = null;
+        SUT = User.GetByID(sutID);
+        Assert.assertEquals(SUT.getEmail(),newEmail);
         
     }
     
+    @Test
     public void CanUpdatePassword(){
+        SetupValidUser();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newPassword = "newPassword";
+        SUT.setPassword(newPassword);
+        SUT.Update();
+        SUT = null;
+        SUT = User.GetByID(sutID);
+        Assert.assertEquals(SUT.getPassword(), newPassword);
         
     }
     
-    public void UpdateDoesNotChangeID(){
-        
-    }
-    
+    @Test
     public void CanAuthenticateFromCredentials(){
-        
+        SetupValidUser();
+        SUT.Insert();
+        Assert.assertNotNull(SUT.getEmail());
+        Assert.assertNotNull(SUT.getPassword());
+        Assert.assertTrue(SUT.IsAuthenticated(SUT.getEmail(),SUT.getPassword()));
     }
     
 }

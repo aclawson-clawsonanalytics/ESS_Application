@@ -254,6 +254,16 @@ public class User extends SQLModel {
         return _validationErrors;
     }
     
+    public boolean IsAuthenticated(String _email, String _password){
+        List<User> userList = User.GetAll();
+        for (User user : userList){
+            if (user.getEmail().equals(_email) && user.getPassword().equals(_password)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     
     
     
