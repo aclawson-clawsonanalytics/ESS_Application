@@ -31,7 +31,7 @@ public class DashboardController {
     }
     
     @RequestMapping(value="/dashboard", method=RequestMethod.POST)
-    public ModelAndView LoginToDashboard(HttpServletRequest request){
+    public ModelAndView MainDashboardControl(HttpServletRequest request){
         HttpSession session = request.getSession();
         
         String email = request.getParameter("loginEmail");
