@@ -264,6 +264,16 @@ public class User extends SQLModel {
         return false;
     }
     
+    public static User GetByCredentials(String _email, String _password){
+        List<User> allUsers = User.GetAll();
+        for (User user:User.GetAll()){
+            if (user.getEmail().equals(_email) && user.getPassword().equals(_password)){
+                return user;
+            }
+        }
+        return null;
+    }
+    
     
     
     
