@@ -8,19 +8,21 @@
 <%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/foundation.css"/>
 <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/app.css"/>
 
 <!DOCTYPE html>
 <div class="top-bar">
+    >
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text">MAX School Solutions</li>
       <li>
         <a href="#">District Administration</a>
         <ul class="menu vertical">
-          <li><a href="#">Distract Data</a></li>
+          <li><a href="#">District Data</a></li>
           <li><a href="#">District Settings</a></li>
           <li><a href="#">Student Data</a></li>
         </ul>
@@ -50,6 +52,7 @@
       <li><input type="search" placeholder="Search"></li>
       <li><button type="button" class="button">Search</button></li>
         -->
+      <li>${pageContext.session.getAttribute("loginUser").getEmail()}</li>
       <li><button type="button" class="button">Tech Support</button></li>
       <li><button type="button" class="button">Log out</button></li>
     </ul>

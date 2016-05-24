@@ -5,7 +5,7 @@ bold faced style guides.
 */
 b.appLabel
 {
-    color:green;
+    color:blue;
 }
 
 /*
@@ -16,20 +16,20 @@ DIV style guides.
 /*Header*/
 div.header
 {
-    background:linear-gradient(to bottom right,#cccccc,green);
+    background:linear-gradient(to bottom right,white,green);
 }
 
 /*Menus*/
 div.side_menu
 {
-    background:linear-gradient(to bottom left,blue,#cccccc);
+    background:linear-gradient(to bottom left,blue,white);
     height:600px;
 }
 
 div.dashboard_content
 {
     height:450px;
-    background:linear-gradient(to bottom right,grey,green);
+    
 }
 /*Footer*/
 div.footer

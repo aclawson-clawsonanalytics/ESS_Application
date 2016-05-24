@@ -8,23 +8,56 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.servlet.ModelAndView;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.clawsonanalytics.MAX.App.ModelLayer.User;
 /**
  *
  * @author andrewclawson
 */
 @Controller
+@SessionAttributes
 public class DashboardController {
     public DashboardController(){
         
     }
     
     @RequestMapping(value="/dashboard", method=RequestMethod.POST)
-    public String LoginToDashboard(){
-        return "dashboard/dashboard";
+    public ModelAndView LoginToDashboard(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        
+        String email = request.getParameter("loginEmail");
+        String password = request.getParameter("loginPassword");
+        
+        ModelAndView modelView = new ModelAndView("loginUser");
+        try{
+            
+            User loginUser = User.GetByCredentials(email, password);
+            if (loginUser != null){
+                modelView.setViewName("dashboard/dashboard");
+                modelView.addObject("loginUser",loginUser);
+                
+                session.setAttribute("loginUser", loginUser);
+                
+            }else{
+                modelView.setViewName("redirect:startup.htm");
+            }
+            
+        }catch(Exception e){
+            modelView.setViewName("redirect:startup.htm");
+            
+            
+        }
+        //return "dashboard/dashboard";
+        return modelView;
     }
     
 }
