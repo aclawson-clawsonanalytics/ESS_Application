@@ -246,4 +246,6 @@ public class UserTest {
         Assert.assertTrue(SUT.IsAuthenticated(SUT.getEmail(),SUT.getPassword()));
     }
     
+    
+    
 }
