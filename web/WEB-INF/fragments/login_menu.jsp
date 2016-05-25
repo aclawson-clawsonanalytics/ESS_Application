@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app" %>
 
 <!DOCTYPE html>
@@ -32,6 +33,8 @@
             </table>
             
         </form:form>
+        <c:set var="loginError" value="${pageContext.session.getAttribute('loginError')}" scope="session"/>
+        
         <p id="loginError" style="color:red">${pageContext.session.getAttribute("loginError")}</p>
         Click <a href="${pageContext.request.contextPath}/subscribe.htm">here</a> to submit a registration request to subscribe to <app:AppName/>.<br>
     </div>

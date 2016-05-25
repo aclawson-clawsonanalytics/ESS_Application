@@ -47,6 +47,7 @@ public class DashboardController {
                 modelView.addObject("loginUser",loginUser);
                 
                 session.setAttribute("loginUser", loginUser);
+                //request.login(loginUser.getEmail(),loginUser.getPassword());
                 
             }else{
                 modelView.setViewName("redirect:startup.htm");
@@ -68,6 +69,14 @@ public class DashboardController {
         HttpSession session = request.getSession();
         session.removeAttribute("loginUser");
         session.removeAttribute("loginError");
+        /*
+        try{
+            request.logout();
+        }catch(Exception e){
+            
+        }
+        */
+        
         ModelAndView modelView = new ModelAndView("logout");
         modelView.setViewName("redirect:startup.htm");
         return modelView;
