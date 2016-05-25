@@ -61,7 +61,9 @@ public class DashboardController {
     }
     
     @RequestMapping(value="/dashboard")
-    public ModelAndView Logout(){
+    public ModelAndView Logout(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.removeAttribute("loginUser");
         ModelAndView modelView = new ModelAndView("logout");
         modelView.setViewName("redirect:startup.htm");
         return modelView;

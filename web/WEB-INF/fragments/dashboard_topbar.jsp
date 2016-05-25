@@ -52,15 +52,15 @@
       <li><input type="search" placeholder="Search"></li>
       <li><button type="button" class="button">Search</button></li>
         -->
-      <li>${pageContext.session.getAttribute("loginUser").getEmail()}</li>
-      <!--<li><button type="button" class="button">Tech Support</button></li>
-      <li>
-          <button type="button" class="button">Log out</button>
-      </li>
-      -->
-      <li><a class="button" href="${pageContext.request.contextPath}/startup.htm">Logout</a>
+      
+        <li><a href="#">Tech Support</a></li>
+      
+      
+      <li><a href="${pageContext.request.contextPath}/startup.htm">Logout</a></li>
     </ul>
+    <b>User: </b>${pageContext.session.getAttribute("loginUser").getEmail()}
   </div>
+    
 </div>
 
 
