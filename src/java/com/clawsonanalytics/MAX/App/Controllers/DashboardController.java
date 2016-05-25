@@ -60,4 +60,11 @@ public class DashboardController {
         return modelView;
     }
     
+    @RequestMapping(value="/dashboard")
+    public ModelAndView Logout(){
+        ModelAndView modelView = new ModelAndView("logout");
+        modelView.setViewName("redirect:startup.htm");
+        return modelView;
+    }
+    
 }

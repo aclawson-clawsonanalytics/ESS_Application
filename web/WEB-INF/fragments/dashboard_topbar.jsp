@@ -53,8 +53,12 @@
       <li><button type="button" class="button">Search</button></li>
         -->
       <li>${pageContext.session.getAttribute("loginUser").getEmail()}</li>
-      <li><button type="button" class="button">Tech Support</button></li>
-      <li><button type="button" class="button">Log out</button></li>
+      <!--<li><button type="button" class="button">Tech Support</button></li>
+      <li>
+          <button type="button" class="button">Log out</button>
+      </li>
+      -->
+      <li><a class="button" href="${pageContext.request.contextPath}/startup.htm">Logout</a>
     </ul>
   </div>
 </div>

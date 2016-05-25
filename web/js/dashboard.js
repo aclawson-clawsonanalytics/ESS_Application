@@ -8,3 +8,7 @@ function LoadGradebook(){
     document.getElementById("contentBody").innerHTML = "Gradbook content loaded.";
 }
 
+function Logout(url){
+    window.location.href = url;
+}
+
