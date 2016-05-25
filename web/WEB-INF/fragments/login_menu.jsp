@@ -32,6 +32,7 @@
             </table>
             
         </form:form>
+        <p id="loginError" style="color:red">${pageContext.session.getAttribute("loginError")}</p>
         Click <a href="${pageContext.request.contextPath}/subscribe.htm">here</a> to submit a registration request to subscribe to <app:AppName/>.<br>
     </div>
     <script src="js/login.js"></script>

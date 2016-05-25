@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -49,6 +50,8 @@ public class DashboardController {
                 
             }else{
                 modelView.setViewName("redirect:startup.htm");
+                modelView.addObject("loginError","Invalid credentials");
+                session.setAttribute("loginError", "Invalid credentials");
             }
             
         }catch(Exception e){
@@ -64,6 +67,7 @@ public class DashboardController {
     public ModelAndView Logout(HttpServletRequest request){
         HttpSession session = request.getSession();
         session.removeAttribute("loginUser");
+        session.removeAttribute("loginError");
         ModelAndView modelView = new ModelAndView("logout");
         modelView.setViewName("redirect:startup.htm");
         return modelView;
