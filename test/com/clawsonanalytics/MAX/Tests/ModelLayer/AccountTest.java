@@ -134,8 +134,10 @@ public class AccountTest {
     @Test
     public void CanInsertAccount(){
         int firstCount = Account.Count();
+        SUT.setManager(sutManager.getID());
+        SUT.setName(sutName);
         SUT.Insert();
-        Assert.assertEquals(firstCount + 1,SUT.Count());
+        Assert.assertEquals(firstCount + 1,Account.Count());
     }
     
     @Test

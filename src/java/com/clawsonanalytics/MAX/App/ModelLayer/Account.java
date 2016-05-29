@@ -12,6 +12,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ArrayList;
@@ -145,8 +146,42 @@ public class Account extends SQLModel {
         return null;
     }
     public void Insert(){
+        if(this.IsValid()){
+            String insertString = "INSERT INTO " + Account.getTablename()
+                    + " VALUES (?,?,?,?,?);";
+            MySQLManager mysql = new MySQLManager();
+            PreparedStatement preparedStatement;
+            ResultSet keys;
+            try{
+                preparedStatement = mysql.Connector.getConnection().prepareStatement(insertString,Statement.RETURN_GENERATED_KEYS);
+                preparedStatement = PrepareStatementForInsert(preparedStatement);
+                int rowsInserted = preparedStatement.executeUpdate();
+                keys = preparedStatement.getGeneratedKeys();
+                keys.next();
+                int id = keys.getInt(1);
+                this.setID(id);
+                mysql.Connector.CloseResources();
+                
+                
+            }catch(SQLException e){
+                e.getMessage();//e.printStackTrace();
+            }
+        }
         
-        
+    }
+    
+    public PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
+        try{
+            preparedStatement.setInt(1, 0);
+            preparedStatement.setInt(2,this.getManagerID());
+            preparedStatement.setString(3, this.getName());
+            preparedStatement.setDate(4,this.getCreationDate());
+            preparedStatement.setDate(5,this.getCloseDate());
+            //preparedStatement.setDate(5, this.getCloseDate());
+        }catch(SQLException e){
+            
+        }
+        return preparedStatement;
     }
     
     
