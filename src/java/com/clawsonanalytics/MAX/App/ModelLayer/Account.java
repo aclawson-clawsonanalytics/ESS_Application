@@ -38,8 +38,19 @@ public class Account extends SQLModel {
     public Account(){
         //this.setManager(managerID);
         //this.setManager(managerID);
-        this.setCreationDate();
+        this.setCreationDate(new Date(Calendar.getInstance().getTime().getTime()));
 
+        
+    }
+    public static Account GetByID(int id){
+        List<Account> allAccounts = Account.GetAll();
+        for (Account account : allAccounts){
+            if (account.getID() == id){
+                return account;
+            }
+        }
+        
+        return null;
         
     }
     
@@ -79,15 +90,15 @@ public class Account extends SQLModel {
     public String getName(){
         return this.name;
     }
-    private void setCreationDate(){
-        this.creation_date = new Date(Calendar.getInstance().getTime().getTime());
+    private void setCreationDate(Date date){
+        this.creation_date = date;
     }
     public Date getCreationDate(){
         return this.creation_date;
     }
     
-    public void setCloseDate(){
-        this.close_date = new Date(Calendar.getInstance().getTime().getTime());
+    public void setCloseDate(Date date){
+        this.close_date = date;
     }
     
     public Date getCloseDate(){
@@ -126,7 +137,7 @@ public class Account extends SQLModel {
         return count;
     }
     
-    public List<Account> GetAll(){
+    public static List<Account> GetAll(){
         List<Account> allAccounts = new ArrayList<Account>();
         String selectString = "SELECT * FROM " + Account.getTablename() +";";
         MySQLManager mysql = new MySQLManager();
@@ -136,15 +147,30 @@ public class Account extends SQLModel {
             statement = mysql.Connector.getConnection().createStatement();
             results = statement.executeQuery(selectString);
             while(results.next()){
-                Account newAccount = new Account();
-                
+                Account newAccount = MapRowToObject(results);
+                allAccounts.add(newAccount);
             }
         }catch(SQLException e){
             
             
         }
-        return null;
+        return allAccounts;
     }
+    
+    private static Account MapRowToObject(ResultSet result){
+        Account newAccount = new Account();
+        try{
+            newAccount.setID(result.getInt("id"));
+            newAccount.setManager(result.getInt("manager_id"));
+            newAccount.setName(result.getString("name"));
+            newAccount.setCreationDate(result.getDate("creation_date"));
+            newAccount.setCloseDate(result.getDate("close_date"));
+        }catch(SQLException e){
+            
+        }
+        return newAccount;
+    }
+    @Override
     public void Insert(){
         if(this.IsValid()){
             String insertString = "INSERT INTO " + Account.getTablename()
@@ -170,7 +196,27 @@ public class Account extends SQLModel {
         
     }
     
-    public PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
+    @Override
+    public void Update(){
+        if(this.IsValid()){
+            MySQLManager mysql = new MySQLManager();
+            PreparedStatement preparedStatement;
+            String updateString = "UPDATE ACCOUNTS SET "
+                    + "manager_id = ?, "
+                    + "name = ?, "
+                    + "creation_date = ?, "
+                    + "close_date = ? WHERE id = ?;";
+            try{
+                preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
+                preparedStatement = PrepareStatementForUpdate(preparedStatement);
+                preparedStatement.executeUpdate();
+            }catch(SQLException e){
+                e.getMessage();
+            }
+        }
+    }
+    
+    private PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
         try{
             preparedStatement.setInt(1, 0);
             preparedStatement.setInt(2,this.getManagerID());
@@ -178,6 +224,19 @@ public class Account extends SQLModel {
             preparedStatement.setDate(4,this.getCreationDate());
             preparedStatement.setDate(5,this.getCloseDate());
             //preparedStatement.setDate(5, this.getCloseDate());
+        }catch(SQLException e){
+            
+        }
+        return preparedStatement;
+    }
+    
+    private PreparedStatement PrepareStatementForUpdate(PreparedStatement preparedStatement){
+        try{
+            preparedStatement.setInt(1,this.getManagerID());
+            preparedStatement.setString(2, this.getName());
+            preparedStatement.setDate(3, this.getCreationDate());
+            preparedStatement.setDate(4, this.getCloseDate());
+            preparedStatement.setInt(5, this.getID());
         }catch(SQLException e){
             
         }

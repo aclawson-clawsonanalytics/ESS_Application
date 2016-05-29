@@ -146,6 +146,19 @@ public class AccountTest {
         Assert.assertFalse(SUT.IsValid());
     }
     
+    @Test
+    public void CanUpdateAccountName(){
+        SUT.setManager(sutManager.getID());
+        SUT.setName(sutName);
+        String secondName = "secondName";
+        SUT.Insert();
+        int sutID = SUT.getID();
+        SUT.setName(secondName);
+        SUT.Update();
+        SUT = null;
+        SUT = Account.GetByID(sutID);
+        Assert.assertEquals(SUT.getName(), secondName);
+    }
     
     
 }
