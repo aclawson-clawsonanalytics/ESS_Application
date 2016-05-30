@@ -193,7 +193,8 @@ public class User extends SQLModel {
                     + "last_name = ?, "
                     + "email = ?, "
                     + "password = ?, "
-                    + "account_id = ? WHERE id = ?;";
+                    + "account_id = ?, "
+                    + "campus_id = ? WHERE id = ?;";
             try{
                 preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
                 preparedStatement = PrepareStatementForUpdate(preparedStatement);
@@ -221,6 +222,7 @@ public class User extends SQLModel {
             preparedStatement.setString(5, this.getPassword());
             preparedStatement.setInt(6, this.getAccountID());
             preparedStatement.setInt(7, this.getCampusID());
+            
         }catch (SQLException e){
             
         }
@@ -235,7 +237,8 @@ public class User extends SQLModel {
             preparedStatement.setString(3, this.getEmail());
             preparedStatement.setString(4,this.getPassword());
             preparedStatement.setInt(5,this.getAccountID());
-            preparedStatement.setInt(6,this.getID());
+            preparedStatement.setInt(6,this.getCampusID());
+            preparedStatement.setInt(7,this.getID());
         }catch(SQLException e){
             
         }
@@ -251,6 +254,7 @@ public class User extends SQLModel {
             newUser.setEmail(result.getString("email"));
             newUser.setPassword(result.getString("password"));
             newUser.setAccountID(result.getInt("account_id"));
+            newUser.setCampusID(result.getInt("campus_id"));
             return newUser;
         }catch(SQLException e){
             
