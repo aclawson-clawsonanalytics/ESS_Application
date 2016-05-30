@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.clawsonanalytics.MAX.App.ModelLayer;
+import com.clawsonanalytics.MAX.App.ModelLayer.UserList;
 import com.clawsonanalytics.MAX.App.ModelLayer.Interface.IValidatable;
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
@@ -34,11 +35,13 @@ public class Account extends SQLModel {
     private Date close_date;
     
     private User manager;
+    private UserList userList;
     // Constructor
     public Account(){
         //this.setManager(managerID);
         //this.setManager(managerID);
         this.setCreationDate(new Date(Calendar.getInstance().getTime().getTime()));
+        
 
         
     }
@@ -243,6 +246,9 @@ public class Account extends SQLModel {
         return preparedStatement;
     }
     
+    public List<User> UserList(){
+        return UserList.ByAccount(this.getID());
+    }
     
     
     
