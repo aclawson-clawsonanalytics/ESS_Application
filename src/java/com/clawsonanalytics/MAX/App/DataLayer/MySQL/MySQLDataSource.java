@@ -18,10 +18,10 @@ import java.sql.ResultSet;
 public class MySQLDataSource {
     
     
-    private static String host = "jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application";//"jdbc:mysql://localhost:3306/SSN_Application";
-    private static String testHost = "jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application_Test";
-    private static String username = "SSN_DB_Admin";
-    private static String password = "ssndbadmin";
+    private static String host = "jdbc:mysql://localhost:3306/"+getDatabaseName();//"jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application";//"jdbc:mysql://localhost:3306/SSN_Application";
+    private static String testHost = "jdbc:mysql://localhost:3306/" + getTestDatabaseName();//"jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application_Test";
+    private static String username = "MAX_DB_Admin";
+    private static String password = "maxdbadmin";
     //private Connection connection;
     
     private static String database = "MAX_Application";
@@ -41,7 +41,7 @@ public class MySQLDataSource {
     }
     
     public static String getFocusHost(){
-        String focusHost = "jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/" + getFocusDB();
+        String focusHost = "jdbc:mysql://localhost:3306/" + getFocusDB();//"jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/" + getFocusDB();
         return focusHost;
     }
     
