@@ -27,6 +27,7 @@ public class User extends SQLModel {
     private String email;
     private String password;
     private int account_id;
+    private int campus_id;
     
     
     // Constructor
@@ -74,6 +75,14 @@ public class User extends SQLModel {
     
     public int getAccountID(){
         return this.account_id;
+    }
+    
+    public void setCampusID(int id){
+        this.campus_id = id;
+    }
+    
+    public int getCampusID(){
+        return this.campus_id;
     }
     //SQL DAO methods
     
@@ -152,7 +161,7 @@ public class User extends SQLModel {
     public void Insert(){
         if (this.IsValid()){
             String insertString = "INSERT INTO " + getTablename()
-                    + " VALUES (?,?,?,?,?,?);";
+                    + " VALUES (?,?,?,?,?,?,?);";
             MySQLManager mysql = new MySQLManager();
             PreparedStatement preparedStatement;
             ResultSet keys;
@@ -211,6 +220,7 @@ public class User extends SQLModel {
             preparedStatement.setString(4, this.getEmail());
             preparedStatement.setString(5, this.getPassword());
             preparedStatement.setInt(6, this.getAccountID());
+            preparedStatement.setInt(7, this.getCampusID());
         }catch (SQLException e){
             
         }
