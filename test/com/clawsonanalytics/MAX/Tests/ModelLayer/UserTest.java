@@ -247,6 +247,18 @@ public class UserTest {
         Assert.assertTrue(SUT.IsAuthenticated(SUT.getEmail(),SUT.getPassword()));
     }
     
+    @Test
+    public void CanSetAsAccountManager(){
+        SetupValidUser();
+        SUT.SetupAsManager();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        SUT = null;
+        SUT = User.GetByID(sutID);
+        Assert.assertTrue(SUT.IsAccountManager());
+        
+    }
+    
     
     
 }
