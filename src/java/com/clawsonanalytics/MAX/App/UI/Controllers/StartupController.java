@@ -36,8 +36,8 @@ public class StartupController {
     
     @RequestMapping(value="/startup")
     public ModelAndView startup(HttpServletRequest request){
-        ModelAndView modelView = new ModelAndView("startup/startup");
-        //modelView.setViewName("redirect:startup.htm");
+        ModelAndView modelView = new ModelAndView();
+        modelView.setViewName("startup/startup");
         
         return modelView;
     }

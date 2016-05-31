@@ -68,6 +68,7 @@ public class DashboardController {
     
     @RequestMapping(value="/logout")
     public ModelAndView Logout(HttpServletRequest request){
+        ModelAndView modelView = new ModelAndView();
         HttpSession session = request.getSession();
         try{
             //request.logout();
@@ -76,6 +77,7 @@ public class DashboardController {
         }
         session.removeAttribute("activeUser");
         session.removeAttribute("loginError");
+        modelView.setViewName("redirect:startup.htm");
         /*
         try{
             request.logout();
@@ -86,7 +88,7 @@ public class DashboardController {
         /*
         ModelAndView modelView = new ModelAndView();
         modelView.setViewName("redirect:startup.htm");*/
-        return new StartupController().startup(request);
+        return modelView;
     }
     
 }
