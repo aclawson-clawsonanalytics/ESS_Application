@@ -40,7 +40,7 @@ public class UserTest {
     @BeforeClass
     public static void setUpClass() {
         environment = new TestEnvironment();
-        //SetupEmptyTestDatabases();
+        SetupEmptyTestDatabases();
         
     }
     
@@ -56,7 +56,7 @@ public class UserTest {
     @Before
     public void setUp() {
         SUT = new User();
-        SetupEmptyTestDatabases();
+        //SetupEmptyTestDatabases();
     }
     
     @After
@@ -64,7 +64,7 @@ public class UserTest {
         SUT = null;
         //environment.DropTestTableForModelByTablename(User.getTablename());
         //environment.TearDown();
-        TearDownTestDatabases();
+        environment.DropRecordsForTestTable(User.getTablename());//TearDownTestDatabases();
     }
     
     public void SetupValidUser(){

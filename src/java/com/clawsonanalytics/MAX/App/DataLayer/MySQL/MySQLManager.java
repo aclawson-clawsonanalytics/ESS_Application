@@ -50,6 +50,13 @@ public class MySQLManager {
     }
     
     public void SetProductionMode(){
+        try{
+            MySQLDataSource.setFocusToProduction();
+            Connector.connectToFocusDB();
+        }catch(SQLException e){
+            
+        }
+        /*
         MySQLDataSource.setFocusToProduction();
         String useString = "USE " + MySQLDataSource.getFocusDB() + ";";
         try{
@@ -58,7 +65,7 @@ public class MySQLManager {
         }catch(SQLException e){
             
         }
-        
+        */
     }
     
     public ResultSet getResultSet(){
