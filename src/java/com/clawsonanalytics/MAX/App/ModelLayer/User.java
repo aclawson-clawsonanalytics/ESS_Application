@@ -29,6 +29,7 @@ public class User extends SQLModel {
     private int account_id;
     private int campus_id;
     private int is_account_manager;
+    private int is_school_admin;
     
     
     // Constructor
@@ -103,6 +104,22 @@ public class User extends SQLModel {
         }
         else{
             return true;
+        }
+    }
+    
+    public void setSchoolAdminValue(int val){
+        this.is_school_admin = val;
+    }
+    
+    public int getSchoolAdminValue(){
+        return this.is_school_admin;
+    }
+    
+    public boolean IsSchoolAdmin(){
+        if (this.getSchoolAdminValue() == 1){
+            return true;
+        }else{
+            return false;
         }
     }
     
