@@ -253,7 +253,7 @@ public class User extends SQLModel {
             newUser.setEmail(result.getString("email"));
             newUser.setPassword(result.getString("password"));
             newUser.setAccountID(result.getInt("account_id"));
-            newUser.setCampusID(result.getInt("campus_id"));
+            //newUser.setCampusID(result.getInt("campus_id"));
             return newUser;
         }catch(SQLException e){
             
