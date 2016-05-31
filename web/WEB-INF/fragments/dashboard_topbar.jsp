@@ -15,10 +15,18 @@
 
 <!DOCTYPE html>
 <div class="top-bar">
-    >
+  
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text">MAX School Solutions</li>
+        <c:if test="${pageContext.session.getAttribute('activeUser').IsAccountManager()}">
+        <li>
+            <a href="#">Account Administration</a>
+            <ul class="menu vertical">
+                <li><a>Account Settings</a></li>
+            </ul>
+        </li>
+        </c:if>
       <li>
         <a href="#">District Administration</a>
         <ul class="menu vertical">
