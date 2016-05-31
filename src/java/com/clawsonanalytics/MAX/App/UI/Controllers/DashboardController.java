@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.clawsonanalytics.MAX.App.UI.Controllers;
+import com.clawsonanalytics.MAX.App.UI.Controllers.StartupController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -49,6 +50,7 @@ public class DashboardController {
                 session.setAttribute("activeUser", activeUser);
                 //request.login(activeUser.getEmail(),activeUser.getPassword());
                 
+                
             }else{
                 modelView.setViewName("redirect:startup.htm");
                 modelView.addObject("loginError","Invalid credentials");
@@ -57,17 +59,22 @@ public class DashboardController {
             
         }catch(Exception e){
             modelView.setViewName("redirect:startup.htm");
-            
+            session.setAttribute("loginError",e.getMessage());
             
         }
         //return "dashboard/dashboard";
         return modelView;
     }
     
-    @RequestMapping(value="/dashboard")
+    @RequestMapping(value="/logout")
     public ModelAndView Logout(HttpServletRequest request){
         HttpSession session = request.getSession();
-        session.removeAttribute("loginUser");
+        try{
+            //request.logout();
+        }catch(Exception e){
+            
+        }
+        session.removeAttribute("activeUser");
         session.removeAttribute("loginError");
         /*
         try{
@@ -76,10 +83,10 @@ public class DashboardController {
             
         }
         */
-        
-        ModelAndView modelView = new ModelAndView("logout");
-        modelView.setViewName("redirect:startup.htm");
-        return modelView;
+        /*
+        ModelAndView modelView = new ModelAndView();
+        modelView.setViewName("redirect:startup.htm");*/
+        return new StartupController().startup(request);
     }
     
 }

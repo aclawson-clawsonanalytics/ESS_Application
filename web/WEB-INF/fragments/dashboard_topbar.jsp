@@ -56,7 +56,7 @@
         <li><a href="#">Tech Support</a></li>
       
       
-      <li><a href="${pageContext.request.contextPath}/startup.htm">Logout</a></li>
+      <li><a href="${pageContext.request.contextPath}/logout.htm">Logout</a></li>
     </ul>
     <b>User: </b>${pageContext.session.getAttribute("activeUser").getEmail()}
   </div>

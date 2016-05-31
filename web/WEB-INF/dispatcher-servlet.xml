@@ -48,6 +48,7 @@ xmlns="http://www.springframework.org/schema/beans"
             <prop key="subscribe.htm">RegistrationController</prop>
             <prop key="submitRegistration.htm">RegistrationController</prop>
             <prop key="dashboard.htm">DashboardController</prop>
+            <prop key="logout.htm">DashboardController</prop>
         </props>
     </property>
 </bean>

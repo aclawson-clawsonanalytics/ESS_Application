@@ -33,7 +33,7 @@
             </table>
             
         </form:form>
-        <c:set var="loginError" value="${pageContext.session.getAttribute('loginError')}" scope="session"/>
+        <c:set var="loginError" value="${pageContext.session.getAttribute('loginError')}" scope="request"/>
         
         <p id="loginError" style="color:red">${pageContext.session.getAttribute("loginError")}</p>
         Click <a href="${pageContext.request.contextPath}/subscribe.htm">here</a> to submit a registration request to subscribe to <app:AppName/>.<br>
