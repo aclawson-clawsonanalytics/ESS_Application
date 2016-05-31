@@ -55,6 +55,7 @@ public class DashboardController {
                 modelView.setViewName("redirect:startup.htm");
                 modelView.addObject("loginError","Invalid credentials");
                 session.setAttribute("loginError", "Invalid credentials");
+                
             }
             
         }catch(Exception e){
@@ -77,6 +78,7 @@ public class DashboardController {
         }
         session.removeAttribute("activeUser");
         session.removeAttribute("loginError");
+        
         modelView.setViewName("redirect:startup.htm");
         /*
         try{
