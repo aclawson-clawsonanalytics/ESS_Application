@@ -58,7 +58,7 @@
       
       <li><a href="${pageContext.request.contextPath}/startup.htm">Logout</a></li>
     </ul>
-    <b>User: </b>${pageContext.session.getAttribute("loginUser").getEmail()}
+    <b>User: </b>${pageContext.session.getAttribute("activeUser").getEmail()}
   </div>
     
 </div>

@@ -38,16 +38,16 @@ public class DashboardController {
         String email = request.getParameter("loginEmail");
         String password = request.getParameter("loginPassword");
         
-        ModelAndView modelView = new ModelAndView("loginUser");
+        ModelAndView modelView = new ModelAndView();
         try{
             
-            User loginUser = User.GetByCredentials(email, password);
-            if (loginUser != null){
+            User activeUser = User.GetByCredentials(email, password);
+            if (activeUser != null){
                 modelView.setViewName("dashboard/dashboard");
-                modelView.addObject("loginUser",loginUser);
+                modelView.addObject("activeUser",activeUser);
                 
-                session.setAttribute("loginUser", loginUser);
-                //request.login(loginUser.getEmail(),loginUser.getPassword());
+                session.setAttribute("activeUser", activeUser);
+                //request.login(activeUser.getEmail(),activeUser.getPassword());
                 
             }else{
                 modelView.setViewName("redirect:startup.htm");
