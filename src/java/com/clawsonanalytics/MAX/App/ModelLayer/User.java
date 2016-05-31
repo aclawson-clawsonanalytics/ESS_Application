@@ -236,8 +236,8 @@ public class User extends SQLModel {
             preparedStatement.setString(3, this.getEmail());
             preparedStatement.setString(4,this.getPassword());
             preparedStatement.setInt(5,this.getAccountID());
-            preparedStatement.setInt(6,this.getCampusID());
-            preparedStatement.setInt(7,this.getID());
+            //preparedStatement.setInt(6,this.getCampusID());
+            preparedStatement.setInt(6,this.getID());
         }catch(SQLException e){
             
         }
@@ -297,6 +297,28 @@ public class User extends SQLModel {
             }
         }
         return null;
+    }
+    
+    // The model mapper class is responsible for DB interactions.
+    private class ModelMapper {
+        public ModelMapper() {
+            
+        }
+        
+        private PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
+            
+            return preparedStatement;
+        }
+        
+        private PreparedStatement PrepareStatementForUpdate(PreparedStatement preparedStatement){
+            return preparedStatement;
+        }
+        
+        private User MapResultsToUser(ResultSet results){
+            User aUser = new User();
+            
+            return aUser;
+        }
     }
     
     
