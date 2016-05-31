@@ -161,7 +161,7 @@ public class User extends SQLModel {
     public void Insert(){
         if (this.IsValid()){
             String insertString = "INSERT INTO " + getTablename()
-                    + " VALUES (?,?,?,?,?,?,?);";
+                    + " VALUES (?,?,?,?,?,?);";
             MySQLManager mysql = new MySQLManager();
             PreparedStatement preparedStatement;
             ResultSet keys;
@@ -176,7 +176,7 @@ public class User extends SQLModel {
                 mysql.Connector.CloseResources();
 
             }catch(SQLException e){
-                //e.getMessage();
+                e.getMessage();
             }
         }
         
@@ -193,8 +193,7 @@ public class User extends SQLModel {
                     + "last_name = ?, "
                     + "email = ?, "
                     + "password = ?, "
-                    + "account_id = ?, "
-                    + "campus_id = ? WHERE id = ?;";
+                    + "account_id = ? WHERE id = ?;";
             try{
                 preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
                 preparedStatement = PrepareStatementForUpdate(preparedStatement);
@@ -215,13 +214,13 @@ public class User extends SQLModel {
     
     private PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
         try{
-            preparedStatement.setInt(1,0);
-            preparedStatement.setString(2, this.getFirstname());
-            preparedStatement.setString(3, this.getLastname());
-            preparedStatement.setString(4, this.getEmail());
-            preparedStatement.setString(5, this.getPassword());
+            preparedStatement.setInt(1,0); // set id property
+            preparedStatement.setString(2, this.getFirstname()); // set firstname
+            preparedStatement.setString(3, this.getLastname()); // set lastname
+            preparedStatement.setString(4, this.getEmail()); // set email
+            preparedStatement.setString(5, this.getPassword()); // set 
             preparedStatement.setInt(6, this.getAccountID());
-            preparedStatement.setInt(7, this.getCampusID());
+            
             
         }catch (SQLException e){
             
