@@ -270,6 +270,17 @@ public class UserTest {
         Assert.assertTrue(SUT.IsSchoolAdmin());
     }
     
+    @Test
+    public void CanSetAsInstructor(){
+        SetupValidUser();
+        SUT.SetupAsInstructor();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        SUT = null;
+        SUT = User.GetByID(sutID);
+        Assert.assertTrue(SUT.IsInstructor());
+    }
+    
     
     
 }
