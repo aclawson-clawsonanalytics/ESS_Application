@@ -259,6 +259,17 @@ public class UserTest {
         
     }
     
+    @Test
+    public void CanSetAsSchoolAdmin(){
+        SetupValidUser();
+        SUT.SetupAsSchoolAdmin();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        SUT = null;
+        SUT = User.GetByID(sutID);
+        Assert.assertTrue(SUT.IsSchoolAdmin());
+    }
+    
     
     
 }

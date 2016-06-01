@@ -123,6 +123,10 @@ public class User extends SQLModel {
         }
     }
     
+    public void SetupAsSchoolAdmin(){
+        this.setSchoolAdminValue(1);
+    }
+    
     //SQL DAO methods
     
     
@@ -200,7 +204,7 @@ public class User extends SQLModel {
     public void Insert(){
         if (this.IsValid()){
             String insertString = "INSERT INTO " + getTablename()
-                    + " VALUES (?,?,?,?,?,?,?);";
+                    + " VALUES (?,?,?,?,?,?,?,?);";
             MySQLManager mysql = new MySQLManager();
             PreparedStatement preparedStatement;
             ResultSet keys;
@@ -233,7 +237,8 @@ public class User extends SQLModel {
                     + "email = ?, "
                     + "password = ?, "
                     + "account_id = ?, "
-                    + "isAccountManager = ? WHERE id = ?;";
+                    + "isAccountManager = ?, "
+                    + "isSchoolAdmin = ? WHERE id = ?;";
             try{
                 preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
                 preparedStatement = PrepareStatementForUpdate(preparedStatement);
@@ -261,6 +266,7 @@ public class User extends SQLModel {
             preparedStatement.setString(5, this.getPassword()); // set 
             preparedStatement.setInt(6, this.getAccountID());
             preparedStatement.setInt(7, this.getAccountManagerValue());
+            preparedStatement.setInt(8, this.getSchoolAdminValue());
             
             
         }catch (SQLException e){
@@ -278,8 +284,9 @@ public class User extends SQLModel {
             preparedStatement.setString(4,this.getPassword());
             preparedStatement.setInt(5,this.getAccountID());
             preparedStatement.setInt(6, this.getAccountManagerValue());
+            preparedStatement.setInt(7, this.getSchoolAdminValue());
             //preparedStatement.setInt(6,this.getCampusID());
-            preparedStatement.setInt(7,this.getID());
+            preparedStatement.setInt(8,this.getID());
         }catch(SQLException e){
             
         }
@@ -296,6 +303,7 @@ public class User extends SQLModel {
             newUser.setPassword(result.getString("password"));
             newUser.setAccountID(result.getInt("account_id"));
             newUser.setAccountManagerValue(result.getInt("isAccountManager"));
+            newUser.setSchoolAdminValue(result.getInt("isSchoolAdmin"));
             //newUser.setCampusID(result.getInt("campus_id"));
             return newUser;
         }catch(SQLException e){

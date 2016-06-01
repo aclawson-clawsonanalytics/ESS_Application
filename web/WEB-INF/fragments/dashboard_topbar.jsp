@@ -27,14 +27,17 @@
             </ul>
         </li>
         </c:if>
+        <c:if test="${pageContext.session.getAttribute('activeUser').IsSchoolAdmin()}">
       <li>
-        <a href="#">District Administration</a>
+        <a href="#">School Administration</a>
         <ul class="menu vertical">
-          <li><a href="#">District Data</a></li>
-          <li><a href="#">District Settings</a></li>
+          <li><a href="#">School Settings</a></li>
+          <li><a href="#">School Settings</a></li>
           <li><a href="#">Student Data</a></li>
+          <li><a href="#">Reports</a></li>
         </ul>
       </li>
+        </c:if>
       <li><a href="#">Administration</a>
         <ul class="menu vertical">
             <li><a href="#">School Settings</a></li>
