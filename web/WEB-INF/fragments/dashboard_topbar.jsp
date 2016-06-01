@@ -24,6 +24,8 @@
             <a href="#">Account Administration</a>
             <ul class="menu vertical">
                 <li><a>Account Settings</a></li>
+                <li><a>Configure Users</a></li>
+                <li><a>Billing</a></li>
             </ul>
         </li>
         </c:if>
@@ -38,15 +40,7 @@
         </ul>
       </li>
         </c:if>
-      <li><a href="#">Administration</a>
-        <ul class="menu vertical">
-            <li><a href="#">School Settings</a></li>
-            <li><a href="#">School Data</a></li>
-            <li><a href="#">School Schedule</a></li>
-            <li><a href="#">Student Information</a></li>
-            <li><a href="#">Student Data</a></li>
-        </ul>
-      </li>
+      <c:if test="${pageContext.session.getAttribute('activeUser').IsInstructor()}">
       <li><a href="#">Instructor</a>
         <ul class="menu vertical">
             <li><a onclick="LoadGradebook();">Gradebook</a></li>
@@ -55,6 +49,8 @@
             <li><a href="#">Email</a></li>
         </ul>
       </li>
+      </c:if>
+      
     </ul>
   </div>
   <div class="top-bar-right">

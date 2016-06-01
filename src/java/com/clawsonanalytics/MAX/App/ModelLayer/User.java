@@ -30,6 +30,7 @@ public class User extends SQLModel {
     private int campus_id;
     private int is_account_manager;
     private int is_school_admin;
+    private int is_instructor;
     
     
     // Constructor
@@ -125,6 +126,23 @@ public class User extends SQLModel {
     
     public void SetupAsSchoolAdmin(){
         this.setSchoolAdminValue(1);
+    }
+    
+    public void setInstructorValue(int val){
+        this.is_instructor = val;
+    }
+    
+    public int getInstructorValue(){
+        return this.is_instructor;
+    }
+    
+    public boolean IsInstructor(){
+        if (this.getInstructorValue() == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
     //SQL DAO methods
