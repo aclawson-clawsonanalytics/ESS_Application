@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.clawsonanalytics.MAX.App.ModelLayer;
-import com.clawsonanalytics.MAX.App.ModelLayer.UserList;
+import com.clawsonanalytics.MAX.App.ModelLayer.Lists.UserList;
 import com.clawsonanalytics.MAX.App.ModelLayer.Interface.IValidatable;
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;

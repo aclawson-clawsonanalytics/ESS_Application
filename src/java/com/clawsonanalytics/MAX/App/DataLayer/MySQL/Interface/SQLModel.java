@@ -25,9 +25,10 @@ public class SQLModel implements SqlDAO, IValidatable {
     
     private static List<String> RegisteredModels;
     private static String tablename;
-    
+    public static List foreignKeyRelations = new ArrayList();
+    public static List childModelRelations = new ArrayList();
     private static String modelName;
-    
+    //public static List<class> dependencies = new ArrayList<class>();
     private int ID;
     
     
@@ -37,6 +38,7 @@ public class SQLModel implements SqlDAO, IValidatable {
         this.setID(0);
         
     }
+    
     
     public static void setTablename(String string){
         

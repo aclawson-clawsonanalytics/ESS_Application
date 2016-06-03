@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.MAX.App.ModelLayer;
+package com.clawsonanalytics.MAX.App.ModelLayer.Lists;
 
+import com.clawsonanalytics.MAX.App.ModelLayer.User;
 import java.util.List;
 import java.util.ArrayList;
 /**

@@ -24,9 +24,24 @@ import java.util.ArrayList;
 public class Campus extends SQLModel {
     
     // class properties
+    private static String tablename = "CAMPUS";
+    private static String modelname = "Campus";
+    private String name;
+    private String address;
+    private String city;
+    private String state;
+    private String zip;
+    private String po_box;
+    
+    private int account_id; // Foreign key reference to account
+    private int principal_id; // Foreign key reference to user who is principal
+    private int assistantPrincipal_id; // Foreign key reference ot user who is assistant principal.
+    
+    private Date creation_date;
+    private Date close_date;
     
     public Campus(){
-        
+        foreignKeyRelations.add(Account.class);
     }
     
     

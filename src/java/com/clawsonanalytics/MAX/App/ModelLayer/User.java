@@ -22,10 +22,14 @@ import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
 public class User extends SQLModel {
     private static String tablename = "USERS";
     private static String modelName = "User";
+    //public static List<SQLModel> dependencies;
+    
     private String firstname;
     private String lastname;
     private String email;
     private String password;
+    //private static List foreignKeyRelations;
+    //private static List childModelRelations = new ArrayList();
     private int account_id;
     private int campus_id;
     private int is_account_manager;
@@ -33,11 +37,20 @@ public class User extends SQLModel {
     private int is_instructor;
     
     
+    
+    
     // Constructor
     public User() {
         //User.setTablename("USERS");
         //User.setModelName(User.class.getSimpleName());
+        foreignKeyRelations.add(Account.class);
+        foreignKeyRelations.add(Campus.class);
         
+        
+    }
+    
+    public static List<SQLModel> getForeignKeyRelations(){
+        return foreignKeyRelations;
     }
     // property getters and setters
     public void setFirstname(String string){
