@@ -14,6 +14,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.Assert;
 import static org.junit.Assert.*;
 
 /**
@@ -25,10 +26,13 @@ public class CampusTest {
     private static TestEnvironment environment;
     
     // class properties
-    private String sutName;
-    private String sutAddress;
-    private String sutState;
-    private String sutZip;
+    private String sutName = "sutName";
+    private String sutAddress = "sutAddress";
+    private String sutCity = "sutCity";
+    private String sutState = "sutState";
+    private String sutZip = "sutZip";
+    private String sutPO = "sutPO";
+    
     
     public CampusTest() {
         
@@ -37,7 +41,7 @@ public class CampusTest {
     @BeforeClass
     public static void setUpClass() {
         environment = new TestEnvironment();
-        
+        SetupEmptyTestDatabases();
     }
     
     public static void SetupEmptyTestDatabases(){
@@ -78,9 +82,65 @@ public class CampusTest {
     }
     
     
+    
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
     // @Test
     // public void hello() {}
+    @Test
+    public void TablenameIsCorrect(){
+        Assert.assertEquals(Campus.getTablename(),"CAMPUS");
+    }
+    
+    @Test
+    public void CanSetName(){
+        SUT.setName(sutName);
+        Assert.assertEquals(SUT.getName(), sutName);
+       
+    }
+    
+    @Test
+    public void CanSetAddress(){
+        SUT.setAddress(sutAddress);
+        Assert.assertEquals(SUT.getAddress(),sutAddress);
+    }
+    
+    @Test
+    public void CanSetCity(){
+        SUT.setCity(sutCity);
+        Assert.assertEquals(SUT.getCity(), sutCity);
+    }
+    
+    @Test
+    public void CanSetState(){
+        SUT.setState(sutState);
+        Assert.assertEquals(sutState,SUT.getState());
+    }
+    
+    @Test
+    public void CanSetZip(){
+        SUT.setZip(sutZip);
+        Assert.assertEquals(sutZip, SUT.getZip());
+    }
+    
+    @Test
+    public void CanSetPO(){
+        SUT.setPO(sutPO);
+        Assert.assertEquals(sutPO, SUT.getPO());
+    }
+    
+    @Test
+    public void MissingPropertiesReturnsMessages(){
+        Assert.assertTrue(SUT.GetValidationErrors().contains("Campus must have a name."));
+        Assert.assertTrue(SUT.GetValidationErrors().contains("Campus must have an address."));
+        Assert.assertTrue(SUT.GetValidationErrors().contains("Campus must have a city."));
+        Assert.assertTrue(SUT.GetValidationErrors().contains("Campus must have a state."));
+        Assert.assertTrue(SUT.GetValidationErrors().contains("Campus must have a zip code."));
+    }
+    
+    @Test
+    public void MissingPropertiesIsInvalid(){
+        Assert.assertFalse(SUT.IsValid());
+    }
 }
