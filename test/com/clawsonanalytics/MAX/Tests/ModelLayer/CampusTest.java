@@ -166,7 +166,7 @@ public class CampusTest {
         Assert.assertFalse(SUT.IsValid());
     }
     
-    
+    @Test
     public void CanInsert(){
        SUT = new ValidCampus();
        int  firstCount = Campus.Count();

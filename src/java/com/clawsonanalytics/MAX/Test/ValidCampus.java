@@ -18,5 +18,6 @@ public class ValidCampus  extends Campus {
         this.setCity("sutCity");
         this.setState("sutState");
         this.setZip("sutZip");
+        this.setPO("sutPO");
     }
 }

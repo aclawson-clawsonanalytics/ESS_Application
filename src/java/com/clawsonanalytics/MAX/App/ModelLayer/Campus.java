@@ -139,7 +139,7 @@ public class Campus extends SQLModel {
     public void Insert(){
         if(this.IsValid()){
             String insertString = "INSERT INTO " + getTablename()
-                    + " VALUES (?,?,?,?,?,?);";
+                    + " VALUES (?,?,?,?,?,?,?);";
             MySQLManager mysql = new MySQLManager();
             PreparedStatement preparedStatement;
             ResultSet keys;
@@ -159,13 +159,14 @@ public class Campus extends SQLModel {
     }
     
     private PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
-        try{    
-            preparedStatement.setString(1,this.getName());
-            preparedStatement.setString(2,this.getAddress());
-            preparedStatement.setString(3,this.getCity());
-            preparedStatement.setString(4,this.getState());
-            preparedStatement.setString(5,this.getZip());
-            preparedStatement.setString(6,this.getPO());
+        try{
+            preparedStatement.setInt(1,0);
+            preparedStatement.setString(2,this.getName());
+            preparedStatement.setString(3,this.getAddress());
+            preparedStatement.setString(4,this.getCity());
+            preparedStatement.setString(5,this.getState());
+            preparedStatement.setString(6,this.getZip());
+            preparedStatement.setString(7,this.getPO());
         }catch(SQLException e){
             
         }
