@@ -9,6 +9,10 @@ import com.clawsonanalytics.MAX.App.ModelLayer.User;
 import com.clawsonanalytics.MAX.App.ModelLayer.Campus;
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
 
+import com.clawsonanalytics.MAX.Test.ValidAccount;
+import com.clawsonanalytics.MAX.Test.ValidUser;
+import com.clawsonanalytics.MAX.Test.ValidCampus;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,6 +36,15 @@ public class CampusTest {
     private String sutState = "sutState";
     private String sutZip = "sutZip";
     private String sutPO = "sutPO";
+    
+    private static User accountManager;
+    private static String managerFirst = "managerFirst";
+    private static String managerLast = "managerList";
+    private static String managerEmail = "managerEmail";
+    private static String managerPassword = "managerPassword";
+    
+    private static Account sutAccount;
+    private static String sutAccountName = "accountName";
     
     
     public CampusTest() {
@@ -82,6 +95,15 @@ public class CampusTest {
     }
     
     
+    public void SetupAccountAndManager(){
+        sutAccount = new ValidAccount();
+        sutAccount.Insert();
+        accountManager = new ValidUser();
+        accountManager.Insert();
+        sutAccount.setManager(accountManager);
+        
+        
+    }
     
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
@@ -143,4 +165,16 @@ public class CampusTest {
     public void MissingPropertiesIsInvalid(){
         Assert.assertFalse(SUT.IsValid());
     }
+    
+    
+    public void CanInsert(){
+       SUT = new ValidCampus();
+       int  firstCount = Campus.Count();
+       SUT.Insert();
+       int secondCount = Campus.Count();
+       Assert.assertEquals(secondCount,firstCount+1);
+        
+    }
+    
+    
 }

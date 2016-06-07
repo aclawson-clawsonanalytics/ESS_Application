@@ -81,6 +81,7 @@ public class Account extends SQLModel {
     
     public void setManager(User _manager){
         this.manager = _manager;
+        this.manager_id = _manager.getID();
     }
     public User Manager(){
         return manager;
