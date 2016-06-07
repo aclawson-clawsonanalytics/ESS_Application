@@ -50,20 +50,20 @@ public class MySQLManagerTest {
     @Test
     public void DefaultModeIsProduction(){
         
-        Assert.assertEquals("MAX_Application", MySQLDataSource.getFocusDB());
+        Assert.assertEquals("max_application", MySQLDataSource.getFocusDB());
         
     }
     @Test
     public void TestModeSetsDB(){
         //MySQLManager SUT = new MySQLManager();
         SUT.SetTestMode();
-        Assert.assertEquals("MAX_Application_Test", MySQLDataSource.getFocusDB());
+        Assert.assertEquals("max_application_test", MySQLDataSource.getFocusDB());
     }
     
     
     public void ChangeDBStatementIsCorrect(){
         SUT.statementManager.ChangeDBStatement();
-        Assert.assertEquals(SUT.statementManager.getStatementString(), "USE MAX_Application_Test");
+        Assert.assertEquals(SUT.statementManager.getStatementString(), "USE max_application_test");
     }
     
     @Test

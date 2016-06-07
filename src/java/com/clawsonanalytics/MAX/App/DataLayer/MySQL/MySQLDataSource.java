@@ -18,14 +18,14 @@ import java.sql.ResultSet;
 public class MySQLDataSource {
     
     
-    private static String host = "jdbc:mysql://localhost:3306/"+getDatabaseName();//"jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application";//"jdbc:mysql://localhost:3306/SSN_Application";
-    private static String testHost = "jdbc:mysql://localhost:3306/" + getTestDatabaseName();//"jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application_Test";
-    private static String username = "MAX_DB_Admin";
-    private static String password = "maxdbadmin";
+    private static String host = "jdbc:mysql://maxdb.clawsonanalytics.com:3306/"+getDatabaseName();//"jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application";//"jdbc:mysql://localhost:3306/SSN_Application";
+    private static String testHost = "jdbc:mysql://maxdb.clawsonanalytics.com:3306/" + getTestDatabaseName();//"jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/MAX_Application_Test";
+    private static String username = "aclawson";
+    private static String password = "clawson1";
     //private Connection connection;
     
-    private static String database = "MAX_Application";
-    private static String testDatabase = "MAX_Application_Test";
+    private static String database = "max_application";
+    private static String testDatabase = "max_application_test";
     private static String focusDB = database;
     
     public MySQLDataSource(){
@@ -41,7 +41,7 @@ public class MySQLDataSource {
     }
     
     public static String getFocusHost(){
-        String focusHost = "jdbc:mysql://localhost:3306/" + getFocusDB();//"jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/" + getFocusDB();
+        String focusHost = "jdbc:mysql://maxdb.clawsonanalytics.com:3306/" + getFocusDB();//"jdbc:mysql://ssndb.cnvibszy1305.us-east-1.rds.amazonaws.com/" + getFocusDB();
         return focusHost;
     }
     
