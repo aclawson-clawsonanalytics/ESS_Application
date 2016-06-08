@@ -176,5 +176,83 @@ public class CampusTest {
         
     }
     
+    @Test
+    public void CanUpdateName(){
+        SUT = new ValidCampus();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newName = "newSUTName";
+        SUT.setName(newName);
+        SUT.Update();
+        SUT = null;
+        SUT = Campus.GetByID(sutID);
+        Assert.assertEquals(SUT.getName(),newName);
+        
+    }
     
+    @Test
+    public void CanUpdateAddress(){
+        SUT = new ValidCampus();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newAddress = "newSUTAddress";
+        SUT.setAddress(newAddress);
+        SUT.Update();
+        SUT = null;
+        SUT = Campus.GetByID(sutID);
+        Assert.assertEquals(SUT.getAddress(), newAddress);
+    }
+    
+    @Test
+    public void CanUpdateCity(){
+        SUT = new ValidCampus();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newCity = "newSUTCity";
+        SUT.setCity(newCity);
+        SUT.Update();
+        SUT = null;
+        SUT = Campus.GetByID(sutID);
+        Assert.assertEquals(SUT.getCity(),newCity);
+    }
+    
+    @Test
+    public void CanUpdateState(){
+        SUT = new ValidCampus();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newState = "newSUTState";
+        SUT.setState(newState);
+        SUT.Update();
+        SUT = null;
+        SUT = Campus.GetByID(sutID);
+        Assert.assertEquals(SUT.getState(),newState);
+    }
+    
+    @Test
+    public void CanUpdateZip(){
+        SUT =  new ValidCampus();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newZip = "newSUTZip";
+        SUT.setZip(newZip);
+        SUT.Update();
+        SUT = null;
+        SUT = Campus.GetByID(sutID);
+        Assert.assertEquals(SUT.getZip(),newZip);
+        
+    }
+    
+    @Test
+    public void CanUpdatePO(){
+        SUT = new ValidCampus();
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String newPO = "newSUTPO";
+        SUT.setPO(newPO);
+        SUT.Update();
+        SUT = null;
+        SUT = Campus.GetByID(sutID);
+        Assert.assertEquals(SUT.getPO(),newPO);
+    }
 }

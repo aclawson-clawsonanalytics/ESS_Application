@@ -135,6 +135,17 @@ public class Campus extends SQLModel {
         
         return all;
     }
+    
+    public static Campus GetByID(int id){
+        List<Campus> allCampuses = Campus.GetAll();
+        for (Campus campus : allCampuses){
+            if (campus.getID() == id){
+                return campus;
+            }
+        }
+        return null;
+        
+    }
     @Override
     public void Insert(){
         if(this.IsValid()){
@@ -153,8 +164,31 @@ public class Campus extends SQLModel {
                 this.setID(id);
                 mysql.Connector.CloseResources();
             }catch(SQLException e){
+                
+            }
+        }
+    }
+    
+    @Override
+    public void Update(){
+        if (this.IsValid()){
+            MySQLManager mysql = new MySQLManager();
+            PreparedStatement preparedStatement;
+            String updateString = "UPDATE CAMPUS SET "
+                    + "name = ?, "
+                    + "address = ?, "
+                    + "city = ?, "
+                    + "state = ?, "
+                    + "zip = ?, "
+                    + "po = ? WHERE id = ?;";
+            try{
+                preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
+                preparedStatement = PrepareStatementForUpdate(preparedStatement);
+                preparedStatement.executeUpdate();
+            }catch(SQLException e){
                 e.getMessage();
             }
+                    
         }
     }
     
@@ -172,10 +206,37 @@ public class Campus extends SQLModel {
         }
         
         return preparedStatement;
-    } 
+    }
+    
+    private PreparedStatement PrepareStatementForUpdate(PreparedStatement preparedStatement){
+        try{
+            
+            preparedStatement.setString(1,this.getName());
+            preparedStatement.setString(2,this.getAddress());
+            preparedStatement.setString(3,this.getCity());
+            preparedStatement.setString(4,this.getState());
+            preparedStatement.setString(5, this.getZip());
+            preparedStatement.setString(6, this.getPO());
+            preparedStatement.setInt(7, this.getID());
+        }catch(SQLException e){
+            
+        }
+        return preparedStatement;
+    }
+     
     private static Campus MapRowToObject(ResultSet results){
         Campus newCampus = new Campus();
-        
+        try{
+            newCampus.setID(results.getInt("id"));
+            newCampus.setName(results.getString("name"));
+            newCampus.setAddress(results.getString("address"));
+            newCampus.setCity(results.getString("city"));
+            newCampus.setState(results.getString("state"));
+            newCampus.setZip(results.getString("zip"));
+            newCampus.setPO(results.getString("po"));
+        }catch(SQLException e){
+           e.getMessage();
+        }
         return newCampus;
     }
     @Override

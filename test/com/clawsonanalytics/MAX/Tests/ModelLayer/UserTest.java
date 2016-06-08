@@ -181,6 +181,7 @@ public class UserTest {
         SetupValidUser();
         SUT.Insert();
         Assert.assertNotNull(SUT.getID());
+        Assert.assertTrue(SUT.getID() > 0);
     }
     
     @Test
