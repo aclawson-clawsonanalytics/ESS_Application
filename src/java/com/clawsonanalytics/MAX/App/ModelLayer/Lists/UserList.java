@@ -41,5 +41,15 @@ public class UserList extends ArrayList {
         return usersByAccount;
     }
     
+    public static List<User> ByCampus(int campusID){
+        List<User> usersByCampus = new ArrayList<>();
+        for(User user: allUsers){
+            if(user.getCampusID() == campusID){
+                usersByCampus.add(user);
+            }
+        }
+        return usersByCampus;
+    }
+    
     
 }

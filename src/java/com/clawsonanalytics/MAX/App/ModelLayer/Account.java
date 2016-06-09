@@ -258,6 +258,9 @@ public class Account extends SQLModel {
         return UserList.ByAccount(this.getID());
     }
     
+    public List<Campus> CampusList(){
+        return CampusList.ByAccount(this.getID());
+    }
     
     
     
