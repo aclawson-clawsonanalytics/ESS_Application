@@ -35,13 +35,13 @@
         </div>
 
             <div class="row">
-                <div class="small-4 columns" align="center">
+                
                     <jsp:include page="/WEB-INF/fragments/login_menu.jsp"/>
-                </div>
-                <div class="small-8 columns">
+                
+               
                     <!--Startup Content here-->
                     <jsp:include page="/WEB-INF/views/startup/startup_content.jsp"/>
-                </div>
+                
             </div>
 
                 <div class="row footer" align="center">
