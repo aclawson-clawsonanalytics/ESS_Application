@@ -16,7 +16,7 @@ import java.util.List;
  * @author andrewclawson
  */
 public class CampusList extends ArrayList {
-    private List<Campus> allCampuses = Campus.GetAll();
+    private static List<Campus> allCampuses = Campus.GetAll();
     
     public CampusList(){
         
@@ -29,7 +29,7 @@ public class CampusList extends ArrayList {
         super.add(campus);
     }
     
-    public List<Campus> ByAccount(int accountID){
+    public static List<Campus> ByAccount(int accountID){
         List<Campus> campusesByAccount = new ArrayList<Campus>();
         for (Campus campus : allCampuses){
             if (campus.getAccountID() == accountID){
