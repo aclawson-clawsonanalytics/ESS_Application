@@ -5,6 +5,7 @@
  */
 package com.clawsonanalytics.MAX.App.ModelLayer;
 import com.clawsonanalytics.MAX.App.ModelLayer.Lists.UserList;
+import com.clawsonanalytics.MAX.App.ModelLayer.Lists.CampusList;
 import com.clawsonanalytics.MAX.App.ModelLayer.Interface.IValidatable;
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
@@ -36,6 +37,7 @@ public class Account extends SQLModel {
     
     private User manager;
     private UserList userList;
+    private CampusList campusList;
     // Constructor
     public Account(){
         //this.setManager(managerID);

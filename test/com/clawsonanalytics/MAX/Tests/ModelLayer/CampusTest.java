@@ -263,7 +263,7 @@ public class CampusTest {
         testAccount.Insert();
         SUT = new ValidCampus();
         SUT.setAccountID(testAccount.getID());
-        Assert.assertEquals(SUT.Account().getID(), testAccount.getID());
-        
+        Assert.assertNotNull(SUT.Account());
+        Assert.assertEquals(SUT.Account().getName(), testAccount.getName());
     }
 }
