@@ -42,6 +42,7 @@ public class Account extends SQLModel {
         //this.setManager(managerID);
         this.setCreationDate(new Date(Calendar.getInstance().getTime().getTime()));
         
+        
 
         
     }
@@ -141,6 +142,7 @@ public class Account extends SQLModel {
         return count;
     }
     
+    
     public static List<Account> GetAll(){
         List<Account> allAccounts = new ArrayList<Account>();
         String selectString = "SELECT * FROM " + Account.getTablename() +";";
@@ -190,6 +192,9 @@ public class Account extends SQLModel {
                 keys.next();
                 int id = keys.getInt(1);
                 this.setID(id);
+                Campus nullCampus = Campus.CreateNullCampus(this.getID());
+                nullCampus.Insert();
+                
                 mysql.Connector.CloseResources();
                 
                 

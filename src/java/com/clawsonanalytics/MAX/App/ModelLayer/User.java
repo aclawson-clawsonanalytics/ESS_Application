@@ -30,8 +30,12 @@ public class User extends SQLModel {
     private String password;
     //private static List foreignKeyRelations;
     //private static List childModelRelations = new ArrayList();
-    private int account_id;
-    private int campus_id;
+    private int account_id; //Database Foreign key
+    private Account account; // Model
+    
+    private int campus_id; // Database Foreign key
+    private Campus campus; // Model
+    
     private int is_account_manager;
     private int is_school_admin;
     private int is_instructor;
@@ -93,12 +97,34 @@ public class User extends SQLModel {
         return this.account_id;
     }
     
+    private void LoadAccount(){
+        this.account = Account.GetByID(this.account_id);
+    }
+    
+    public Account Account(){
+        if(this.account == null){
+            LoadAccount();
+        }
+        return this.account;
+    }
+    
     public void setCampusID(int id){
         this.campus_id = id;
     }
     
     public int getCampusID(){
         return this.campus_id;
+    }
+    
+    private void LoadCampus(){
+        this.campus = Campus.GetByID(this.campus_id);
+    }
+    
+    public Campus Campus(){
+        if(this.campus == null){
+            LoadCampus();
+        }
+        return this.campus;
     }
     
     public void setAccountManagerValue(int val){

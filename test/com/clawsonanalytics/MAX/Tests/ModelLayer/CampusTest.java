@@ -255,4 +255,15 @@ public class CampusTest {
         SUT = Campus.GetByID(sutID);
         Assert.assertEquals(SUT.getPO(),newPO);
     }
+    
+    @Test
+    public void AccountModelIsNotNull(){
+        
+        Account testAccount = new ValidAccount();
+        testAccount.Insert();
+        SUT = new ValidCampus();
+        SUT.setAccountID(testAccount.getID());
+        Assert.assertEquals(SUT.Account().getID(), testAccount.getID());
+        
+    }
 }

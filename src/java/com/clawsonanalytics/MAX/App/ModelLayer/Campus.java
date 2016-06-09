@@ -40,6 +40,9 @@ public class Campus extends SQLModel {
     private Date creation_date;
     private Date close_date;
     
+    //Model layer relations
+    private Account parentAccount;
+    
     public Campus() {
         foreignKeyRelations.add(Account.class);
     }
@@ -96,6 +99,38 @@ public class Campus extends SQLModel {
         return this.po_box;
     }
     
+    public void setAccountID(int id){
+        this.account_id = id;
+        LoadAccount();
+    }
+    
+    public int getAccountID(){
+        return this.account_id;
+    }
+    
+    private void LoadAccount(){
+        parentAccount = Account.GetByID(this.account_id);
+        
+    }
+    
+    public Account Account(){
+        if(this.parentAccount == null){
+            LoadAccount();
+        }
+        return this.parentAccount;
+    }
+    
+    public static Campus CreateNullCampus(int accountID){
+        Campus nullCampus = new Campus();
+        nullCampus.setName("Null");
+        nullCampus.setAddress("Null");
+        nullCampus.setCity("Null");
+        nullCampus.setState("Null");
+        nullCampus.setZip("Null");
+        nullCampus.setPO("Null");
+        nullCampus.setAccountID(accountID);
+        return nullCampus;
+    }
     
     public static int Count(){
         int count = 0;
@@ -150,7 +185,7 @@ public class Campus extends SQLModel {
     public void Insert(){
         if(this.IsValid()){
             String insertString = "INSERT INTO " + getTablename()
-                    + " VALUES (?,?,?,?,?,?,?);";
+                    + " VALUES (?,?,?,?,?,?,?,?);";
             MySQLManager mysql = new MySQLManager();
             PreparedStatement preparedStatement;
             ResultSet keys;
@@ -180,7 +215,8 @@ public class Campus extends SQLModel {
                     + "city = ?, "
                     + "state = ?, "
                     + "zip = ?, "
-                    + "po = ? WHERE id = ?;";
+                    + "po = ?, "
+                    + "account_id = ? WHERE id = ?;";
             try{
                 preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
                 preparedStatement = PrepareStatementForUpdate(preparedStatement);
@@ -201,6 +237,7 @@ public class Campus extends SQLModel {
             preparedStatement.setString(5,this.getState());
             preparedStatement.setString(6,this.getZip());
             preparedStatement.setString(7,this.getPO());
+            preparedStatement.setInt(8, this.getAccountID());
         }catch(SQLException e){
             
         }
@@ -217,7 +254,8 @@ public class Campus extends SQLModel {
             preparedStatement.setString(4,this.getState());
             preparedStatement.setString(5, this.getZip());
             preparedStatement.setString(6, this.getPO());
-            preparedStatement.setInt(7, this.getID());
+            preparedStatement.setInt(7,this.getAccountID());
+            preparedStatement.setInt(8, this.getID());
         }catch(SQLException e){
             
         }
@@ -234,6 +272,7 @@ public class Campus extends SQLModel {
             newCampus.setState(results.getString("state"));
             newCampus.setZip(results.getString("zip"));
             newCampus.setPO(results.getString("po"));
+            newCampus.setAccountID(results.getInt("account_id"));
         }catch(SQLException e){
            e.getMessage();
         }
