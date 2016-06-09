@@ -37,12 +37,8 @@
             <div class="row">
                 
                     <jsp:include page="/WEB-INF/fragments/login_menu.jsp"/>
-                
-               
-                    <!--Startup Content here-->
-                    <jsp:include page="/WEB-INF/views/startup/startup_content.jsp"/>
-                
             </div>
+            
 
                 <div class="row footer" align="center">
                     <jsp:include page="/WEB-INF/fragments/footer.jsp"/>

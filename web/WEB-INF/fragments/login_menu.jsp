@@ -77,9 +77,10 @@
     <!-- original content goes in this container -->
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="row column">
-        <img src="http://placehold.it/2000x3000" alt="" />
+          <jsp:include page="/WEB-INF/views/startup/startup_content.jsp"/>
       </div>
     </div>
+
 
   <!-- close wrapper, no more content after this -->
   </div>
