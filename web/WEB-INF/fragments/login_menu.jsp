@@ -14,7 +14,7 @@
     <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
       <div class="title-bar-left">
         <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
-        <span class="title-bar-title">Foundation</span>
+        <span class="title-bar-title">Login</span>
       </div>
       <div class="title-bar-right">
         <span class="title-bar-title">Login</span>
@@ -25,9 +25,9 @@
     <!-- off-canvas left menu -->
     <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
       <ul class="vertical dropdown menu" data-dropdown-menu>
-        <li><a href="left_item_1">Left item 1</a></li>
-        <li><a href="left_item_2">Left item 2</a></li>
-        <li><a href="left_item_3">Left item 3</a></li>
+          <li><input type="text" placeholder="Email"></input></li>
+          <li><input type="password" placeholder="Password"</input></li>
+          <li><a class="button">Login</a></li>
       </ul>
     </div>
 
@@ -42,6 +42,7 @@
 
     <!-- "wider" top-bar menu for 'medium' and up -->
     <div id="widemenu" class="top-bar">
+        <!--
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
           <li class="menu-text">Foundation</li>
@@ -63,10 +64,12 @@
           </li>
         </ul>
       </div>
+        -->
       <div class="top-bar-right">
         <ul class="menu">
-          <li><input type="search" placeholder="Search"></li>
-          <li><button class="button">Search</button></li>
+          <li><input type="text" placeholder="Email"></li>
+          <li><input type="password" placeholder="Password"></li>
+          <li><a class="button">Login</a></li>
         </ul>
       </div>
     </div>
