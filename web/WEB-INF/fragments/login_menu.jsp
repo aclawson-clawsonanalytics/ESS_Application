@@ -13,7 +13,7 @@
     <!-- off-canvas title bar for 'small' screen -->
     <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
       <div class="title-bar-left">
-        <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+        <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
         <span class="title-bar-title">Login</span>
       </div>
       
