@@ -53,8 +53,8 @@
             </div> <!-- End wide menu -->
             
             <div class="off-canvas-content" data-off-canvas-content>
-      <div class="row column">
-          <jsp:include page="/WEB-INF/views/startup/startup_content.jsp"/>
+      <div class="row column dashboard_content">
+          DASHBOARD CONTENT COMING SOON
       </div>
     </div>
         </div>

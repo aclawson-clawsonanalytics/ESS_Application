@@ -5,7 +5,7 @@ bold faced style guides.
 */
 b.appLabel
 {
-    color:blue;
+    color:#00ff33
 }
 
 /*
@@ -16,7 +16,7 @@ DIV style guides.
 /*Header*/
 div.header
 {
-    background:linear-gradient(to bottom right,white,green);
+    background:linear-gradient(to bottom right,#999999,blue);
 }
 
 /*Menus*/
