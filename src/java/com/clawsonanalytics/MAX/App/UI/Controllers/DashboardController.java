@@ -35,9 +35,17 @@ public class DashboardController {
     @RequestMapping(value="/dashboard", method=RequestMethod.POST)
     public ModelAndView MainDashboardControl(HttpServletRequest request){
         HttpSession session = request.getSession();
+        String email;
+        String password;
+        if(request.getParameter("loginEmail") != null && request.getParameter("loginPassword") != null){
+            email = request.getParameter("loginEmail");
+            password = request.getParameter("loginPassword");
+        }
+        else{
+            email = request.getParameter("mobileLoginEmail");
+            password = request.getParameter("mobileLoginPassword");
+        }
         
-        String email = request.getParameter("loginEmail");
-        String password = request.getParameter("loginPassword");
         
         ModelAndView modelView = new ModelAndView();
         try{
@@ -53,7 +61,7 @@ public class DashboardController {
                 
             }else{
                 modelView.setViewName("redirect:startup.htm");
-                modelView.addObject("loginError","Invalid credentials");
+                //modelView.addObject("loginError","Invalid credentials");
                 session.setAttribute("loginError", "Invalid credentials");
                 
             }

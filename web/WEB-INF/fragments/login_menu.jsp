@@ -24,7 +24,7 @@
         <form id="mobileLoginForm" action="${pageContext.request.contextPath}/dashboard.htm" method="post">
       <ul class="vertical dropdown menu" data-dropdown-menu>
           <li><input id="mobileLoginEmail" name="mobileLoginEmail" type="text" placeholder="Email"></li>
-          <li><input id="mobileLoginPassword" name="mobileLoginEmail" type="password" placeholder="Password"></li>
+          <li><input id="mobileLoginPassword" name="mobileLoginPassword" type="password" placeholder="Password"></li>
           <li><a class="button" onclick="ValidateMobileLogin();">Login</a></li>
       </ul>
         </form>
@@ -88,4 +88,5 @@
   <!-- close wrapper, no more content after this -->
   </div>
 </div>
+      <script src="js/login.js"></script>
 </html>
