@@ -32,15 +32,16 @@
             <div class="row">
                 <jsp:include page="/WEB-INF/fragments/dashboard_topbar.jsp"/>
             </div>
-            
+            <!--
         <div class="row">
             <div class="dashboard_content">
                 <div class="small-12 columns">
-                    <!--Startup Content here-->
+                    
                     <h1 id="contentBody">Dashboard Content here</h1>
                 </div>
             </div>
         </div>
+            -->
         <div class="row" align="center">
             <jsp:include page="/WEB-INF/fragments/footer.jsp"/>
         </div>

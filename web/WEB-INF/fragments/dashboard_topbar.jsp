@@ -1,73 +1,62 @@
 <%-- 
     Document   : dashboard_topbar
-    Created on : May 18, 2016, 11:30:23 PM
+    Created on : Jun 10, 2016, 1:26:37 PM
     Author     : andrewclawson
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/foundation.css"/>
-<link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/app.css"/>
-
 <!DOCTYPE html>
-<div class="top-bar">
-  
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text">MAX School Solutions</li>
-        <c:if test="${pageContext.session.getAttribute('activeUser').IsAccountManager()}">
-        <li>
-            <a href="#">Account Administration</a>
-            <ul class="menu vertical">
-                <li><a>Account Settings</a></li>
-                <li><a>Configure Users</a></li>
-                <li><a>Billing</a></li>
-            </ul>
-        </li>
-        </c:if>
-        <c:if test="${pageContext.session.getAttribute('activeUser').IsSchoolAdmin()}">
-      <li>
-        <a href="#">School Administration</a>
-        <ul class="menu vertical">
-          <li><a href="#">School Settings</a></li>
-          <li><a href="#">School Settings</a></li>
-          <li><a href="#">Student Data</a></li>
-          <li><a href="#">Reports</a></li>
-        </ul>
-      </li>
-        </c:if>
-      <c:if test="${pageContext.session.getAttribute('activeUser').IsInstructor()}">
-      <li><a href="#">Instructor</a>
-        <ul class="menu vertical">
-            <li><a onclick="LoadGradebook();">Gradebook</a></li>
-            <li><a href="#">Attendance</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Email</a></li>
-        </ul>
-      </li>
-      </c:if>
-      
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-        <!--
-      <li><input type="search" placeholder="Search"></li>
-      <li><button type="button" class="button">Search</button></li>
-        -->
-      
-        <li><a href="#">Tech Support</a></li>
-      
-      
-      <li><a href="${pageContext.request.contextPath}/logout.htm">Logout</a></li>
-    </ul>
-    <b>User: </b>${pageContext.session.getAttribute("activeUser").getEmail()}
-  </div>
-    
-</div>
-
-
+<html>
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            
+            <!-- Define:
+                1. Title bar for small screen
+                2. Data content of hidden menu
+                3. Wide screen menu 
+                4. Content display
+            
+            <!--Off-canvas title bar for small screen-->
+            <div class="title-bar" data-responsive-toggle="dashboardWideMenu" data-hide-for="medium">
+                <div class="title-bar-left">
+                    <button class="menu-icon" type="button" data-toggle="mobileDashboardMenu"></button>
+                    <span class="title-bar-title">Menu</span>
+                </div>
+            </div>
+            
+            
+            <!-- Data content of hidden menu -->
+            <div class="off-canvas position-left" id="mobileDashboardMenu" data-off-canvas>
+                <ul class="vertical accordion-menu menu" data-accordion-menu>
+                    <jsp:include page="/WEB-INF/views/dashboard/dashboard_menu_data.jsp"/>
+                    <li></li>
+                    <li></li>
+                    <jsp:include page="/WEB-INF/views/dashboard/dashboard_menu_utility_options.jsp"/>
+                </ul>
+                
+            </div>
+            
+            
+            <!-- Wide menu -->
+            <div id="dashboardWideMenu" class="top-bar">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <jsp:include page="/WEB-INF/views/dashboard/dashboard_menu_data.jsp"/>
+                    </ul>
+                </div>
+                    
+                    <div class="top-bar-right">
+                        <ul class="menu">
+                            <jsp:include page="/WEB-INF/views/dashboard/dashboard_menu_utility_options.jsp"/>
+                        </ul>
+                    </div>
+            </div> <!-- End wide menu -->
+            
+            <div class="off-canvas-content" data-off-canvas-content>
+      <div class="row column">
+          <jsp:include page="/WEB-INF/views/startup/startup_content.jsp"/>
+      </div>
+    </div>
+        </div>
+    </div>
+</html>
