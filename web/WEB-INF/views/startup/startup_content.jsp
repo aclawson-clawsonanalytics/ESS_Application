@@ -16,7 +16,7 @@
     </head>
     <body>
         <!-- Header -->
-        <div class="blog-post">
+        <div class="blog-post" align="center">
             <h3>Check out what's new with <app:AppName/>!<small>5/24/2016</small></h3>
             <!--<img class="thumbnail" src="http://placehold.it/850x350">-->
             <img class="thumbnail" src="images/bookstack.jpg"/>

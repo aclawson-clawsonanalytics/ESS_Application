@@ -12,11 +12,13 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/test/com/clawsonanalytics/MAX/Tests/ModelLayer/CampusTest.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/test/com/clawsonanalytics/MAX/Tests/ModelLayer/UserTest.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/Account.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/User.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/Campus.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/startup/startup_content.jsp</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/js/login.js</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/fragments/login_menu_old.jsp</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/fragments/dashboard_topbar.jsp</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/UI/Controllers/DashboardController.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/startup/startup_view.jsp</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/fragments/login_menu.jsp</file>
         </group>
     </open-files>
 </project-private>
