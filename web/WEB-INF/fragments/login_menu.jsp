@@ -21,11 +21,13 @@
 
     <!-- off-canvas left menu -->
     <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+        <form id="mobileLoginForm" action="${pageContext.request.contextPath}/dashboard.htm" method="post">
       <ul class="vertical dropdown menu" data-dropdown-menu>
-          <li><input type="text" placeholder="Email"></li>
-          <li><input type="password" placeholder="Password"></li>
-          <li><a class="button">Login</a></li>
+          <li><input id="mobileLoginEmail" name="mobileLoginEmail" type="text" placeholder="Email"></li>
+          <li><input id="mobileLoginPassword" name="mobileLoginEmail" type="password" placeholder="Password"></li>
+          <li><a class="button" onclick="ValidateMobileLogin();">Login</a></li>
       </ul>
+        </form>
     </div>
 
     <!-- off-canvas right menu -->
@@ -65,11 +67,13 @@
       </div>
         -->
       <div class="top-bar-right">
+          <form id="loginForm" action="${pageContext.request.contextPath}/dashboard.htm" method="post">
         <ul class="menu">
-          <li><input type="text" placeholder="Email"></li>
-          <li><input type="password" placeholder="Password"></li>
-          <li><a class="button">Login</a></li>
+          <li><input id="loginEmail" name="loginEmail" type="text" placeholder="Email"></li>
+          <li><input id="loginPassword" name="loginPassword" type="password" placeholder="Password"></li>
+          <li><a class="button" onclick="ValidateLoginForm();">Login</a></li>
         </ul>
+          </form>
       </div>
     </div>
 

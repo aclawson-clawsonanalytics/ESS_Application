@@ -17,3 +17,13 @@ function ValidateLoginForm(){
     }
 }
 
+function ValidateMobileLogin(){
+    var loginForm = document.getElementById("mobileLoginForm");
+    var email = document.getElementById("mobileLoginEmail");;
+    var password = document.getElementById("mobileLoginPassword");
+    if (!email || !password){
+        alert("Missing username or password.");
+    } else{
+        loginForm.submit();
+    }
+}
