@@ -29,8 +29,7 @@
             <div class="off-canvas position-left" id="mobileDashboardMenu" data-off-canvas>
                 <ul class="vertical accordion-menu menu" data-accordion-menu>
                     <jsp:include page="/WEB-INF/views/dashboard/dashboard_menu_data.jsp"/>
-                    <li></li>
-                    <li></li>
+                    <li><br><br></li>
                     <jsp:include page="/WEB-INF/views/dashboard/dashboard_menu_utility_options.jsp"/>
                 </ul>
                 
