@@ -27,17 +27,56 @@
             <button class="close-button" aria-label="Close menu" type="button" data-close>
                 <span aria-hidden="true">&times;</span>
             </button>
+            
           <ul class="vertical accordion-menu menu" data-accordion-menu>
               <li><br><br></li>
+              
+              <c:if test="${pageContext.session.getAttribute('activeUser').IsAccountManager()}">
               <li>
-                  <a>Item 1</a>
+              
+                  <a><b>Account Admin</b></a>
                   <ul class="menu vertical">
-                      <li><a>sub item 1</a></li>
+                      <li><a>Account Info</a></li>
+                      <li><a>Manage Users</a></li>
+                      <li><a>Account Settings</a></li>
                   </ul>
+              
               </li>
-            <li><a href="#">Left item 2</a></li>
-            <li><a href="#">Left item 3</a></li>
+              </c:if>
+            
+            
+              
+              
+              <c:if test="${pageContext.session.getAttribute('activeUser').IsSchoolAdmin()}">
+              <li>
+                  <a href="#"><b>School Admin</b></a>
+                <ul class="menu vertical">
+                    <li><a>Personnel</a></li>
+                    <li><a>Academics</a></li>
+                    <li><a>Data</a></li>
+                </ul>
+                    
+              </li>
+              </c:if>
+              
+              <c:if test="${pageContext.session.getAttribute('activeUser').IsInstructor()}">
+                  <li>
+                      <a><b>Instructor</b></a>
+                      <ul class="menu vertical">
+                          <li><a>Grade Book</a></li>
+                          <li><a>Attendance</a></li>
+                          <li><a>Classes</a></li>
+                          <li><a>Data</a></li>
+                      </ul>
+                  </li>
+              </c:if>
+                  
+                  <li class="divider"><br><br></li>
+                  
+                  <li><a>Tech Support</a></li>
+                  <li><a href="${pageContext.request.contextPath}/logout.htm">Logout</a></li>
           </ul>
+           
         </div>
 
     <!-- off-canvas right menu -->
