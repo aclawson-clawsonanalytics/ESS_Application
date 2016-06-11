@@ -4,6 +4,10 @@
     Author     : andrewclawson
 --%>
 
+<%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -94,31 +98,49 @@
     <div id="widemenu" class="top-bar">
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text">Foundation</li>
-          <li class="has-submenu">
-            <a href="#">Item 1</a>
-            <ul class="menu submenu vertical" data-submenu>
-              <li><a href="left_wide_11">Left wide 1</a></li>
-              <li><a href="left_wide_12">Left wide 2</a></li>
-              <li><a href="left_wide_13">Left wide 3</a></li>
+          
+          
+          <c:if test="${pageContext.session.getAttribute('activeUser').IsAccountManager()}">
+          <li data-toggle>
+              <a><b>Account Admin</b></a>
+            <ul class="menu vertical">
+                <li data-close><a>Account Info</a></li>
+                <li data-close><a>Manage Users</a></li>
+                <li data-close><a>Settings</a></li>
             </ul>
           </li>
-          <li class="has-submenu">
-            <a href="#">Item 2</a>
-            <ul class="menu submenu vertical" data-submenu>
-              <li><a href="left_wide_21">Left wide 1</a></li>
-              <li><a href="left_wide_22">Left wide 2</a></li>
-              <li><a href="left_wide_23">Left wide 3</a></li>
+          </c:if>
+          
+          <c:if test="${pageContext.session.getAttribute('activeUser').IsSchoolAdmin()}">
+          <li data-toggle>
+              <a><b>School Admin</b></a>
+            <ul class="menu vertical">
+                <li data-close><a>Personnel</a></li>
+                <li data-close><a>Academics</a></li>
+              <li data-close><a>Data</a></li>
             </ul>
           </li>
+          </c:if>
+          
+          <c:if test="${pageContext.session.getAttribute('activeUser').IsInstructor()}">
+              <li data-toggle>
+                  <a><b>Instructor</b></a>
+                  <ul class="menu vertical">
+                      <li data-close><a>Grade Book</a></li>
+                      <li data-close><a>Attendance</a></li>
+                      <li data-close><a>Classes</a></li>
+                      <li data-close><a>Data</a></li>
+                  </ul>
+              </li>
+          </c:if>
         </ul>
       </div>
         
         
       <div class="top-bar-right">
         <ul class="menu">
-          <li><input type="search" placeholder="Search"></li>
-          <li><button class="button">Search</button></li>
+            <li><a>Tech Support</a></li>
+            <li><a href="${pageContext.request.contextPath}/logout.htm">Logout</a></li>
         </ul>
       </div>
         
