@@ -7,4 +7,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <li><a>Tech Support</a></li>
-<li><a>Logout</a></li>
+<li><a href="${pageContext.request.contextPath}/logout.htm">Logout</a></li>

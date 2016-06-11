@@ -13,25 +13,42 @@
 <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/foundation.css"/>
 <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/app.css"/>
 <!DOCTYPE html>
-
+                    <!-- Check if user is an account manager -->
+                    <c:if test="${pageContext.session.getAttribute('activeUser').IsAccountManager()}">
                         <li>
                             <a>Account Admin</a>
                             <ul class="menu vertical">
-                                <li><a>Account admin option 1</a></li>
-                                <li><a>Account admin option 2</a></li>
+                                <li><a>Management</a></li>
+                                <li><a>Data</a></li>
+                                <li><a>Finances</a></li>
+                                
                             </ul>
                         </li>
+                    </c:if>
+                        
+                    <!-- Check if user is school administration role -->
+                    <c:if test="${pageContext.session.getAttribute('activeUser').IsSchoolAdmin()}">
                         <li>
                             <a>School Admin</a>
                             <ul class="menu vertical">
-                                <li><a>School admin option 1</a></li>
-                                <li><a>School admin option 2</a></li>
+                                <li><a>Personnel</a></li>
+                                <li><a>Curriculum</a></li>
+                                <li><a>Data</a></li>
+                                <li><a>Academics</a></li>
                             </ul>
                         </li>
+                        
+                    </c:if>
+                            
+                    <!-- Check if user is an instructor -->
+                    <c:if test="${pageContext.session.getAttribute('activeUser').IsInstructor()}">
                         <li>
                             <a>Instructor</a>
                             <ul class="menu vertical">
                                 <li><a>Gradebook</a></li>
                                 <li><a>Attendance</a></li>
+                                <li><a>Student Data</a></li>
+                                <li><a>Report Cards</a></li>
                             </ul>
-                        </li>           
+                        </li> 
+                    </c:if>

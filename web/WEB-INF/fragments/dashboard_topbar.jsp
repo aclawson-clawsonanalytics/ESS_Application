@@ -48,6 +48,9 @@
                         <ul class="menu">
                             <jsp:include page="/WEB-INF/views/dashboard/dashboard_menu_utility_options.jsp"/>
                         </ul>
+                            <b>User: </b>${pageContext.session.getAttribute("activeUser").getEmail()}<br>
+                            <b>Account: </b>${pageContext.session.getAttribute("activeUser").Account().getName()}<br>
+                        <b>Campus: </b>${pageContext.session.getAttribute("activeUser").Campus().getName()}
                     </div>
             </div> <!-- End wide menu -->
             
