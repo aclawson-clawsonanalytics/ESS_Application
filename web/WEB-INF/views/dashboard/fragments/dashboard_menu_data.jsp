@@ -17,7 +17,7 @@
                     <c:if test="${pageContext.session.getAttribute('activeUser').IsAccountManager()}">
                         <li>
                             <a>Account Admin</a>
-                            <ul class="menu vertical">
+                            <ul class="menu vertical" data-accordion>
                                 <li><a>Management</a></li>
                                 <li><a>Data</a></li>
                                 <li><a>Finances</a></li>
@@ -30,7 +30,7 @@
                     <c:if test="${pageContext.session.getAttribute('activeUser').IsSchoolAdmin()}">
                         <li>
                             <a>School Admin</a>
-                            <ul class="menu vertical">
+                            <ul class="menu vertical" data-accordion>
                                 <li><a>Personnel</a></li>
                                 <li><a>Curriculum</a></li>
                                 <li><a>Data</a></li>
@@ -44,7 +44,7 @@
                     <c:if test="${pageContext.session.getAttribute('activeUser').IsInstructor()}">
                         <li>
                             <a>Instructor</a>
-                            <ul class="menu vertical">
+                            <ul class="menu vertical" data-accordion>
                                 <li><a>Gradebook</a></li>
                                 <li><a>Attendance</a></li>
                                 <li><a>Student Data</a></li>

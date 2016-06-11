@@ -30,7 +30,7 @@
             </div>
         </div>
             <div class="row">
-                <jsp:include page="/WEB-INF/fragments/dashboard_topbar.jsp"/>
+                <jsp:include page="/WEB-INF/views/dashboard/dashboard_view.jsp"/>
             </div>
             <!--
         <div class="row">

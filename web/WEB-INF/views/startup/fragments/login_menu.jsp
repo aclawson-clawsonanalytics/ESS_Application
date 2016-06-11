@@ -13,7 +13,7 @@
     <!-- off-canvas title bar for 'small' screen -->
     <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
       <div class="title-bar-left">
-        <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
+        <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
         <span class="title-bar-title">Login</span>
       </div>
       
@@ -21,8 +21,15 @@
 
     <!-- off-canvas left menu -->
     <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+        
         <form id="mobileLoginForm" action="${pageContext.request.contextPath}/dashboard.htm" method="post">
       <ul class="vertical dropdown menu" data-dropdown-menu>
+          <li><br><br></li>
+          <li>
+              <button class="close-button" aria-label="Close menu" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+            </button>
+          </li>
           <li><input id="mobileLoginEmail" name="mobileLoginEmail" type="text" placeholder="Email"></li>
           <li><input id="mobileLoginPassword" name="mobileLoginPassword" type="password" placeholder="Password"></li>
           <li><a class="button" onclick="ValidateMobileLogin();">Login</a></li>
