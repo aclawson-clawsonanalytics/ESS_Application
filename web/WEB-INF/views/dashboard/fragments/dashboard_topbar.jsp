@@ -18,7 +18,7 @@
         <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
           <div class="title-bar-left">
             <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
-            <span class="title-bar-title">Foundation</span>
+            <span class="title-bar-title">Dashboard Menu</span>
           </div>
           <div class="title-bar-right">
               <!--
