@@ -20,11 +20,13 @@
             <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
             <span class="title-bar-title">Foundation</span>
           </div>
+            <!--
           <div class="title-bar-right">
             <span class="title-bar-title">Login</span>
             <button class="menu-icon" type="button" data-toggle="offCanvasRight"></button>
           </div>
         </div>
+            -->
 
     <!-- off-canvas left menu -->
         <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
@@ -83,16 +85,7 @@
            
         </div>
 
-    <!-- off-canvas right menu -->
-    <!--
-        <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
-          <ul class="vertical dropdown menu" data-dropdown-menu>
-            <li><a href="right_item_1">Right item 1</a></li>
-            <li><a href="right_item_2">Right item 2</a></li>
-            <li><a href="right_item_3">Right item 3</a></li>
-          </ul>
-        </div>
-    -->
+    
 
     <!-- "wider" top-bar menu for 'medium' and up -->
     <div id="widemenu" class="top-bar">
