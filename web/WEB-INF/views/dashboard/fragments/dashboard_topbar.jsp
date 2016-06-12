@@ -21,8 +21,10 @@
             <span class="title-bar-title">Foundation</span>
           </div>
           <div class="title-bar-right">
+              <!--
             <span class="title-bar-title">Login</span>
             <button class="menu-icon" type="button" data-toggle="offCanvasRight"></button>
+              -->
           </div>
         </div>
 
