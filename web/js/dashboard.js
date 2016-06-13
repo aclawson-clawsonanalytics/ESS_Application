@@ -8,5 +8,9 @@ function LoadGradebook(){
     document.getElementById("contentBody").innerHTML = "Gradbook content loaded.";
 }
 
+function LoadTechSupportContent(){
+    
+}
+
 
 
