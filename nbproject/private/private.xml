@@ -12,14 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/User.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/instructor/gradebook/content/gradebookContentTest.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/styles/foundation-6.2.1-complete/css/app.css</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/dashboard/fragments/info_bar.jsp</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/js/login.js</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/dashboard/dashboard_view.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/dashboard/content/pendingMessage.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/dashboard/fragments/newhtml.html</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/UI/Controllers/DashboardController.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/techsupport/tech_support_view.jsp</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/js/dashboard.js</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/startup/fragments/login_menu.jsp</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/startup/startup_view.jsp</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/dashboard/fragments/dashboard_topbar.jsp</file>
         </group>
