@@ -22,7 +22,7 @@
             <form id="techsupport-form">
                 <label><b>Email:</b></label>
                     <input type="email" placeholder="${pageContext.session.getAttribute('activeUser').getEmail()}">
-                    <textarea rows="15" name="comment" form="techsupport-form" placeholder="How can we assist you today?">
+                    <textarea rows="10" name="comment" form="techsupport-form" placeholder="How can we assist you today?">
                         
                     </textarea>
                     <a class="button">Contact Tech Support</a>
