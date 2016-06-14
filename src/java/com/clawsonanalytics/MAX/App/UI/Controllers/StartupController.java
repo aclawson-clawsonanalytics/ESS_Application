@@ -39,7 +39,7 @@ public class StartupController {
         HttpSession session = request.getSession();
         ModelAndView modelView = new ModelAndView();
         modelView.setViewName("startup/startup");
-        session.setAttribute("dynamicContent", "/WEB-INF/views/startup/startup_content.jsp");
+        request.setAttribute("dynamicContent", "/WEB-INF/views/startup/startup_content.jsp");
         
         return modelView;
     }
@@ -49,7 +49,7 @@ public class StartupController {
         
         ModelAndView modelView = new ModelAndView();
         modelView.setViewName("techsupport/techsupport");
-        
+        request.setAttribute("dynamicContent","/WEB-INF/views/techsupport/fragments/techsupport_form.jsp");
         return modelView;
     }
 }
