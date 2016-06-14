@@ -264,7 +264,7 @@ public class User extends SQLModel {
     public void Insert(){
         if (this.IsValid()){
             String insertString = "INSERT INTO " + getTablename()
-                    + " VALUES (?,?,?,?,?,?,?,?,?);";
+                    + " VALUES (?,?,?,?,?,?,?,?,?,?);";
             MySQLManager mysql = new MySQLManager();
             PreparedStatement preparedStatement;
             ResultSet keys;
@@ -297,6 +297,7 @@ public class User extends SQLModel {
                     + "email = ?, "
                     + "password = ?, "
                     + "account_id = ?, "
+                    + "campus_id = ?, "
                     + "isAccountManager = ?, "
                     + "isSchoolAdmin = ?, "
                     + "isInstructor = ? WHERE id = ?;";
@@ -326,9 +327,10 @@ public class User extends SQLModel {
             preparedStatement.setString(4, this.getEmail()); // set email
             preparedStatement.setString(5, this.getPassword()); // set 
             preparedStatement.setInt(6, this.getAccountID());
-            preparedStatement.setInt(7, this.getAccountManagerValue());
-            preparedStatement.setInt(8, this.getSchoolAdminValue());
-            preparedStatement.setInt(9, this.getInstructorValue());
+            preparedStatement.setInt(7,this.getCampusID());
+            preparedStatement.setInt(8, this.getAccountManagerValue());
+            preparedStatement.setInt(9, this.getSchoolAdminValue());
+            preparedStatement.setInt(10, this.getInstructorValue());
             
             
         }catch (SQLException e){
@@ -345,11 +347,12 @@ public class User extends SQLModel {
             preparedStatement.setString(3, this.getEmail());
             preparedStatement.setString(4,this.getPassword());
             preparedStatement.setInt(5,this.getAccountID());
-            preparedStatement.setInt(6, this.getAccountManagerValue());
-            preparedStatement.setInt(7, this.getSchoolAdminValue());
-            preparedStatement.setInt(8, this.getInstructorValue());
-            //preparedStatement.setInt(6,this.getCampusID());
-            preparedStatement.setInt(9,this.getID());
+            preparedStatement.setInt(6, this.getCampusID());
+            preparedStatement.setInt(7, this.getAccountManagerValue());
+            preparedStatement.setInt(8, this.getSchoolAdminValue());
+            preparedStatement.setInt(9, this.getInstructorValue());
+            
+            preparedStatement.setInt(10,this.getID());
         }catch(SQLException e){
             
         }
@@ -365,6 +368,7 @@ public class User extends SQLModel {
             newUser.setEmail(result.getString("email"));
             newUser.setPassword(result.getString("password"));
             newUser.setAccountID(result.getInt("account_id"));
+            newUser.setAccountID(result.getInt("campus_id"));
             newUser.setAccountManagerValue(result.getInt("isAccountManager"));
             newUser.setSchoolAdminValue(result.getInt("isSchoolAdmin"));
             newUser.setInstructorValue(result.getInt("isInstructor"));
