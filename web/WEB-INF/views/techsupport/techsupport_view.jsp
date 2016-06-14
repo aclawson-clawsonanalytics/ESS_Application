@@ -25,7 +25,7 @@
                     <jsp:include page="/WEB-INF/views/startup/fragments/login_menu.jsp"/>
             </div>
             <div class="row techsupport-form">
-                <jsp:include page="/WEB-INF/views/techsupport/fragments/techsupport_form.jsp"/>
+                
             </div>
      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
