@@ -87,7 +87,7 @@
     <!-- original content goes in this container -->
     <div class="off-canvas-content" data-off-canvas-content>
       <div class="row column">
-          <jsp:include page="/WEB-INF/views/startup/startup_content.jsp"/>
+          <jsp:include page="${pageContext.session.getAttribute('dynamicContent')}"/>
       </div>
     </div>
 

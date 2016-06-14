@@ -36,16 +36,20 @@ public class StartupController {
     
     @RequestMapping(value="/startup")
     public ModelAndView startup(HttpServletRequest request){
+        HttpSession session = request.getSession();
         ModelAndView modelView = new ModelAndView();
         modelView.setViewName("startup/startup");
+        session.setAttribute("dynamicContent", "/WEB-INF/views/startup/startup_content.jsp");
         
         return modelView;
     }
     
     @RequestMapping(value="/techsupport")
     public ModelAndView TechSupport(HttpServletRequest request){
+        
         ModelAndView modelView = new ModelAndView();
         modelView.setViewName("techsupport/techsupport");
+        
         return modelView;
     }
 }
