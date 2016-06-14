@@ -9,8 +9,17 @@
 <html>
     <div id="info_bar" class="top-bar">
         <div class="top-bar-right">
-            <ul class="menu">
-                <li><b>User: </b>${pageContext.session.getAttribute('activeUser').getEmail()}</li>
+            <ul class="menu info-bar-menu">
+                <li style="padding:10px">
+                    <b>Account: </b>${pageContext.session.getAttribute("account").getName()}
+                </li>
+                <li style="padding:10px">
+                    <b>Campus: </b>${pageContext.session.getAttribute("campus").getName()}
+                </li>
+                <li style="padding:10px">
+                    <b>User: </b>${pageContext.session.getAttribute('activeUser').getEmail()}
+                </li>            
+                
             </ul>
         </div>
     </div>

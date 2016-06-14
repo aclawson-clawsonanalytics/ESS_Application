@@ -153,7 +153,8 @@
     <!-- original content goes in this container -->
     <div class="off-canvas-content" data-off-canvas-content>
       <div id="dashboard_window" class="row column dashboard_content">
-         <jsp:include page="${dynamicContent}"/>
+          <jsp:include page="/WEB-INF/views/dashboard/fragments/info_bar.jsp"/>
+          <jsp:include page="${dynamicContent}"/>
       </div>
     </div>
 
