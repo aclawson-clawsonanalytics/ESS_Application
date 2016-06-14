@@ -21,7 +21,7 @@
         <div class="callout row techsupport-form">
             <form id="techsupport-form">
                 <label><b>Email:</b></label>
-                    <input type="email" placeholder="${pageContext.session.getAttribute('activeUser').getEmail()}">
+                    <input type="email" value="${pageContext.session.getAttribute('activeUser').getEmail()}">
                     <textarea rows="10" name="comment" form="techsupport-form" placeholder="How can we assist you today?">
                         
                     </textarea>

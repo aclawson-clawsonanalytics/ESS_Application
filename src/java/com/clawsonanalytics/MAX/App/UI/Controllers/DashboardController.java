@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.clawsonanalytics.MAX.App.ModelLayer.User;
+import com.clawsonanalytics.MAX.App.ModelLayer.Account;
+import com.clawsonanalytics.MAX.App.ModelLayer.Campus;
 /**
  *
  * @author andrewclawson
@@ -51,13 +53,15 @@ public class DashboardController {
         try{
             
             User activeUser = User.GetByCredentials(email, password);
+            Campus campus = activeUser.Campus();
+            Account account = activeUser.Account();
             if (activeUser != null){
                 modelView.setViewName("dashboard/dashboard");
                 modelView.addObject("activeUser",activeUser);
                 
                 session.setAttribute("activeUser", activeUser);
-                session.setAttribute("campus",activeUser.Campus());
-                session.setAttribute("account", activeUser.Account());
+                session.setAttribute("campus",campus);
+                session.setAttribute("account", account);
                 
                 
                 
