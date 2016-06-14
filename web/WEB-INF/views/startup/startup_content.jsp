@@ -21,9 +21,15 @@
             <!--<img class="thumbnail" src="http://placehold.it/850x350">-->
             <img class="thumbnail" src="images/bookstack.jpg"/>
             <p>
-                We're introducing a new responsive school management system. Check out 
-                <a>maxssweb.com</a> to find out about all of the exciting features we offer.
-                Feel free to <a>contact us</a> to see how we can meet your needs.
+                We're introducing a new and exciting school management system. Check out 
+                <a>maxssweb.com</a> to find out about all of the exciting features we offer
+                including a clean mobile experience as well as desktop web applications.
+                Whether you are a single school, a large district, or a home school family,
+                let's have a conversation to see how we can meet your educational needs.
+                
+                If you already have an account and need to contact tech support, follow
+                <a href="${pageContext.request.contextPath}/techsupport.htm">this link</a> and we can help you out! Otherwise, use the menu above
+                to login.
                 
             </p>
             <div class="callout">

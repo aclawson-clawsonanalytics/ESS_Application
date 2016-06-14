@@ -41,4 +41,11 @@ public class StartupController {
         
         return modelView;
     }
+    
+    @RequestMapping(value="/techsupport")
+    public ModelAndView TechSupport(HttpServletRequest request){
+        ModelAndView modelView = new ModelAndView();
+        modelView.setViewName("techsupport/techsupport");
+        return modelView;
+    }
 }

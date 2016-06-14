@@ -59,3 +59,14 @@ input[type=password]
     color:red;
 }
 
+techsupport-form.input[type=email]
+{
+    
+    width:400px;
+}
+
+techsupport-form.input[type=text]
+{
+    height:450px;
+    width:400px;
+}
