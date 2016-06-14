@@ -39,7 +39,8 @@ public class StartupController {
         HttpSession session = request.getSession();
         ModelAndView modelView = new ModelAndView();
         modelView.setViewName("startup/startup");
-        request.setAttribute("dynamicContent", "/WEB-INF/views/startup/startup_content.jsp");
+        modelView.addObject("dynamicContent","/WEB-INF/views/startup/startup_content.jsp");
+        //request.setAttribute("dynamicContent", "/WEB-INF/views/startup/startup_content.jsp");
         
         return modelView;
     }
@@ -48,8 +49,9 @@ public class StartupController {
     public ModelAndView TechSupport(HttpServletRequest request){
         
         ModelAndView modelView = new ModelAndView();
-        modelView.setViewName("techsupport/techsupport");
-        request.setAttribute("dynamicContent","/WEB-INF/views/techsupport/fragments/techsupport_form.jsp");
+        modelView.setViewName("startup/startup");
+        modelView.addObject("dynamicContent","/WEB-INF/views/techsupport/fragments/techsupport_form.jsp");
+        //request.setAttribute("dynamicContent","/WEB-INF/views/techsupport/fragments/techsupport_form.jsp");
         return modelView;
     }
 }

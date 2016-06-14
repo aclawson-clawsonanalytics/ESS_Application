@@ -79,7 +79,7 @@
                   
                   <li class="divider"><br><br></li>
                   
-                  <li><a>Tech Support</a></li>
+                  <li><a href="${pageContext.request.contextPath}/dashboard-techsupport.htm">Tech Support</a></li>
                   <li><a href="${pageContext.request.contextPath}/logout.htm">Logout</a></li>
           </ul>
            
@@ -141,9 +141,9 @@
         
       <div class="top-bar-right">
         <ul class="menu">
-            <li><a id="techSupport" class="button" onclick="SetTechSupportContent();">Tech Support</a></li>
+            <li><a id="techSupport" href="${pageContext.request.contextPath}/dashboard-techsupport.htm">Tech Support</a></li>
             <li><br></li>
-            <li><a  class="button" href="${pageContext.request.contextPath}/logout.htm">Logout</a></li>
+            <li><a href="${pageContext.request.contextPath}/logout.htm">Logout</a></li>
         </ul>
       </div>
         
@@ -153,12 +153,12 @@
     <!-- original content goes in this container -->
     <div class="off-canvas-content" data-off-canvas-content>
       <div id="dashboard_window" class="row column dashboard_content">
-          
+         <jsp:include page="${dynamicContent}"/>
       </div>
     </div>
 
   <!-- close wrapper, no more content after this -->
   </div>
 </div>
-        
+        <script src="js/dashboard.js"></script>
 </html>

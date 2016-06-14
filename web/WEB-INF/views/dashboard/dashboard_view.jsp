@@ -16,8 +16,8 @@
         
         <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/foundation.css"/>
         <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/app.css"/>
-        <!--<script src="WEB-INF/resources/js/dashboard.js"/>-->
-        <script src="/styles/foundation-6.2.1-complete/js/vendor/jquery.js"></script>
+       
+        
         
         <title>MAX Dashboard</title>
         

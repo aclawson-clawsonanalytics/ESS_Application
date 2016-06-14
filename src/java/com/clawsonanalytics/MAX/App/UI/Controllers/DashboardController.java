@@ -101,4 +101,12 @@ public class DashboardController {
         return modelView;
     }
     
-}
+    @RequestMapping(value="/dashboard-techsupport")
+    public ModelAndView TechSupport(HttpServletRequest request){
+        ModelAndView modelView = new ModelAndView();
+        modelView.setViewName("dashboard/dashboard");
+        modelView.addObject("dynamicContent","/WEB-INF/views/techsupport/fragments/techsupport_form.jsp");
+        //request.setAttribute("dynamicContent", "/WEB-INF/views/techsupport/fragments/techsupport_form.jsp");
+        return modelView;
+    }
+} 

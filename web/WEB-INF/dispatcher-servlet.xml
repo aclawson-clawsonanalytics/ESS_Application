@@ -50,7 +50,7 @@ xmlns="http://www.springframework.org/schema/beans"
             <prop key="dashboard.htm">DashboardController</prop>
             <prop key="logout.htm">DashboardController</prop>
             <prop key="techsupport.htm">StartupController</prop>
-            <prop key="dashboard/techsupport.htm">DashboardController</prop>
+            <prop key="dashboard-techsupport.htm">DashboardController</prop>
         </props>
     </property>
 </bean>
