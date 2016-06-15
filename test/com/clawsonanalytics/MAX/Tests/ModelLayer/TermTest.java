@@ -12,6 +12,7 @@ import com.clawsonanalytics.MAX.App.ModelLayer.User;
 
 
 import java.sql.Date;
+
 import java.util.Calendar;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -36,6 +37,7 @@ public class TermTest {
     
     private int accound_id;
     private String year;
+    private String sutLabel;
     private Date startDate;
     private Date endDate;
     
@@ -45,6 +47,7 @@ public class TermTest {
     @BeforeClass
     public static void setUpClass() {
         environment = new TestEnvironment();
+        
         SetupEmptyTestDatabases();
         account = new ValidAccount();
         account.Insert();
@@ -80,6 +83,8 @@ public class TermTest {
     @Before
     public void setUp() {
         SUT = new Term();
+        startDate = new Date(new java.util.Date().getTime());
+        endDate = new Date(startDate.getTime() + 24*60*60*1000);
     }
     
     @After
@@ -101,6 +106,12 @@ public class TermTest {
         
     }
     
+    @Test
+    public void CanSetLabel(){
+        sutLabel = "testLabel";
+        SUT.setLabel(sutLabel);
+        Assert.assertEquals(SUT.getLabel(),sutLabel);
+    }
     @Test
     public void CanSetStartDate(){
         startDate = new Date(Calendar.getInstance().getTime().getTime());
@@ -126,5 +137,38 @@ public class TermTest {
         SUT.setAccountID(account.getID());
         Assert.assertNotNull(SUT.Account());
         Assert.assertEquals(SUT.Account().getID(),account.getID());
+    }
+    
+    // Validation Methods
+    @Test
+    public void MissingSchoolYearReturnsMessage(){
+        SUT.setAccountID(account.getID());
+        SUT.setLabel(sutLabel);
+        SUT.setStartDate(startDate);
+        SUT.setEndDate(endDate);
+        Assert.assertTrue(SUT.GetValidationErrors().contains("Academic term must have a school year."));
+        Assert.assertFalse(SUT.IsValid());
+    }
+    
+    @Test
+    public void MissingLabel(){
+        SUT.setAccountID(account.getID());
+        SUT.setStartDate(startDate);
+        SUT.setEndDate(endDate);
+        SUT.setYear(year);
+        Assert.assertTrue(SUT.GetValidationErrors().contains("Academic term must have a label."));
+        Assert.assertFalse(SUT.IsValid());
+    }
+    
+    @Test
+    public void StartAndEndDateOutOfSequence(){
+        
+        SUT.setAccountID(account.getID());
+        SUT.setYear(year);
+        SUT.setLabel(sutLabel);
+        SUT.setStartDate(endDate);
+        SUT.setEndDate(startDate);
+        Assert.assertTrue(SUT.GetValidationErrors().contains("Check academic term dates."));
+        Assert.assertFalse(SUT.IsValid());
     }
 }
