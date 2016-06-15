@@ -10,12 +10,15 @@ import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
 import com.clawsonanalytics.MAX.App.ModelLayer.Campus;
 import com.clawsonanalytics.MAX.App.ModelLayer.User;
 
+
 import java.sql.Date;
+import java.util.Calendar;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.Assert;
 import static org.junit.Assert.*;
 
 import com.clawsonanalytics.MAX.Test.ValidAccount;
@@ -32,6 +35,7 @@ public class TermTest {
     private static Account account;
     
     private int accound_id;
+    private String year;
     private Date startDate;
     private Date endDate;
     
@@ -89,4 +93,38 @@ public class TermTest {
     //
     // @Test
     // public void hello() {}
+    @Test
+    public void CanSetYear(){
+        year = "2015-2016";
+        SUT.setYear(year);
+        Assert.assertEquals(SUT.getYear(),year);
+        
+    }
+    
+    @Test
+    public void CanSetStartDate(){
+        startDate = new Date(Calendar.getInstance().getTime().getTime());
+        SUT.setStartDate(startDate);
+        Assert.assertEquals(SUT.getStartDate(), startDate);
+    }
+    
+    @Test
+    public void CanSetEndDate(){
+        endDate = new Date(Calendar.getInstance().getTime().getTime());
+        SUT.setEndDate(endDate);
+        Assert.assertEquals(SUT.getEndDate(),endDate);
+    }
+    
+    @Test
+    public void CanSetAccountID(){
+        SUT.setAccountID(account.getID());
+        Assert.assertEquals(SUT.getAccountID(), account.getID());
+    }
+    
+    @Test
+    public void CanLoadAccount(){
+        SUT.setAccountID(account.getID());
+        Assert.assertNotNull(SUT.Account());
+        Assert.assertEquals(SUT.Account().getID(),account.getID());
+    }
 }
