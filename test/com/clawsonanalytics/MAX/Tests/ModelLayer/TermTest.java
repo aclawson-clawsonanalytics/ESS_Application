@@ -74,15 +74,19 @@ public class TermTest {
         //Drop records from test tables
         
         environment.DropRecordsForTestTable(Account.getTablename());
+        environment.DropRecordsForTestTable(Term.getTablename());
         
         
         //Drop test tables
         environment.DropTestTableForModelByTablename(Account.getTablename());
+        environment.DropTestTableForModelByTablename(Term.getTablename());
     }
     
     @Before
     public void setUp() {
         SUT = new Term();
+        year = "2015-2016";
+        sutLabel = "sutLabel";
         startDate = new Date(new java.util.Date().getTime());
         endDate = new Date(startDate.getTime() + 24*60*60*1000);
     }
@@ -98,6 +102,12 @@ public class TermTest {
     //
     // @Test
     // public void hello() {}
+    @Test
+    public void TablenameIsCorrect(){
+        Assert.assertEquals("TERMS", Term.getTablename());
+    }
+    
+    
     @Test
     public void CanSetYear(){
         year = "2015-2016";
@@ -122,8 +132,8 @@ public class TermTest {
     @Test
     public void CanSetEndDate(){
         endDate = new Date(Calendar.getInstance().getTime().getTime());
-        SUT.setEndDate(endDate);
-        Assert.assertEquals(SUT.getEndDate(),endDate);
+        SUT.setCloseDate(endDate);
+        Assert.assertEquals(SUT.getCloseDate(),endDate);
     }
     
     @Test
@@ -145,7 +155,7 @@ public class TermTest {
         SUT.setAccountID(account.getID());
         SUT.setLabel(sutLabel);
         SUT.setStartDate(startDate);
-        SUT.setEndDate(endDate);
+        SUT.setCloseDate(endDate);
         Assert.assertTrue(SUT.GetValidationErrors().contains("Academic term must have a school year."));
         Assert.assertFalse(SUT.IsValid());
     }
@@ -154,7 +164,7 @@ public class TermTest {
     public void MissingLabel(){
         SUT.setAccountID(account.getID());
         SUT.setStartDate(startDate);
-        SUT.setEndDate(endDate);
+        SUT.setCloseDate(endDate);
         SUT.setYear(year);
         Assert.assertTrue(SUT.GetValidationErrors().contains("Academic term must have a label."));
         Assert.assertFalse(SUT.IsValid());
@@ -167,8 +177,44 @@ public class TermTest {
         SUT.setYear(year);
         SUT.setLabel(sutLabel);
         SUT.setStartDate(endDate);
-        SUT.setEndDate(startDate);
+        SUT.setCloseDate(startDate);
         Assert.assertTrue(SUT.GetValidationErrors().contains("Check academic term dates."));
         Assert.assertFalse(SUT.IsValid());
     }
+    
+    @Test
+    public void CanInsert(){
+        int termCount = Term.Count();
+        SUT.setAccountID(account.getID());
+        SUT.setLabel(sutLabel);
+        SUT.setYear(year);
+        SUT.setStartDate(startDate);
+        SUT.setCloseDate(endDate);
+        SUT.Insert();
+        Assert.assertEquals(Term.Count(),termCount+1);
+    }
+    
+    
+    public void CanUpdateAccount(){
+        
+    }
+    
+    public void CanUpdateLabel(){
+        
+    }
+    
+    public void CanUpdateSchoolYear(){
+        
+    }
+    
+    public void CanUpdateStart(){
+        
+    }
+    
+    public void CanUpdateEnd(){
+        
+    }
+    
 }
+
+

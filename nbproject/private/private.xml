@@ -12,13 +12,15 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/js/login.js</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/dashboard/dashboard_view.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/techsupport/tech_support_view.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/js/dashboard.js</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/startup/fragments/login_menu.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/startup/startup_view.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/web/WEB-INF/views/dashboard/fragments/dashboard_topbar.jsp</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/User.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/test/com/clawsonanalytics/MAX/Tests/ModelLayer/TermTest.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/Test/ValidTerm.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/test/com/clawsonanalytics/MAX/Tests/ModelLayer/UserTest.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/Account.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/test/com/clawsonanalytics/MAX/Tests/ModelLayer/CampusTest.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/Test/ValidUser.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/Term.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/Test/ValidAccount.java</file>
         </group>
     </open-files>
 </project-private>
