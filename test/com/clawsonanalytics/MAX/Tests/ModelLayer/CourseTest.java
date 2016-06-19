@@ -10,6 +10,7 @@ import com.clawsonanalytics.MAX.App.ModelLayer.Account;
 import com.clawsonanalytics.MAX.App.ModelLayer.Campus;
 
 import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
+import com.clawsonanalytics.MAX.App.ModelLayer.User;
 
 import com.clawsonanalytics.MAX.Test.ValidAccount;
 import com.clawsonanalytics.MAX.Test.ValidCampus;
@@ -30,11 +31,15 @@ public class CourseTest {
     private static Course SUT;
     private static TestEnvironment environment;
     
+    // Class properties
+    
     public CourseTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        environment = new TestEnvironment();
+        SetupEmptyTestDatabases();
     }
     
     @AfterClass
@@ -43,10 +48,37 @@ public class CourseTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
     public void tearDown() {
+        environment.DropRecordsForTestTable(Course.getTablename());
+        environment.DropRecordsForTestTable(User.getTablename());
+        environment.DropRecordsForTestTable(Account.getTablename());
+    }
+    
+    public static void SetupEmptyTestDatabases(){
+        environment.Setup();
+        try{
+            environment.CreateTestTableForModelByTablename(Account.getTablename());
+            environment.CreateTestTableForModelByTablename(User.getTablename());
+            environment.CreateTestTableForModelByTablename(Course.getTablename());
+        }catch(Exception e){}
+    }
+    
+    public static void TearDownTestDatabases(){
+        //Drop records
+        environment.DropRecordsForTestTable(User.getTablename());
+        environment.DropRecordsForTestTable(Course.getTablename());
+        environment.DropRecordsForTestTable(Account.getTablename());
+        
+        //Drop Tables
+        environment.DropTestTableForModelByTablename(User.getTablename());
+        environment.DropTestTableForModelByTablename(Course.getTablename());
+        environment.DropTestTableForModelByTablename(Account.getTablename());
+        
+        environment.TearDown();
     }
 
     // TODO add test methods here.
@@ -54,4 +86,8 @@ public class CourseTest {
     //
     // @Test
     // public void hello() {}
+    @Test
+    public void TablenameIsCorrect(){
+        Assert.assertEquals();
+    }
 }

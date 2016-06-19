@@ -10,7 +10,14 @@ import com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface.SQLModel;
  * @author andrewclawson
  */
 public class Course extends SQLModel {
-    private String tablename = "COURSES";
+    private static String tablename = "COURSES";
     
+    public Course(){
+        
+    }
+    
+    public static String getTablename(){
+        return Course.tablename;
+    }
     
 }
