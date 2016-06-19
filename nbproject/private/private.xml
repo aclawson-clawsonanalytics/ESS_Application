@@ -14,13 +14,11 @@
         <group>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/User.java</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/test/com/clawsonanalytics/MAX/Tests/ModelLayer/TermTest.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/DataLayer/MySQL/Interface/SQLModel.java</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/Test/ValidTerm.java</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/test/com/clawsonanalytics/MAX/Tests/ModelLayer/UserTest.java</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/Account.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/test/com/clawsonanalytics/MAX/Tests/ModelLayer/CampusTest.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/Test/ValidUser.java</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/App/ModelLayer/Term.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/MAX/MAX/src/java/com/clawsonanalytics/MAX/Test/ValidAccount.java</file>
         </group>
     </open-files>
 </project-private>

@@ -88,7 +88,7 @@ public class TermTest {
         year = "2015-2016";
         sutLabel = "sutLabel";
         startDate = new Date(new java.util.Date().getTime());
-        endDate = new Date(startDate.getTime() + 24*60*60*1000);
+        endDate = new Date(startDate.getTime() + 10*24*60*60*1000);
     }
     
     @After
@@ -197,21 +197,76 @@ public class TermTest {
     
     public void CanUpdateAccount(){
         
+        
+        
     }
     
+    @Test
     public void CanUpdateLabel(){
-        
+        String secondLabel = "newSUTLabel";
+        SUT.setAccountID(account.getID());
+        SUT.setYear(year);
+        SUT.setLabel(sutLabel);
+        SUT.setStartDate(startDate);
+        SUT.setCloseDate(endDate);
+        SUT.Insert();
+        int sutID = SUT.getID();
+        SUT.setLabel(secondLabel);
+        SUT.Update();
+        SUT = null;
+        SUT = Term.GetByID(sutID);
+        Assert.assertEquals(SUT.getLabel(),secondLabel);
     }
     
+    @Test
     public void CanUpdateSchoolYear(){
-        
+        String newYear = "2016-2017";
+        SUT.setAccountID(account.getID());
+        SUT.setYear(year);
+        SUT.setLabel(sutLabel);
+        SUT.setStartDate(startDate);
+        SUT.setCloseDate(endDate);
+        SUT.Insert();
+        int sutID = SUT.getID();
+        SUT.setYear(newYear);
+        SUT.Update();
+        SUT = null;
+        SUT = Term.GetByID(sutID);
+        Assert.assertEquals(SUT.getYear(),newYear);
     }
     
+    @Test
     public void CanUpdateStart(){
+        Date newStart = new Date(startDate.getTime() + 24*60*60*1000);
+        SUT.setAccountID(account.getID());
+        SUT.setYear(year);
+        SUT.setLabel(sutLabel);
+        SUT.setStartDate(startDate);
+        SUT.setCloseDate(endDate);
+        SUT.Insert();
+        int sutID = SUT.getID();
+        SUT.setStartDate(newStart);
+        SUT.Update();
+        SUT = null;
+        SUT = Term.GetByID(sutID);
+        Assert.assertEquals(SUT.getStartDate().toString(),newStart.toString());
         
     }
     
     public void CanUpdateEnd(){
+        Date newEnd = new Date(endDate.getTime() + 24*60*60*1000);
+        SUT.setAccountID(account.getID());
+        SUT.setYear(year);
+        SUT.setLabel(sutLabel);
+        SUT.setStartDate(startDate);
+        SUT.setCloseDate(endDate);
+        SUT.Insert();
+        int sutID = SUT.getID();
+        SUT.setStartDate(newEnd);
+        SUT.Update();
+        SUT = null;
+        SUT = Term.GetByID(sutID);
+        Assert.assertEquals(SUT.getStartDate().toString(),newEnd.toString());
         
     }
     

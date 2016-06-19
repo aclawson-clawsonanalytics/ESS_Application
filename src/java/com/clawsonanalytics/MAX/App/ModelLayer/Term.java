@@ -80,6 +80,14 @@ public class Term extends SQLModel {
         Statement statement;
         ResultSet results;
         String select = "SELECT * FROM " + Term.getTablename() +";";
+        try{
+            statement = mysql.Connector.getConnection().createStatement();
+            results = statement.executeQuery(select);
+            while(results.next()){
+                Term newTerm = Term.MapRowToObject(results);
+                allTerms.add(newTerm);
+            }
+        }catch(SQLException e){}
         return allTerms;
     }
     
@@ -137,6 +145,28 @@ public class Term extends SQLModel {
         
     }
     
+    
+    @Override
+    public void Update(){
+        if(this.IsValid()){
+            MySQLManager mysql = new MySQLManager();
+            PreparedStatement preparedStatement;
+            String updateString = "UPDATE TERMS SET "
+                    + "account_id = ?, "
+                    + "label = ?, "
+                    + "year = ?, "
+                    + "start_date = ?, "
+                    + "close_date = ? WHERE id = ?;";
+            try{
+                preparedStatement = mysql.Connector.getConnection().prepareStatement(updateString,Statement.RETURN_GENERATED_KEYS);
+                preparedStatement = PrepareStatementForUpdate(preparedStatement);
+                preparedStatement.executeUpdate();
+            }catch(SQLException e){
+                e.getMessage();
+            }
+        }
+    }
+    
     public PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
         try{
             preparedStatement.setInt(1, 0); // Set id
@@ -149,6 +179,34 @@ public class Term extends SQLModel {
             
         }
         return preparedStatement;
+    }
+    
+    public PreparedStatement PrepareStatementForUpdate(PreparedStatement preparedStatement){
+        try{
+            preparedStatement.setInt(1,this.getAccountID());
+            preparedStatement.setString(2,this.getLabel());
+            preparedStatement.setString(3, this.getYear());
+            preparedStatement.setDate(4,this.getStartDate());
+            preparedStatement.setDate(5,this.getCloseDate());
+            preparedStatement.setInt(6,this.getID());
+        }catch(SQLException e){
+            
+        }
+        return preparedStatement;
+    }
+    
+    public static Term MapRowToObject(ResultSet results){
+        Term newTerm = new Term();
+        try{
+            newTerm.setID(results.getInt("id"));
+            newTerm.setAccountID(results.getInt("account_id"));
+            newTerm.setLabel(results.getString("label"));
+            newTerm.setYear(results.getString("year"));
+            newTerm.setStartDate(results.getDate("start_date"));
+            newTerm.setCloseDate(results.getDate("close_date"));
+            return newTerm;
+        }catch(SQLException e){}
+        return newTerm;
     }
     // Validation Methods
     @Override
