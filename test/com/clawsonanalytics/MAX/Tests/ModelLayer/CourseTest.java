@@ -88,6 +88,6 @@ public class CourseTest {
     // public void hello() {}
     @Test
     public void TablenameIsCorrect(){
-        Assert.assertEquals();
+        Assert.assertEquals(Course.getTablename(),"COURSES");
     }
 }
