@@ -55,10 +55,10 @@ xmlns="http://www.springframework.org/schema/beans"
     </property>
 </bean>
 
-<bean name="StartupController" class="com.clawsonanalytics.MAX.App.UI.Controllers.StartupController"/>
-<bean name="LoginController" class="com.clawsonanalytics.MAX.App.UI.Controllers.LoginController"/>
-<bean name="RegistrationController" class="com.clawsonanalytics.MAX.App.UI.Controllers.RegistrationController"/>
-<bean name="DashboardController" class="com.clawsonanalytics.MAX.App.UI.Controllers.DashboardController"/>
+<bean name="StartupController" class="com.clawsonanalytics.ESS.App.UI.Controllers.StartupController"/>
+<bean name="LoginController" class="com.clawsonanalytics.ESS.App.UI.Controllers.LoginController"/>
+<bean name="RegistrationController" class="com.clawsonanalytics.ESS.App.UI.Controllers.RegistrationController"/>
+<bean name="DashboardController" class="com.clawsonanalytics.ESS.App.UI.Controllers.DashboardController"/>
 
 
 </beans>

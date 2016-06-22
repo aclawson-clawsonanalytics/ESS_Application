@@ -5,11 +5,11 @@
  */
 package com.clawsonanalytics.MAX.Tests.ModelLayer;
 
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.Interface.SQLModel;
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataSource;
-import com.clawsonanalytics.MAX.App.ModelLayer.User;
-import com.clawsonanalytics.MAX.App.ModelLayer.Lists.UserList;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.Interface.SQLModel;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLDataSource;
+import com.clawsonanalytics.ESS.App.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.ModelLayer.Lists.UserList;
 
 import java.util.List;
 import org.junit.After;

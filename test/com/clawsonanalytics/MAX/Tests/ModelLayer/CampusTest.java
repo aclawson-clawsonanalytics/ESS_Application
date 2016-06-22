@@ -4,14 +4,13 @@
  * and open the template in the editor.
  */
 package com.clawsonanalytics.MAX.Tests.ModelLayer;
-import com.clawsonanalytics.MAX.App.ModelLayer.Account;
-import com.clawsonanalytics.MAX.App.ModelLayer.User;
-import com.clawsonanalytics.MAX.App.ModelLayer.Campus;
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
-
-import com.clawsonanalytics.MAX.Test.ValidAccount;
-import com.clawsonanalytics.MAX.Test.ValidUser;
-import com.clawsonanalytics.MAX.Test.ValidCampus;
+import com.clawsonanalytics.ESS.App.ModelLayer.Account;
+import com.clawsonanalytics.ESS.App.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.ModelLayer.Campus;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;
+import com.clawsonanalytics.ESS.Test.ValidAccount;
+import com.clawsonanalytics.ESS.Test.ValidUser;
+import com.clawsonanalytics.ESS.Test.ValidCampus;
 
 import org.junit.After;
 import org.junit.AfterClass;

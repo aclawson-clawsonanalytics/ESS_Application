@@ -5,9 +5,9 @@
  */
 package com.clawsonanalytics.MAX.Tests;
 
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataSource;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLManager;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLDataSource;
 
 //import com.clawsonanalytics.SSN.ModelLayer.RegisteredModel;
 

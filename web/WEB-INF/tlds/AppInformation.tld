@@ -22,17 +22,17 @@
     -->
   <tag>
     <name>AppName</name>
-    <tag-class>com.clawsonanalytics.MAX.App.Tags.StringTags.AppName</tag-class>
+    <tag-class>com.clawsonanalytics.ESS.App.Tags.StringTags.AppName</tag-class>
     <body-content>empty</body-content>
   </tag>
   <tag>
     <name>Developer</name>
-    <tag-class>com.clawsonanalytics.MAX.App.Tags.StringTags.Developer</tag-class>
+    <tag-class>com.clawsonanalytics.ESS.App.Tags.StringTags.Developer</tag-class>
     <body-content>empty</body-content>
   </tag>
   <tag>
     <name>AppLongName</name>
-    <tag-class>com.clawsonanalytics.MAX.App.Tags.StringTags.AppLongName</tag-class>
+    <tag-class>com.clawsonanalytics.ESS.App.Tags.StringTags.AppLongName</tag-class>
     <body-content>empty</body-content>
   </tag>
 </taglib>

@@ -5,8 +5,8 @@
  */
 package com.clawsonanalytics.MAX.Tests.DataLayer;
 
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLManager;
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.MySQLDataSource;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLManager;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLDataSource;
 import org.junit.Assert;
 import org.junit.After;
 import org.junit.AfterClass;

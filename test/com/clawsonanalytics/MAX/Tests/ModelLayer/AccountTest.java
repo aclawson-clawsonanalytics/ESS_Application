@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
 
 import java.sql.Date;
 
-import com.clawsonanalytics.MAX.App.ModelLayer.Account;
-import com.clawsonanalytics.MAX.App.ModelLayer.User;
-import com.clawsonanalytics.MAX.App.DataLayer.MySQL.TestEnvironment;
+import com.clawsonanalytics.ESS.App.ModelLayer.Account;
+import com.clawsonanalytics.ESS.App.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;
 
 /**
  *
