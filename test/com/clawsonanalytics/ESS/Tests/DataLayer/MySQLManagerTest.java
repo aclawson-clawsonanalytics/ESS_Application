@@ -3,14 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.MAX.Tests;
+package com.clawsonanalytics.ESS.Tests.DataLayer;
 
-import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLManager;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLDataSource;
-
-//import com.clawsonanalytics.SSN.ModelLayer.RegisteredModel;
-
 import org.junit.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -23,26 +19,18 @@ import static org.junit.Assert.*;
  *
  * @author andrewclawson
  */
-public class TestEvironmentTest {
-    public static TestEnvironment SUT;
-    public static MySQLManager mysqlManager;
-    
-    public TestEvironmentTest() {
-        mysqlManager = new MySQLManager();
-        
+public class MySQLManagerTest {
+    public static MySQLManager SUT;
+    public MySQLManagerTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-        SUT = new TestEnvironment();
-        SUT.Setup();
-        
-        
+        SUT = new MySQLManager();
     }
     
     @AfterClass
     public static void tearDownClass() {
-        
     }
     
     @Before
@@ -51,6 +39,7 @@ public class TestEvironmentTest {
     
     @After
     public void tearDown() {
+        SUT.SetProductionMode();
     }
 
     // TODO add test methods here.
@@ -59,17 +48,32 @@ public class TestEvironmentTest {
     // @Test
     // public void hello() {}
     @Test
-    public void SetupChangesFocusDB(){
-        SUT.Setup();
-        Assert.assertEquals(MySQLDataSource.getTestDatabaseName(),MySQLDataSource.getFocusDB());
+    public void DefaultModeIsProduction(){
+        
+        Assert.assertEquals("max_application", MySQLDataSource.getFocusDB());
+        
+    }
+    @Test
+    public void TestModeSetsDB(){
+        //MySQLManager SUT = new MySQLManager();
+        SUT.SetTestMode();
+        Assert.assertEquals("max_application_test", MySQLDataSource.getFocusDB());
+    }
+    
+    
+    public void ChangeDBStatementIsCorrect(){
+        SUT.statementManager.ChangeDBStatement();
+        Assert.assertEquals(SUT.statementManager.getStatementString(), "USE max_application_test");
     }
     
     @Test
-    public void TearDownChangesFocusDB(){
-        SUT.TearDown();
-        String test = MySQLDataSource.getDatabaseName();
-        String db = MySQLDataSource.getFocusDB();
-        Assert.assertEquals(MySQLDataSource.getDatabaseName(),MySQLDataSource.getFocusDB());
+    public void DefaultConnectionIsNotNull(){
+        Assert.assertNotNull(SUT.Connector.getConnection());
+    }
+    
+    
+    public void DefaultStatementIsNotNull(){
+        Assert.assertNotNull(SUT.getStatement());
     }
     
     

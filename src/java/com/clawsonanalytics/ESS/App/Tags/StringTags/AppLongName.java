@@ -16,6 +16,6 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class AppLongName extends SimpleTagSupport{
     public void doTag() throws JspException, IOException {
         JspWriter out = getJspContext().getOut();
-        out.println("M.A.X. School Solutions");
+        out.println("Elemental School Solutions");
     }
 }

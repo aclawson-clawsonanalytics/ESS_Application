@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.MAX.Tests.ModelLayer;
+package com.clawsonanalytics.ESS.Tests.ModelLayer;
 import com.clawsonanalytics.ESS.App.ModelLayer.Account;
 import com.clawsonanalytics.ESS.App.ModelLayer.Term;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;

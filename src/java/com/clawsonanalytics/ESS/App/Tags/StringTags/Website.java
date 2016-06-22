@@ -11,9 +11,9 @@ import java.io.*;
  *
  * @author andrewclawson
  */
-public class AppName extends SimpleTagSupport{
+public class Website extends SimpleTagSupport{
     public void doTag() throws JspException, IOException {
         JspWriter out = getJspContext().getOut();
-        out.println("Elemental S.S.");
+        out.println("elementalss.com");
     }
 }
