@@ -28,6 +28,10 @@ public class Course extends SQLModel {
     private String title;
     private String description;
     
+    public static String MISSING_DEPARTMENT = "Course must have a department.";
+    public static String MISSING_TITLE = "Course must have a title.";
+    public static String MISSING_DESCRIPTION = "Course must have a description.";
+    
     
     public Course(){
         
@@ -39,6 +43,7 @@ public class Course extends SQLModel {
     
     public void setAccountID(int id){
         this.account_id = id;
+        LoadAccount();
     }
     
     public int getAccountID(){
@@ -46,18 +51,45 @@ public class Course extends SQLModel {
     }
     
     private void LoadAccount(){
-        this.parentAccount = Account.GetByID(this.account_id);
+        this.parentAccount = Account.GetByID(this.getAccountID());
     }
     
     public Account Account(){
-        try{
-            LoadAccount();
-            
-        }catch(Exception e){
-            
+        if (this.parentAccount == null){
+            try{
+                LoadAccount();
+            }catch(Exception e){
+                
+            }
         }
         return this.parentAccount;
     }
+    
+    // Property accessors
+    public void setDepartment(String string){
+        this.department = string;
+    }
+    
+    public String getDepartment(){
+        return this.department;
+    }
+    
+    public void setTitle(String string){
+        this.title = string;
+    }
+    
+    public String getTitle(){
+        return this.title;
+    }
+    
+    public void setDescription(String string){
+        this.description = string;
+    }
+    
+    public String getDescription(){
+        return this.description;
+    }
+    
     public static int Count(){
         int count = 0;
         ResultSet results;
@@ -115,5 +147,21 @@ public class Course extends SQLModel {
         Course newCourse = new Course();
         
         return newCourse;
+    }
+    
+    @Override
+    public List<String> GetValidationErrors(){
+        List<String> _validationErrors = new ArrayList<String>();
+        if(this.getDepartment() == null){
+            _validationErrors.add(Course.MISSING_DEPARTMENT);
+        }
+        if(this.getTitle() == null){
+            _validationErrors.add(Course.MISSING_TITLE);
+            
+        }
+        if(this.getDescription() == null){
+            _validationErrors.add(Course.MISSING_DESCRIPTION);
+        }
+        return _validationErrors;
     }
 }

@@ -30,6 +30,12 @@ public class CourseTest {
     private static TestEnvironment environment;
     private static Account account;
     
+    private String sutDepartment = "testDepartment";
+    private String sutTitle = "testTitle";
+    private String sutDescription = "A test description";
+    
+    
+    
     // Class properties
     
     public CourseTest() {
@@ -45,6 +51,7 @@ public class CourseTest {
     
     @AfterClass
     public static void tearDownClass() {
+        TearDownTestDatabases();
     }
     
     @Before
@@ -56,8 +63,8 @@ public class CourseTest {
     @After
     public void tearDown() {
         environment.DropRecordsForTestTable(Course.getTablename());
-        environment.DropRecordsForTestTable(User.getTablename());
-        environment.DropRecordsForTestTable(Account.getTablename());
+        //environment.DropRecordsForTestTable(User.getTablename());
+        //environment.DropRecordsForTestTable(Account.getTablename());
     }
     
     public static void SetupEmptyTestDatabases(){
@@ -98,4 +105,83 @@ public class CourseTest {
         SUT.setAccountID(account.getID());
         Assert.assertEquals(SUT.getAccountID(), account.getID());
     }
+    
+    @Test
+    public void CanRetreiveAccount(){
+        SUT.setAccountID(account.getID());
+        Assert.assertNotNull(SUT.Account());
+        Assert.assertEquals(SUT.Account().getID(),account.getID());
+    }
+    
+    @Test
+    public void CanSetDepartment(){
+        SUT.setAccountID(account.getID());
+        SUT.setDepartment(sutDepartment);
+        Assert.assertEquals(sutDepartment,SUT.getDepartment());
+    }
+    
+    @Test
+    public void CanSetTitle(){
+        SUT.setAccountID(account.getID());
+        SUT.setTitle(sutTitle);
+        Assert.assertEquals(sutTitle,SUT.getTitle());
+    }
+    
+    @Test
+    public void CanSetDescription(){
+        SUT.setAccountID(account.getID());
+        SUT.setDescription(sutDescription);
+        Assert.assertEquals(sutDescription,SUT.getDescription());
+    }
+    
+    @Test
+    public void MissingDepartmentHasMessage(){
+        SUT.setAccountID(account.getID());
+        SUT.setTitle(sutTitle);
+        SUT.setDescription(sutDescription);
+        Assert.assertTrue(SUT.GetValidationErrors().contains(Course.MISSING_DEPARTMENT));
+        
+    }
+    
+    @Test
+    public void MissingDepartmentIsInvalid(){
+        SUT.setAccountID(account.getID());
+        SUT.setTitle(sutTitle);
+        SUT.setDescription(sutDescription);
+        Assert.assertFalse(SUT.IsValid());
+        
+    }
+    
+    @Test
+    public void MissingTitleHasMessage(){
+        SUT.setAccountID(account.getID());
+        SUT.setDepartment(sutDepartment);
+        SUT.setDescription(sutDescription);
+        Assert.assertTrue(SUT.GetValidationErrors().contains(Course.MISSING_TITLE));
+    }
+    
+    @Test
+    public void MissingTitleIsInvalid(){
+        SUT.setAccountID(account.getID());
+        SUT.setDepartment(sutDepartment);
+        SUT.setDescription(sutDescription);
+        Assert.assertFalse(SUT.IsValid());
+    }
+    
+    @Test
+    public void MissingDescriptionHasMessage(){
+        SUT.setAccountID(account.getID());
+        SUT.setDepartment(sutDepartment);
+        SUT.setTitle(sutTitle);
+        Assert.assertTrue(SUT.GetValidationErrors().contains(Course.MISSING_DESCRIPTION));
+    }
+    
+    @Test
+    public void MissingDescriptionIsInvalid(){
+        SUT.setAccountID(account.getID());
+        SUT.setDepartment(sutDepartment);
+        SUT.setTitle(sutTitle);
+        Assert.assertFalse(SUT.IsValid());
+    }
+    
 }
