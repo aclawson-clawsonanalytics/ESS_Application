@@ -7,6 +7,7 @@ package com.clawsonanalytics.ESS.App.ModelLayer.Academics;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLManager;
 import com.clawsonanalytics.ESS.App.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.ModelLayer.Account;
 import static com.clawsonanalytics.ESS.App.ModelLayer.User.getTablename;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,6 +22,8 @@ import java.util.List;
 public class Course extends SQLModel {
     private static String tablename = "COURSES";
     
+    private int account_id; // Reference to parentAccount id.
+    private Account parentAccount;
     private String department;
     private String title;
     private String description;
@@ -34,6 +37,27 @@ public class Course extends SQLModel {
         return Course.tablename;
     }
     
+    public void setAccountID(int id){
+        this.account_id = id;
+    }
+    
+    public int getAccountID(){
+        return this.account_id;
+    }
+    
+    private void LoadAccount(){
+        this.parentAccount = Account.GetByID(this.account_id);
+    }
+    
+    public Account Account(){
+        try{
+            LoadAccount();
+            
+        }catch(Exception e){
+            
+        }
+        return this.parentAccount;
+    }
     public static int Count(){
         int count = 0;
         ResultSet results;

@@ -28,6 +28,7 @@ import static org.junit.Assert.*;
 public class CourseTest {
     private static Course SUT;
     private static TestEnvironment environment;
+    private static Account account;
     
     // Class properties
     
@@ -38,6 +39,8 @@ public class CourseTest {
     public static void setUpClass() {
         environment = new TestEnvironment();
         SetupEmptyTestDatabases();
+        account = new ValidAccount();
+        account.Insert();
     }
     
     @AfterClass
@@ -46,6 +49,7 @@ public class CourseTest {
     
     @Before
     public void setUp() {
+        SUT = new Course();
         
     }
     
@@ -87,5 +91,11 @@ public class CourseTest {
     @Test
     public void TablenameIsCorrect(){
         Assert.assertEquals(Course.getTablename(),"COURSES");
+    }
+    
+    @Test
+    public void CanSetAccountID(){
+        SUT.setAccountID(account.getID());
+        Assert.assertEquals(SUT.getAccountID(), account.getID());
     }
 }
