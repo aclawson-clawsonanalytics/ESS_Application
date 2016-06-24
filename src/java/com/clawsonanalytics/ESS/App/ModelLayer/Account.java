@@ -201,7 +201,7 @@ public class Account extends SQLModel {
                 
                 
             }catch(SQLException e){
-                e.getMessage();//e.printStackTrace();
+                
             }
         }
         

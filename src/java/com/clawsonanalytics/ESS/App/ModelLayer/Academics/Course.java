@@ -133,8 +133,39 @@ public class Course extends SQLModel {
         return all;
     }
     
+    @Override
+    public void Insert(){
+        if(this.IsValid()){
+            String insert = "INSERT INTO " + Course.getTablename()
+                    + " VALUES(?,?,?,?,?);";
+            MySQLManager mysql = new MySQLManager();
+            PreparedStatement preparedStatement;
+            ResultSet keys;
+            try{
+                preparedStatement = mysql.Connector.getConnection().prepareStatement(insert,Statement.RETURN_GENERATED_KEYS);
+                preparedStatement = PrepareStatementForInsert(preparedStatement);
+                int rowsInserted = preparedStatement.executeUpdate();
+                keys = preparedStatement.getGeneratedKeys();
+                keys.next();
+                int id = keys.getInt(1);
+                this.setID(id);
+                mysql.Connector.CloseResources();
+            }catch(SQLException e){
+                
+            }
+        }
+    }
     public PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
-        
+        try{
+            preparedStatement.setInt(1, 0);
+            preparedStatement.setInt(2, this.getAccountID());
+            preparedStatement.setString(3,this.getDepartment());
+            preparedStatement.setString(4,this.getTitle());
+            preparedStatement.setString(5,this.getDescription());
+            
+        }catch(SQLException e){
+            e.getMessage();
+        }
         return preparedStatement;
     }
     
@@ -145,6 +176,13 @@ public class Course extends SQLModel {
     
     public static Course MapRowToObject(ResultSet results){
         Course newCourse = new Course();
+        try{
+            newCourse.setID(results.getInt("id"));
+            newCourse.setAccountID(results.getInt("account_id"));
+            newCourse.setDepartment(results.getString("department"));
+            newCourse.setTitle(results.getString("title"));
+            newCourse.setDescription(results.getString("description"));
+        }catch(SQLException e){}
         
         return newCourse;
     }

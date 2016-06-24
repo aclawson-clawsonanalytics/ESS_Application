@@ -184,4 +184,15 @@ public class CourseTest {
         Assert.assertFalse(SUT.IsValid());
     }
     
+    @Test
+    public void CanInsert(){
+        int firstCount = Course.Count();
+        SUT.setAccountID(account.getID());
+        SUT.setDepartment(sutDepartment);
+        SUT.setTitle(sutTitle);
+        SUT.setDescription(sutDescription);
+        SUT.Insert();
+        Assert.assertEquals(Course.Count(),firstCount+1);
+    }
+    
 }
