@@ -24,7 +24,7 @@
         <!--<link rel="stylesheet" type="text/css" href="/resources/stylesheet.css"/>-->
     </head>
     <body>
-        <div class="row header">
+        <div class="row dashboard-header">
             <div class="small-12 columns" align="center">
                 <jsp:include page="/WEB-INF/fragments/header.jsp"/>
             </div>

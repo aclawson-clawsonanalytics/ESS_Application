@@ -26,7 +26,7 @@
 
         
 
-        <div class="row header">
+        <div class="row startup-header">
             <div class="small-12 columns" align="center">
                 <jsp:include page="/WEB-INF/fragments/header.jsp"/>
             </div>

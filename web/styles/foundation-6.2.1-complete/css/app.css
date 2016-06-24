@@ -5,7 +5,8 @@ bold faced style guides.
 */
 b.appLabel
 {
-    color:#00ff33
+    /*color:#00ff33*/
+    color:#00ff33;
 }
 
 /*
@@ -14,11 +15,19 @@ DIV style guides.
 */
 
 /*Header*/
-div.header
+.startup-header
 {
-    background:linear-gradient(to bottom right,#999999,blue);
+    /*background:linear-gradient(to bottom right,#999999,blue);*/
+    height:500px;
+    background:url('images/atomLogo1.jpg') no-repeat center center;
+    background-size:cover;
 }
 
+.dashboard-header{
+    height:150px;
+    background:url('images/atomLogo1.jpg') no-repeat center center;
+    background-size:100%;
+}
 /*Menus*/
 div.side_menu
 {

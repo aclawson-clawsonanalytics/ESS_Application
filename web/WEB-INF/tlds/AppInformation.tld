@@ -35,4 +35,14 @@
     <tag-class>com.clawsonanalytics.ESS.App.Tags.StringTags.AppLongName</tag-class>
     <body-content>empty</body-content>
   </tag>
+  <tag>
+      <name>AppAbbreviation</name>
+      <tag-class>com.clawsonanalytics.ESS.App.Tags.StringTags.AppAbbreviation</tag-class>
+      <body-content>empty</body-content>
+  </tag>
+  <tag>
+      <name>Website</name>
+      <tag-class>com.clawsonanalytics.ESS.App.Tags.StringTags.Website</tag-class>
+      <body-content>empty</body-content>
+  </tag>
 </taglib>

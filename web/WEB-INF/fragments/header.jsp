@@ -9,7 +9,7 @@
 
 <!DOCTYPE html>
 <div class="header">
-    <h1><b class="welcomeLabel">WELCOME</b></h1><br>
+    <!--<h1><b class="welcomeLabel">WELCOME</b></h1><br>-->
     <h1><b class="appLabel"><app:AppLongName/></b></h1>
 </div>
 <!--

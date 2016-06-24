@@ -22,7 +22,7 @@
             <img class="thumbnail" src="images/bookstack.jpg"/>
             <p>
                 We're introducing a new and exciting school management system. Check out 
-                <a>maxssweb.com</a> to find out about all of the exciting features we offer
+                <a><app:Website/></a> to find out about all of the exciting features we offer
                 including a clean mobile experience as well as desktop web applications.
                 Whether you are a single school, a large district, or a home school family,
                 let's have a conversation to see how we can meet your educational needs.
