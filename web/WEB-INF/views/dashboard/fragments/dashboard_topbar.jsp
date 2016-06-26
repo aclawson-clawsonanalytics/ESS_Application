@@ -90,10 +90,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
           <ul class="vertical dropdown menu" data-dropdown-menu>
-            <li><a href="r#">Class</a></li>
-            <li><a href="#">Setup</a></li>
-            <li><a href="#">Add / Edit Category</a></li>
-            <li><a href="#">Add / Edit Assignment</a></li>
+              <jsp:include page="${mobileMenuOptions}"/>
           </ul>
         </div>
     
