@@ -17,19 +17,17 @@
     <!-- off-canvas title bar for 'small' screen -->
         <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
           <div class="title-bar-left">
-            <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+            <button class="menu-icon" type="button" data-open="dashboard-mobile-left"></button>
             <span class="title-bar-title">Dashboard Menu</span>
           </div>
           <div class="title-bar-right">
-              <!--
-            <span class="title-bar-title">Login</span>
-            <button class="menu-icon" type="button" data-toggle="offCanvasRight"></button>
-              -->
+              
+              <jsp:include page="${mobileMenu}"/>
           </div>
         </div>
 
     <!-- off-canvas left menu -->
-        <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+        <div class="off-canvas position-left" id="dashboard-mobile-left" data-off-canvas>
             <button class="close-button" aria-label="Close menu" type="button" data-close>
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -86,15 +84,19 @@
         </div>
 
     <!-- off-canvas right menu -->
-    <!--
-        <div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-position="right">
+    
+        <div class="off-canvas position-right" id="dashboard-mobile-right" data-off-canvas data-position="right">
+            <button class="close-button" aria-label="Close menu" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+            </button>
           <ul class="vertical dropdown menu" data-dropdown-menu>
-            <li><a href="right_item_1">Right item 1</a></li>
-            <li><a href="right_item_2">Right item 2</a></li>
-            <li><a href="right_item_3">Right item 3</a></li>
+            <li><a href="r#">Class</a></li>
+            <li><a href="#">Setup</a></li>
+            <li><a href="#">Add / Edit Category</a></li>
+            <li><a href="#">Add / Edit Assignment</a></li>
           </ul>
         </div>
-    -->
+    
 
     <!-- "wider" top-bar menu for 'medium' and up -->
     <div id="widemenu" class="top-bar">
