@@ -69,7 +69,7 @@
                   <li>
                       <a><b>Instructor</b></a>
                       <ul class="menu vertical">
-                          <li><a>Grade Book</a></li>
+                          <li><a href="${pageContext.request.contextPath}/dashboard-gradebook.htm">Grade Book</a></li>
                           <li><a>Attendance</a></li>
                           <li><a>Classes</a></li>
                           <li><a>Data</a></li>
@@ -128,7 +128,7 @@
               <li data-toggle>
                   <a><b>Instructor</b></a>
                   <ul class="menu vertical">
-                      <li data-close><a>Grade Book</a></li>
+                      <li data-close><a href="${pageContext.request.contextPath}/dashboard-gradebook.htm">Grade Book</a></li>
                       <li data-close><a>Attendance</a></li>
                       <li data-close><a>Classes</a></li>
                       <li data-close><a>Data</a></li>
