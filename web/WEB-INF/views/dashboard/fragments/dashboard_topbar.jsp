@@ -89,7 +89,7 @@
             <button class="close-button" aria-label="Close menu" type="button" data-close>
                 <span aria-hidden="true">&times;</span>
             </button>
-          <ul class="vertical dropdown menu" data-dropdown-menu>
+          <ul class="vertical accordion-menu menu" data-accordion-menu>
               <jsp:include page="${mobileMenuOptions}"/>
           </ul>
         </div>

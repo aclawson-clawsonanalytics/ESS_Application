@@ -33,7 +33,6 @@
         </div>
 
             <div class="row">
-                
                     <jsp:include page="/WEB-INF/views/startup/fragments/login_menu.jsp"/>
             </div>
             

@@ -6,7 +6,7 @@ bold faced style guides.
 b.appLabel
 {
     /*color:#00ff33*/
-    color:#00ff33;
+    color:#1893e4;
 }
 
 /*
@@ -18,14 +18,14 @@ DIV style guides.
 .startup-header
 {
     /*background:linear-gradient(to bottom right,#999999,blue);*/
-    height:500px;
-    background:url('images/atomLogo1.jpg') no-repeat center center;
+    height:200px;
+    background:url('images/mountains1.jpg') no-repeat center center;
     background-size:cover;
 }
 
 .dashboard-header{
-    height:150px;
-    background:url('images/atomLogo1.jpg') no-repeat center center;
+    height:200px;
+    background:url('images/mountains1.jpg') no-repeat center center;
     background-size:100%;
 }
 /*Menus*/

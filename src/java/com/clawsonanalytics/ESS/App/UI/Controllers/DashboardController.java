@@ -53,11 +53,12 @@ public class DashboardController {
         try{
             
             User activeUser = User.GetByCredentials(email, password);
-            Campus campus = activeUser.Campus();
-            Account account = activeUser.Account();
+            
             if (activeUser != null){
+                Campus campus = activeUser.Campus();
+                Account account = activeUser.Account();
                 modelView.setViewName("dashboard/dashboard");
-                modelView.addObject("activeUser",activeUser);
+                //modelView.addObject("activeUser",activeUser);
                 
                 session.setAttribute("activeUser", activeUser);
                 session.setAttribute("campus",campus);

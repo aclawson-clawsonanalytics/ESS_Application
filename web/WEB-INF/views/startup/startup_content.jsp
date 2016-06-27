@@ -21,14 +21,16 @@
             <!--<img class="thumbnail" src="http://placehold.it/850x350">-->
             <img class="thumbnail" src="images/bookstack.jpg"/>
             <p>
-                We're introducing a new and exciting school management system. Check out 
-                <a><app:Website/></a> to find out about all of the exciting features we offer
-                including a clean mobile experience as well as desktop web applications.
-                Whether you are a single school, a large district, or a home school family,
-                let's have a conversation to see how we can meet your educational needs.
+                Welcome to the <app:AppName/> login! Use the menu above to login to the
+                dashboard. If you landed here on accident, checkout: <a href='http://essweb.clawsonanalytics.com'><app:Website/></a>
+                 to find out about all of the exciting features we offer in our school management
+                 system. Whether you are a single school, a district, or a home school family,
+                 let's have a conversation about how we can help you on your educational journey.
+                
                 
                 If you already have an account and need to contact tech support, follow
-                <a href="${pageContext.request.contextPath}/techsupport.htm">this link</a> and we can help you out! Otherwise, use the menu above
+                <a href="${pageContext.request.contextPath}/techsupport.htm">this link</a> 
+                and we can help you out! Otherwise, use the menu above
                 to login.
                 
             </p>
