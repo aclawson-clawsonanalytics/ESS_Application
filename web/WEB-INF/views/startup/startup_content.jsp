@@ -34,12 +34,7 @@
                 to login.
                 
             </p>
-            <div class="callout">
-                <ul class="menu simple">
-                    <li><a href="#">Author: Andrew Clawson, <app:Developer/></a></li>
-                <li><a href="#">Comments: 3</a></li>
-                </ul>
-            </div>
+            
         </div>
         
     </body>

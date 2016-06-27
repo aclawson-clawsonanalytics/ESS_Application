@@ -126,7 +126,7 @@ public class DashboardController {
     public ModelAndView Gradebook(HttpServletRequest request){
         ModelAndView modelView = new ModelAndView();
         modelView.setViewName("dashboard/dashboard");
-        //modelView.addObject("dynamicContent","/WEB-INF/views/dashboard/instructor/gradebook/gradebook_view.jsp");
+        modelView.addObject("dynamicContent","/WEB-INF/views/dashboard/instructor/gradebook/gradebook_view.jsp");
         modelView.addObject("mobileMenu","/WEB-INF/views/dashboard/instructor/gradebook/fragments/mobile_menu.jsp");
         modelView.addObject("mobileMenuOptions","/WEB-INF/views/dashboard/instructor/gradebook/fragments/menu_options.jsp");
         
