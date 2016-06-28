@@ -13,6 +13,8 @@ import com.clawsonanalytics.ESS.App.ModelLayer.User;
 import com.clawsonanalytics.ESS.Test.ValidAccount;
 import com.clawsonanalytics.ESS.Test.ValidCampus;
 import com.clawsonanalytics.ESS.Test.ValidUser;
+import com.clawsonanalytics.ESS.Test.ValidCourse;
+
 import org.junit.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -194,6 +196,51 @@ public class CourseTest {
         SUT.Insert();
         Assert.assertEquals(Course.Count(),firstCount+1);
     }
+    
+    @Test
+    public void CanUpdateDepartment(){
+        SUT = new ValidCourse();
+        SUT.setAccountID(account.getID());
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String NEW_DEPARTMENT = "newDepartment";
+        SUT.setDepartment(NEW_DEPARTMENT);
+        SUT.Update();
+        SUT = null;
+        SUT = Course.GetByID(sutID);
+        Assert.assertEquals(SUT.getDepartment(),NEW_DEPARTMENT);
+    }
+    
+    @Test
+    public void CanUpdateTitle(){
+        SUT = new ValidCourse();
+        SUT.setAccountID(account.getID());
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String NEW_TITLE = "newTitle";
+        SUT.setTitle(NEW_TITLE);
+        SUT.Update();
+        SUT = null;
+        SUT = Course.GetByID(sutID);
+        Assert.assertEquals(SUT.getTitle(),NEW_TITLE);
+    }
+    
+    
+    @Test
+    public void CanUpdateDescription(){
+        SUT = new ValidCourse();
+        SUT.setAccountID(account.getID());
+        SUT.Insert();
+        int sutID = SUT.getID();
+        String NEW_DESCRIPTION = "new description";
+        SUT.setDescription(NEW_DESCRIPTION);
+        SUT.Update();
+        SUT = null;
+        SUT = Course.GetByID(sutID);
+        Assert.assertEquals(SUT.getDescription(),NEW_DESCRIPTION);
+    }
+    
+    
     
     
     

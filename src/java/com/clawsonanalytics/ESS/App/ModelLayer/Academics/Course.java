@@ -133,6 +133,16 @@ public class Course extends SQLModel {
         return all;
     }
     
+    public static Course GetByID(int id){
+        List<Course> allCourses = Course.GetAll();
+        for (Course course : allCourses){
+            if (course.getID() == id){
+                return course;
+            }
+        }
+        return null;
+        
+    }
     @Override
     public void Insert(){
         if(this.IsValid()){
@@ -155,6 +165,26 @@ public class Course extends SQLModel {
             }
         }
     }
+    
+    @Override
+    public void Update(){
+        if(this.IsValid()){
+            MySQLManager mysql = new MySQLManager();
+            PreparedStatement preparedStatement;
+            String update = "UPDATE COURSES SET "
+                    + "account_id = ?, "
+                    + "department = ?, "
+                    + "title = ?, "
+                    + "description = ? WHERE id = ?;";
+            try{
+                preparedStatement = mysql.Connector.getConnection().prepareStatement(update,Statement.RETURN_GENERATED_KEYS);
+                preparedStatement = PrepareStatementForUpdate(preparedStatement);
+                preparedStatement.executeUpdate();
+            }catch(SQLException e){
+                e.getMessage();
+            }
+        }
+    }
     public PreparedStatement PrepareStatementForInsert(PreparedStatement preparedStatement){
         try{
             preparedStatement.setInt(1, 0);
@@ -170,7 +200,13 @@ public class Course extends SQLModel {
     }
     
     public PreparedStatement PrepareStatementForUpdate(PreparedStatement preparedStatement){
-        
+        try{
+            preparedStatement.setInt(1,this.getAccountID());
+            preparedStatement.setString(2,this.getDepartment());
+            preparedStatement.setString(3,this.getTitle());
+            preparedStatement.setString(4,this.getDescription());
+            preparedStatement.setInt(5,this.getID());
+        }catch(SQLException e){e.getMessage();}
         return preparedStatement;
     }
     
