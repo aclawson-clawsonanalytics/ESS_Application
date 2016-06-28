@@ -12,10 +12,10 @@
             <ul class="menu info-bar-menu">
                 <!--
                 <li style="padding:10px">
-                    <b>Account: </b>${pageContext.session.getAttribute("account").getName()}
+                    <b>Account: </b>${pageContext.session.getAttribute('account').getName()}
                 </li>
                 <li style="padding:10px">
-                    <b>Campus: </b>${pageContext.session.getAttribute("campus").getName()}
+                    <b>Campus: </b>${pageContext.session.getAttribute('campus').getName()}
                 </li>
                 -->
                 <li style="padding:10px">
