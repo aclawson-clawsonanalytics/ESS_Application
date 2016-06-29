@@ -22,5 +22,12 @@ import java.util.ArrayList;
  * @author andrewclawson
  */
 public class Course extends SQLModel {
+    private static String tablename = "COURSES";
+    public Course(){
+        
+    }
     
+    public static String getTablename(){
+        return Course.tablename;
+    }
 }

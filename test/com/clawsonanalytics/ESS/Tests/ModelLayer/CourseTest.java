@@ -11,6 +11,7 @@ import com.clawsonanalytics.ESS.Test.Entity;
 
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;
 
+import org.junit.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -72,5 +73,11 @@ public class CourseTest {
     //
     // @Test
     // public void hello() {}
+    @Test
+    public void TablenameIsCorrect(){
+        Assert.assertEquals(Course.getTablename(),"COURSES");
+    }
+    
+    
     
 }
