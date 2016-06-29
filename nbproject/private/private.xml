@@ -12,13 +12,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/UI/Controllers/DashboardController.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/UI/Controllers/StartupController.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/web/WEB-INF/views/startup/startup_view.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/web/styles/foundation-6.2.1-complete/css/app.css</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/web/WEB-INF/views/dashboard/fragments/dashboard_topbar.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/web/WEB-INF/fragments/header.jsp</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/web/WEB-INF/views/startup/startup_content.jsp</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/ModelLayer/Campus.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/ModelLayer/Academics/CourseInstance.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/test/com/clawsonanalytics/ESS/Tests/ModelLayer/CampusTest.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/ModelLayer/Academics/Course.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/Test/ValidCourse.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/test/com/clawsonanalytics/ESS/Tests/ModelLayer/CourseTest.java</file>
         </group>
     </open-files>
 </project-private>
