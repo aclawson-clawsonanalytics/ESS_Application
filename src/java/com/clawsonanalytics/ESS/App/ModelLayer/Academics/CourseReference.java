@@ -19,8 +19,8 @@ import java.util.List;
  *
  * @author andrewclawson
  */
-public class Course extends SQLModel {
-    private static String tablename = "COURSES";
+public class CourseReference extends SQLModel {
+    private static String tablename = "COURSE_REFERENCES";
     
     private int account_id; // Reference to parentAccount id.
     private Account parentAccount;
@@ -33,12 +33,12 @@ public class Course extends SQLModel {
     public static String MISSING_DESCRIPTION = "Course must have a description.";
     
     
-    public Course(){
+    public CourseReference(){
         
     }
     
     public static String getTablename(){
-        return Course.tablename;
+        return CourseReference.tablename;
     }
     
     public void setAccountID(int id){
@@ -112,9 +112,9 @@ public class Course extends SQLModel {
         return count;
     }
     
-    public static List<Course> GetAll(){
-        List<Course> all = new ArrayList<Course>();
-        String selectString = "SELECT * FROM " + Course.getTablename() + ";";
+    public static List<CourseReference> GetAll(){
+        List<CourseReference> all = new ArrayList<CourseReference>();
+        String selectString = "SELECT * FROM " + CourseReference.getTablename() + ";";
         MySQLManager mysqlManager = new MySQLManager();
         Statement statement;
         ResultSet results;
@@ -123,7 +123,7 @@ public class Course extends SQLModel {
             statement = mysql.Connector.getConnection().createStatement();
             results = statement.executeQuery(selectString);
             while(results.next()){
-                Course newUser = Course.MapRowToObject(results);
+                CourseReference newUser = CourseReference.MapRowToObject(results);
                 all.add(newUser);
             }
         }catch(SQLException e){
@@ -133,9 +133,9 @@ public class Course extends SQLModel {
         return all;
     }
     
-    public static Course GetByID(int id){
-        List<Course> allCourses = Course.GetAll();
-        for (Course course : allCourses){
+    public static CourseReference GetByID(int id){
+        List<CourseReference> allCourses = CourseReference.GetAll();
+        for (CourseReference course : allCourses){
             if (course.getID() == id){
                 return course;
             }
@@ -146,7 +146,7 @@ public class Course extends SQLModel {
     @Override
     public void Insert(){
         if(this.IsValid()){
-            String insert = "INSERT INTO " + Course.getTablename()
+            String insert = "INSERT INTO " + CourseReference.getTablename()
                     + " VALUES(?,?,?,?,?);";
             MySQLManager mysql = new MySQLManager();
             PreparedStatement preparedStatement;
@@ -171,7 +171,7 @@ public class Course extends SQLModel {
         if(this.IsValid()){
             MySQLManager mysql = new MySQLManager();
             PreparedStatement preparedStatement;
-            String update = "UPDATE COURSES SET "
+            String update = "UPDATE COURSE_REFERENCES SET "
                     + "account_id = ?, "
                     + "department = ?, "
                     + "title = ?, "
@@ -210,8 +210,8 @@ public class Course extends SQLModel {
         return preparedStatement;
     }
     
-    public static Course MapRowToObject(ResultSet results){
-        Course newCourse = new Course();
+    public static CourseReference MapRowToObject(ResultSet results){
+        CourseReference newCourse = new CourseReference();
         try{
             newCourse.setID(results.getInt("id"));
             newCourse.setAccountID(results.getInt("account_id"));
@@ -227,14 +227,14 @@ public class Course extends SQLModel {
     public List<String> GetValidationErrors(){
         List<String> _validationErrors = new ArrayList<String>();
         if(this.getDepartment() == null){
-            _validationErrors.add(Course.MISSING_DEPARTMENT);
+            _validationErrors.add(CourseReference.MISSING_DEPARTMENT);
         }
         if(this.getTitle() == null){
-            _validationErrors.add(Course.MISSING_TITLE);
+            _validationErrors.add(CourseReference.MISSING_TITLE);
             
         }
         if(this.getDescription() == null){
-            _validationErrors.add(Course.MISSING_DESCRIPTION);
+            _validationErrors.add(CourseReference.MISSING_DESCRIPTION);
         }
         return _validationErrors;
     }

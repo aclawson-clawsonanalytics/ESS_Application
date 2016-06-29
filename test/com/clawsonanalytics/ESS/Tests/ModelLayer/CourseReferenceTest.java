@@ -5,7 +5,7 @@
  */
 package com.clawsonanalytics.ESS.Tests.ModelLayer;
 
-import com.clawsonanalytics.ESS.App.ModelLayer.Academics.Course;
+import com.clawsonanalytics.ESS.App.ModelLayer.Academics.CourseReference;
 import com.clawsonanalytics.ESS.App.ModelLayer.Account;
 import com.clawsonanalytics.ESS.App.ModelLayer.Campus;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;
@@ -27,8 +27,8 @@ import static org.junit.Assert.*;
  *
  * @author andrewclawson
  */
-public class CourseTest {
-    private static Course SUT;
+public class CourseReferenceTest {
+    private static CourseReference SUT;
     private static TestEnvironment environment;
     private static Account account;
     
@@ -40,7 +40,7 @@ public class CourseTest {
     
     // Class properties
     
-    public CourseTest() {
+    public CourseReferenceTest() {
     }
     
     @BeforeClass
@@ -58,13 +58,13 @@ public class CourseTest {
     
     @Before
     public void setUp() {
-        SUT = new Course();
+        SUT = new CourseReference();
         
     }
     
     @After
     public void tearDown() {
-        environment.DropRecordsForTestTable(Course.getTablename());
+        environment.DropRecordsForTestTable(CourseReference.getTablename());
         //environment.DropRecordsForTestTable(User.getTablename());
         //environment.DropRecordsForTestTable(Account.getTablename());
     }
@@ -74,19 +74,19 @@ public class CourseTest {
         try{
             environment.CreateTestTableForModelByTablename(Account.getTablename());
             environment.CreateTestTableForModelByTablename(User.getTablename());
-            environment.CreateTestTableForModelByTablename(Course.getTablename());
+            environment.CreateTestTableForModelByTablename(CourseReference.getTablename());
         }catch(Exception e){}
     }
     
     public static void TearDownTestDatabases(){
         //Drop records
         environment.DropRecordsForTestTable(User.getTablename());
-        environment.DropRecordsForTestTable(Course.getTablename());
+        environment.DropRecordsForTestTable(CourseReference.getTablename());
         environment.DropRecordsForTestTable(Account.getTablename());
         
         //Drop Tables
         environment.DropTestTableForModelByTablename(User.getTablename());
-        environment.DropTestTableForModelByTablename(Course.getTablename());
+        environment.DropTestTableForModelByTablename(CourseReference.getTablename());
         environment.DropTestTableForModelByTablename(Account.getTablename());
         
         environment.TearDown();
@@ -99,7 +99,7 @@ public class CourseTest {
     // public void hello() {}
     @Test
     public void TablenameIsCorrect(){
-        Assert.assertEquals(Course.getTablename(),"COURSES");
+        Assert.assertEquals(CourseReference.getTablename(),"COURSE_REFERENCES");
     }
     
     @Test
@@ -141,7 +141,7 @@ public class CourseTest {
         SUT.setAccountID(account.getID());
         SUT.setTitle(sutTitle);
         SUT.setDescription(sutDescription);
-        Assert.assertTrue(SUT.GetValidationErrors().contains(Course.MISSING_DEPARTMENT));
+        Assert.assertTrue(SUT.GetValidationErrors().contains(CourseReference.MISSING_DEPARTMENT));
         
     }
     
@@ -159,7 +159,7 @@ public class CourseTest {
         SUT.setAccountID(account.getID());
         SUT.setDepartment(sutDepartment);
         SUT.setDescription(sutDescription);
-        Assert.assertTrue(SUT.GetValidationErrors().contains(Course.MISSING_TITLE));
+        Assert.assertTrue(SUT.GetValidationErrors().contains(CourseReference.MISSING_TITLE));
     }
     
     @Test
@@ -175,7 +175,7 @@ public class CourseTest {
         SUT.setAccountID(account.getID());
         SUT.setDepartment(sutDepartment);
         SUT.setTitle(sutTitle);
-        Assert.assertTrue(SUT.GetValidationErrors().contains(Course.MISSING_DESCRIPTION));
+        Assert.assertTrue(SUT.GetValidationErrors().contains(CourseReference.MISSING_DESCRIPTION));
     }
     
     @Test
@@ -188,13 +188,13 @@ public class CourseTest {
     
     @Test
     public void CanInsert(){
-        int firstCount = Course.Count();
+        int firstCount = CourseReference.Count();
         SUT.setAccountID(account.getID());
         SUT.setDepartment(sutDepartment);
         SUT.setTitle(sutTitle);
         SUT.setDescription(sutDescription);
         SUT.Insert();
-        Assert.assertEquals(Course.Count(),firstCount+1);
+        Assert.assertEquals(CourseReference.Count(),firstCount+1);
     }
     
     @Test
@@ -207,7 +207,7 @@ public class CourseTest {
         SUT.setDepartment(NEW_DEPARTMENT);
         SUT.Update();
         SUT = null;
-        SUT = Course.GetByID(sutID);
+        SUT = CourseReference.GetByID(sutID);
         Assert.assertEquals(SUT.getDepartment(),NEW_DEPARTMENT);
     }
     
@@ -221,7 +221,7 @@ public class CourseTest {
         SUT.setTitle(NEW_TITLE);
         SUT.Update();
         SUT = null;
-        SUT = Course.GetByID(sutID);
+        SUT = CourseReference.GetByID(sutID);
         Assert.assertEquals(SUT.getTitle(),NEW_TITLE);
     }
     
@@ -236,7 +236,7 @@ public class CourseTest {
         SUT.setDescription(NEW_DESCRIPTION);
         SUT.Update();
         SUT = null;
-        SUT = Course.GetByID(sutID);
+        SUT = CourseReference.GetByID(sutID);
         Assert.assertEquals(SUT.getDescription(),NEW_DESCRIPTION);
     }
     

@@ -5,14 +5,14 @@
  */
 package com.clawsonanalytics.ESS.Test;
 
-import com.clawsonanalytics.ESS.App.ModelLayer.Academics.Course;
+import com.clawsonanalytics.ESS.App.ModelLayer.Academics.CourseReference;
 import com.clawsonanalytics.ESS.App.ModelLayer.Account;
 import com.clawsonanalytics.ESS.App.ModelLayer.User;
 /**
  *
  * @author andrewclawson
  */
-public class ValidCourse extends Course {
+public class ValidCourse extends CourseReference {
     private static String COURSE_DEPARTMENT = "validCourseDepartement";
     private static String COURSE_TITLE = "validCourseTitle";
     private static String COURSE_DESCRIPTION = "validCourseDescription";
