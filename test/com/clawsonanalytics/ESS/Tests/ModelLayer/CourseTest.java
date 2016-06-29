@@ -238,7 +238,6 @@ public class CourseTest {
         SUT = null;
         SUT = Course.GetByID(sutID);
         Assert.assertEquals(SUT.getDescription(),NEW_DESCRIPTION);
-        
     }
     
     
