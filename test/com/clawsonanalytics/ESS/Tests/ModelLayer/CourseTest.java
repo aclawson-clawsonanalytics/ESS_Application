@@ -5,6 +5,8 @@
  */
 package com.clawsonanalytics.ESS.Tests.ModelLayer;
 
+import com.clawsonanalytics.ESS.Test.Entity;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
