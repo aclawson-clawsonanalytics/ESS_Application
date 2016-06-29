@@ -10,6 +10,8 @@ import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLDataConnector;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLDataSource;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.ESS.App.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.ModelLayer.Account;
+import com.clawsonanalytics.ESS.App.ModelLayer.Campus;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -165,7 +167,28 @@ public class TestEnvironment {
         */
     }
     
+    public void CreateTablesForEntity(){
+        // - Users
+        CreateTestTableForModelByTablename(User.getTablename());
+        // - Accounts
+        CreateTestTableForModelByTablename(Account.getTablename());
+        // - Campus
+        CreateTestTableForModelByTablename(Campus.getTablename());
+        // - 
+    }
     
+    public void DropForEntity(){
+        // Drop records
+        
+        DropRecordsForTestTable(User.getTablename());
+        DropRecordsForTestTable(Account.getTablename());
+        DropRecordsForTestTable(Campus.getTablename());
+        
+        DropTestTableForModelByTablename(Campus.getTablename());
+        DropTestTableForModelByTablename(User.getTablename());
+        DropTestTableForModelByTablename(Account.getTablename());
+        
+    }
     
     
     
