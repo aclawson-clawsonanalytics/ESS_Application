@@ -14,12 +14,13 @@
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--
-        <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/foundation.css"/>
-        <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/app.css"/>
-        -->
+        
         <link rel="stylesheet" href="resources/css/foundation.css"/>
         <link rel="stylesheet" href="resources/css/app.css"/>
+        <link rel="stylesheet" href="resources/css/forms.css"/>
+        <link rel="stylesheet" href="resources/css/headings.css"/>
+        <link rel="stylesheet" href="resources/css/labels.css"/>
+        <link rel="stylesheet" href="resources/css/menus.css"/>
         <title>Welcome</title>
 
         <!--<link rel="stylesheet" type="text/css" href="/resources/stylesheet.css"/>-->
