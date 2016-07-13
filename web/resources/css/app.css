@@ -19,13 +19,13 @@ DIV style guides.
 {
     /*background:linear-gradient(to bottom right,#999999,blue);*/
     height:200px;
-    background:url('images/mountains1.jpg') no-repeat center center;
+    background:url('background-images/mountains1.jpg') no-repeat center center;
     background-size:cover;
 }
 
 .dashboard-header{
     height:200px;
-    background:url('images/mountains1.jpg') no-repeat center center;
+    background:url('background-images/mountains1.jpg') no-repeat center center;
     background-size:100%;
 }
 /*Menus*/
