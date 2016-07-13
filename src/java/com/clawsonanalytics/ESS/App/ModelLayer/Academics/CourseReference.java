@@ -32,6 +32,8 @@ public class CourseReference extends SQLModel {
     public static String MISSING_TITLE = "Course must have a title.";
     public static String MISSING_DESCRIPTION = "Course must have a description.";
     
+    public int TERM_ID;
+    
     
     public CourseReference(){
         

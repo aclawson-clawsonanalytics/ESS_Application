@@ -36,7 +36,7 @@ public class Account extends SQLModel {
     private Date close_date;
     
     private User manager;
-    private UserList userList;
+    private ArrayList<User> UserSet;
     public ArrayList<Campus> CampusSet;
     //private CampusList CampusSet;
     // Constructor

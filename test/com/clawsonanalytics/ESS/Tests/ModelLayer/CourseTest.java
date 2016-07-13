@@ -78,6 +78,13 @@ public class CourseTest {
         Assert.assertEquals(Course.getTablename(),"COURSES");
     }
     
+    public void CanSetReferenceID(){
+        
+    }
+    
+    public void CanSetTerm(){
+        
+    }
     
     
 }
