@@ -10,8 +10,12 @@
 <%@taglib uri="/WEB-INF/tlds/AppInformation.tld" prefix="app"%> 
 
 <html>
+    <!--
 <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/foundation.css"/>
 <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/app.css"/>
+    -->
+    <link rel="stylesheet" href="resources/css/foundation.css"/>
+    <link rel="stylesheet" href="resources/css/app.css"/>
 <!DOCTYPE html>
 <body>
     <div class="row header">

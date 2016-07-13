@@ -13,9 +13,12 @@
     <head>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+        <link rel="stylesheet" href="resources/css/foundation.css"/>
+        <link rel="stylesheet" href="resources/css/app.css"/>
+        <!--
         <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/foundation.css"/>
         <link rel="stylesheet" href="styles/foundation-6.2.1-complete/css/app.css"/>
+        -->
        
         
         
@@ -46,7 +49,7 @@
             <jsp:include page="/WEB-INF/fragments/footer.jsp"/>
         </div>
     
-        <script src="js/dashboard.js"></script>
+        <script src="resources/javascript/dashboard.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     
