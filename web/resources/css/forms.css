@@ -7,4 +7,28 @@ and open the template in the editor.
     Created on : Jul 13, 2016, 1:08:09 AM
     Author     : andrewclawson
 */
+input[type=text]
+{
+    height:30px;
+    display:inline-block;
+    border-radius:4px;
+}
 
+input[type=password]
+{
+    height:30px;
+    display:inline-block;
+    border-radius:4px;
+}
+
+techsupport-form.input[type=email]
+{
+    
+    width:400px;
+}
+
+techsupport-form.input[type=text]
+{
+    height:450px;
+    width:400px;
+}
