@@ -8,6 +8,12 @@ import com.clawsonanalytics.ESS.App.ModelLayer.Campus;
 import com.clawsonanalytics.ESS.App.ModelLayer.Account;
 import com.clawsonanalytics.ESS.App.ModelLayer.User;
 
+import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLManager;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,27 +21,58 @@ import java.util.List;
  *
  * @author andrewclawson
  */
-public class CampusList extends ArrayList {
-    private static List<Campus> allCampuses = Campus.GetAll();
-    
+public class CampusList {
+    //private static List<Campus> allCampuses = Campus.GetAll();
+    public String SELECT;
+    public ArrayList<Campus> SET = new ArrayList<Campus>();
     public CampusList(){
         
     }
     
-    public void add(Campus campus){
-        if (campus.IsValid()){
-            campus.Insert();
-        }
-        super.add(campus);
+    /*Overloaded constructor for account*/
+    public CampusList(Account account){
+        SELECT = "SELECT * FROM " + Account.getTablename() + " WHERE account_id = " + account.getID() + ";";
     }
     
-    public static List<Campus> ByAccount(int accountID){
-        List<Campus> campusesByAccount = new ArrayList<Campus>();
-        for (Campus campus : allCampuses){
-            if (campus.getAccountID() == accountID){
-                campusesByAccount.add(campus);
+    public void Load(){
+        // Create MySQLManager
+        MySQLManager mysql = new MySQLManager();
+        
+        //Set SQL variables
+        Statement statement;
+        ResultSet results;
+        
+        // Execute statement
+        try{
+            statement = mysql.Connector.getConnection().createStatement();
+            results = statement.executeQuery(SELECT);
+            while(results.next()){
+                AddCampus(Campus.MapRowToObject(results));
             }
+        }catch(SQLException e){
+            
         }
-        return campusesByAccount;
+        //Process results
+        
+        //Close resourecs
     }
-}
+    public void AddCampus(Campus campus){
+        // TODO Check if campus already exists within list
+        // TODO If campus is not persisted, insert it and 
+        SET.stream().forEach((_campus) -> {
+            if(_campus.getID() == campus.getID()){
+                return;
+            }else{
+                if(campus.getID() == 0){
+                    campus.Insert();
+                    SET.add(campus);
+                }
+            }
+        });
+      
+            
+        }
+        
+}    
+      
+    

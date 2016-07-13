@@ -37,13 +37,14 @@ public class Account extends SQLModel {
     
     private User manager;
     private UserList userList;
-    private CampusList campusList;
+    public ArrayList<Campus> CampusSet;
+    //private CampusList CampusSet;
     // Constructor
     public Account(){
         //this.setManager(managerID);
         //this.setManager(managerID);
         this.setCreationDate(new Date(Calendar.getInstance().getTime().getTime()));
-        
+        //this.CampusSet = new CampusList();
         
 
         
@@ -173,8 +174,9 @@ public class Account extends SQLModel {
             newAccount.setName(result.getString("name"));
             newAccount.setCreationDate(result.getDate("creation_date"));
             newAccount.setCloseDate(result.getDate("close_date"));
-        }catch(SQLException e){
-            
+            //newAccount.NotifyLoaded();
+        }catch(Exception e){
+            e.printStackTrace();
         }
         return newAccount;
     }
@@ -254,13 +256,30 @@ public class Account extends SQLModel {
         return preparedStatement;
     }
     
-    public List<User> UserList(){
-        return UserList.ByAccount(this.getID());
+    public void LoadCampusSet(){
+        ArrayList<Campus> _campusSet = new ArrayList<Campus>();
+        String SELECT = "SELECT * FROM " + Campus.getTablename() + " WHERE account_id = " + this.getID() + ";";
+        MySQLManager mysql = new MySQLManager();
+        Statement statement;
+        ResultSet results;
+        try{
+            statement = mysql.Connector.getConnection().createStatement();
+            results = statement.executeQuery(SELECT);
+            while(results.next()){
+                _campusSet.add(Campus.MapRowToObject(results));
+            }
+        }catch(SQLException e){
+            e.getMessage();
+        }
+        this.CampusSet = _campusSet;
     }
     
-    public List<Campus> CampusList(){
-        return CampusList.ByAccount(this.getID());
+    public void NotifyLoaded(){
+        this.LoadCampusSet();
     }
+   
+    
+    
     
     
     

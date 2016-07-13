@@ -368,7 +368,7 @@ public class User extends SQLModel {
             newUser.setEmail(result.getString("email"));
             newUser.setPassword(result.getString("password"));
             newUser.setAccountID(result.getInt("account_id"));
-            newUser.setAccountID(result.getInt("campus_id"));
+            newUser.setCampusID(result.getInt("campus_id"));
             newUser.setAccountManagerValue(result.getInt("isAccountManager"));
             newUser.setSchoolAdminValue(result.getInt("isSchoolAdmin"));
             newUser.setInstructorValue(result.getInt("isInstructor"));

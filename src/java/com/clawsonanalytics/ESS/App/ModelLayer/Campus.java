@@ -262,7 +262,7 @@ public class Campus extends SQLModel {
         return preparedStatement;
     }
      
-    private static Campus MapRowToObject(ResultSet results){
+    public static Campus MapRowToObject(ResultSet results){
         Campus newCampus = new Campus();
         try{
             newCampus.setID(results.getInt("id"));
