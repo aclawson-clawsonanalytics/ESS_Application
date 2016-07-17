@@ -274,14 +274,13 @@ public class Account extends SQLModel {
         this.CampusSet = _campusSet;
     }
     
+    public void LoadUserSet(){
+        
+    }
+    
     public void NotifyLoaded(){
         this.LoadCampusSet();
-    }
+    }  
    
-    
-    
-    
-    
-    
-    
 }
+
