@@ -7,6 +7,7 @@ package com.clawsonanalytics.ESS.App.ModelLayer;
 import com.clawsonanalytics.ESS.App.ModelLayer.Lists.UserList;
 import com.clawsonanalytics.ESS.App.ModelLayer.Lists.CampusList;
 import com.clawsonanalytics.ESS.App.ModelLayer.Interface.IValidatable;
+import com.clawsonanalytics.ESS.App.ModelLayer.Interface.IModelSetManager;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLManager;
 
@@ -38,6 +39,8 @@ public class Account extends SQLModel {
     private User manager;
     private ArrayList<User> UserSet;
     public ArrayList<Campus> CampusSet;
+    
+    public CampusSetManager CampusManager;
     //private CampusList CampusSet;
     // Constructor
     public Account(){
@@ -45,7 +48,7 @@ public class Account extends SQLModel {
         //this.setManager(managerID);
         this.setCreationDate(new Date(Calendar.getInstance().getTime().getTime()));
         //this.CampusSet = new CampusList();
-        
+        this.CampusManager = new CampusSetManager();
 
         
     }
@@ -282,6 +285,32 @@ public class Account extends SQLModel {
         this.LoadCampusSet();
     }
     
+    public class CampusSetManager implements IModelSetManager{
+        
+        
+        public void LoadSet(){
+            ArrayList<Campus> _campusSet = new ArrayList<Campus>();
+            String SELECT = "SELECT * FROM " + Campus.getTablename() + " WHERE account_id = " + getID() + ";";
+            MySQLManager mysql = new MySQLManager();
+            Statement statement;
+            ResultSet results;
+        try{
+            statement = mysql.Connector.getConnection().createStatement();
+            results = statement.executeQuery(SELECT);
+            while(results.next()){
+                _campusSet.add(Campus.MapRowToObject(results));
+            }
+        }catch(SQLException e){
+            e.getMessage();
+        }
+        CampusSet = _campusSet;
+            
+        }
+        public void NotifyDataChange(){
+            
+        }
+        
+    }
     
     
     
