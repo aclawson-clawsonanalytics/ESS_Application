@@ -53,11 +53,29 @@ public class Account extends SQLModel {
         
     }
     public static Account GetByID(int id){
+        /*
         List<Account> allAccounts = Account.GetAll();
         for (Account account : allAccounts){
             if (account.getID() == id){
                 return account;
             }
+        }
+        
+        return null;*/
+        Account account;
+        MySQLManager mysql = new MySQLManager();
+        Statement statement;
+        ResultSet results;
+        String SELECT = "SELECT * FROM " + getTablename() + " WHERE id = " + Integer.toString(id) +";";
+        try{
+            statement = mysql.Connector.getConnection().createStatement();
+            results = statement.executeQuery(SELECT);
+            while(results.next()){
+                account = Account.MapRowToObject(results);
+                return account;
+            }
+        }catch(SQLException e){
+            account = null;
         }
         
         return null;
