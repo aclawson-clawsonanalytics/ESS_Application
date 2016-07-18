@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.8.0.xsd">
+    <jdbc>
+        <driver>com.mysql.jdbc.Driver</driver>
+        <url>jdbc:mysql://maxdb.clawsonanalytics.com:3306/max_application</url>
+        <user>aclawson</user>
+        <password>clawson1</password>
+    </jdbc>
+    <generator>
+        <name>org.jooq.util.JavaGenerator</name>
+        <database>
+            <name>org.jooq.util.mysql.MySQLDatabase</name>
+            <inputSchema>max_application</inputSchema>
+            <includes>.*</includes>
+            <excludes></excludes>
+        </database>
+        <target>
+                <packageName>ess.generated</packageName>
+                <directory>/Volumes/Storage/ClawsonAnalytics/Development Projects/ESS/ESS/src/java</directory>
+        </target>
+    </generator>
+</configuration>
