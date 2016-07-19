@@ -40,7 +40,7 @@
               
                   <a><b>Account Admin</b></a>
                   <ul class="menu vertical">
-                      <li><a>Account Info</a></li>
+                      <li><a href="${pageContext.request.contextPath}/dashboard-account-info.htm">Account Info</a></li>
                       <li><a>Manage Users</a></li>
                       <li><a>Account Settings</a></li>
                   </ul>
@@ -105,7 +105,7 @@
           <li data-toggle>
               <a><b>Account Admin</b></a>
             <ul class="menu vertical">
-                <li data-close><a>Account Info</a></li>
+                <li data-close><a href="${pageContext.request.contextPath}/dashboard-account-info.htm">Account Info</a></li>
                 <li data-close><a>Manage Users</a></li>
                 <li data-close><a>Settings</a></li>
             </ul>

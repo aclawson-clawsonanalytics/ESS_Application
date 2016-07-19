@@ -133,4 +133,14 @@ public class DashboardController {
         
         return modelView;
     }
+    
+    @RequestMapping(value="/dashboard-account-info.htm")
+    public ModelAndView Account(HttpServletRequest request){
+        ModelAndView modelView = new ModelAndView();
+        modelView.setViewName("dashboard/dashboard");
+        modelView.addObject("dynamicContent","/WEB-INF/views/dashboard/account/info/account-info_view.jsp");
+        modelView.addObject("mobileMenu","/WEB-INF/views/dashboard/account/info/fragments/mobile_menu.jsp");
+        modelView.addObject("mobileMenuOptions","/WEB-INF/views/dashboard/account/info/fragments/menu_options.jsp");
+        return modelView;
+    }
 } 

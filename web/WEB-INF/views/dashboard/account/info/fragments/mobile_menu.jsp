@@ -6,7 +6,7 @@
 
 
 
-<span class="title-bar-title">Grade Book</span>
+<span class="title-bar-title">Account Info</span>
 <button class="menu-icon" type="button" data-open="dashboard-mobile-right"></button>
 <span class="title-bar-title"></span>
 

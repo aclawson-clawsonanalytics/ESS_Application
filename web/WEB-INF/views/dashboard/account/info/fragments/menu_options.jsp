@@ -8,17 +8,10 @@
 <!DOCTYPE html>
 <html>
         <li><br><br></li>
-        <li>
-            <a href="r#">Class</a>
-            <ul class="menu vertical">
-                <li><a>Foundations</a></li>
-                <li><a>Algebra</a></li>
-                <li><a>Geometry</a></li>
-                <li><a>AP Stats</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Setup</a></li>
-        <li><a href="#">Add / Edit Category</a></li>
-        <li><a href="#">Add / Edit Assignment</a></li>
+        <li><a href="#">Info</a></li>
+        <li><a href="#">Campuses</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Emplyees</a></li>
+        <li><a href="#">Billing</a></li>
         
 </html>

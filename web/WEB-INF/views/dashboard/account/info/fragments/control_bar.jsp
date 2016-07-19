@@ -11,6 +11,7 @@
         <li><a href="#">Info</a></li>
         <li><a href="#">Campuses</a></li>
         <li><a>Users</a></li>
+        <li><a>Employees</a></li>
         <li><a>Billing</a></li>
 </ul>
     
