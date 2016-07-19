@@ -52,6 +52,7 @@ xmlns="http://www.springframework.org/schema/beans"
             <prop key="techsupport.htm">StartupController</prop>
             <prop key="dashboard-techsupport.htm">DashboardController</prop>
             <prop key="dashboard-gradebook.htm">DashboardController</prop>
+            <prop key="dashboard-account-info.htm">DashboardController</prop>
         </props>
     </property>
 </bean>
