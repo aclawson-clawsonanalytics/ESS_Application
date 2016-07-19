@@ -30,8 +30,10 @@
                 <span aria-hidden="true">&times;</span>
             </button>
           </li>
+          
           <li><input id="mobileLoginEmail" name="mobileLoginEmail" type="text" placeholder="Email"></li>
           <li><input id="mobileLoginPassword" name="mobileLoginPassword" type="password" placeholder="Password"></li>
+          <li class="mobile-login-error"><a style="color:red">${loginError}</a></li>
           <li><a class="button" onclick="ValidateMobileLogin();">Login</a></li>
       </ul>
         </form>
@@ -76,9 +78,11 @@
       <div class="top-bar-right">
           <form id="loginForm" action="${pageContext.request.contextPath}/dashboard.htm" method="post">
         <ul class="menu">
+            <li><a style="color:red" id="wide-login-error">${loginError}</a></li>
           <li><input id="loginEmail" name="loginEmail" type="text" placeholder="Email"></li>
           <li><input id="loginPassword" name="loginPassword" type="password" placeholder="Password"></li>
           <li><a class="button" onclick="ValidateLoginForm();">Login</a></li>
+          
         </ul>
           </form>
       </div>

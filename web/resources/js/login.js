@@ -10,7 +10,10 @@ function ValidateLoginForm(){
     var email = document.getElementById("loginEmail").value;
     var password = document.getElementById("loginPassword").value;
     if (!email || !password){
-        alert("Missing username or password.");
+        //alert("Missing username or password.");
+        var wideLoginError = document.getElementById("wide-login-error");
+        wideLoginError.innerHTML = "Missing username or password.";
+        $("#wide-login-error").show();
     }else{
         
         loginForm.submit();
@@ -19,10 +22,14 @@ function ValidateLoginForm(){
 
 function ValidateMobileLogin(){
     var loginForm = document.getElementById("mobileLoginForm");
-    var email = document.getElementById("mobileLoginEmail");;
+    var email = document.getElementById("mobileLoginEmail");
     var password = document.getElementById("mobileLoginPassword");
     if (!email || !password){
-        alert("Missing username or password.");
+        //alert("Missing username or password.");
+        var mobileLoginError = document.getElementById("mobile-login-error");
+        mobileLoginError.innerHTML = "Missing username or password.";
+        $("#mobile-login-error").show();
+        
     } else{
         loginForm.submit();
     }
