@@ -8,16 +8,10 @@
 <!DOCTYPE html>
 <html>
     <ul class= "menu" data-accordion-menu>
-        <li>
-          <a href="#">Classes</a>
-          <ul class="menu vertical nested">
-            <li><a href="#">Item 1A</a></li>
-            <li><a href="#">Item 1B</a></li>
-          </ul>
-        </li>
-    <li><a href="#">Setup</a></li>
-    <li><a>Add / Edit Category</a></li>
-    <li><a>Add / Edit Assignment</a></li>
+        <li><a href="#">Info</a></li>
+        <li><a href="#">Campuses</a></li>
+        <li><a>Users</a></li>
+        <li><a>Billing</a></li>
 </ul>
     
 </html>

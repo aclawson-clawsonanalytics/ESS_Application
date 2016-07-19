@@ -14,7 +14,7 @@
     </head>
     -->
     <body>
-        <div class="hide-for-portrait" id="gradebook-wide-menu" >
+        <div class="hide-for-portrait" id="accountInfo-wide-menu" >
             <jsp:include page="/WEB-INF/views/dashboard/account/info/fragments/control_bar.jsp"/>
         </div>
     </body>
