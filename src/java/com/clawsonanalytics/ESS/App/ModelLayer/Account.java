@@ -195,7 +195,7 @@ public class Account extends SQLModel {
             newAccount.setName(result.getString("name"));
             newAccount.setCreationDate(result.getDate("creation_date"));
             newAccount.setCloseDate(result.getDate("close_date"));
-            //newAccount.NotifyLoaded();
+            //newAccount.OnLoad();
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -296,11 +296,28 @@ public class Account extends SQLModel {
     }
     
     public void LoadUserSet(){
-        
+        ArrayList<User> _userSet = new ArrayList<User>();
+        String SELECT = "SELECT * FROM " + User.getTablename() + " WHERE account_id = " + this.getID() + ";";
+        MySQLManager mysql = new MySQLManager();
+        Statement statement;
+        ResultSet results;
+        try{
+            statement = mysql.Connector.getConnection().createStatement();
+            results = statement.executeQuery(SELECT);
+            while(results.next()){
+                _userSet.add(User.MapRowToObject(results));
+            }
+        }catch(SQLException e){
+            
+        }finally{
+            mysql.Connector.CloseResources();
+        }
+        this.UserSet = _userSet;
     }
     
-    public void NotifyLoaded(){
+    public void OnLoad(){
         this.LoadCampusSet();
+        this.LoadUserSet();
     }
     
     public class CampusSetManager implements IModelSetManager{

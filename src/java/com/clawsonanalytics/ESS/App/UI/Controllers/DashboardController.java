@@ -56,7 +56,7 @@ public class DashboardController {
             
             if (activeUser != null){
                 Account userAccount = Account.GetByID(activeUser.getAccountID());
-                userAccount.NotifyLoaded();
+                userAccount.OnLoad();
                 modelView.setViewName("dashboard/dashboard");
                 //modelView.addObject("activeUser",activeUser);
                 

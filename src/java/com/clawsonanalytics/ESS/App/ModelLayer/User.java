@@ -359,7 +359,7 @@ public class User extends SQLModel {
         return preparedStatement;
     }
     
-    private static User MapRowToObject(ResultSet result){
+    public static User MapRowToObject(ResultSet result){
         User newUser = new User();
         try{
             newUser.setID(result.getInt("id"));
