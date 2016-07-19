@@ -12,10 +12,9 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/UI/Controllers/DashboardController.java</file>
             <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/ModelLayer/Account.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/ModelLayer/Managers/CampusManager.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/ModelLayer/Campus.java</file>
-            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/src/java/com/clawsonanalytics/ESS/App/ModelLayer/User.java</file>
+            <file>file:/Volumes/Storage/ClawsonAnalytics/Development%20Projects/ESS/ESS/web/WEB-INF/dispatcher-servlet.xml</file>
         </group>
     </open-files>
 </project-private>

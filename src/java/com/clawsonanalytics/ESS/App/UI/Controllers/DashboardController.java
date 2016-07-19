@@ -30,6 +30,8 @@ import com.clawsonanalytics.ESS.App.ModelLayer.Campus;
 @Controller
 @SessionAttributes
 public class DashboardController {
+    public User activeUser;
+    
     public DashboardController(){
         
     }
@@ -52,7 +54,7 @@ public class DashboardController {
         ModelAndView modelView = new ModelAndView();
         try{
             
-            User activeUser = User.GetByCredentials(email, password);
+            activeUser = User.GetByCredentials(email, password);
             
             if (activeUser != null){
                 Account userAccount = Account.GetByID(activeUser.getAccountID());
@@ -97,7 +99,7 @@ public class DashboardController {
         session.removeAttribute("campus");
         session.removeAttribute("account");
         session.removeAttribute("loginError");
-        
+        activeUser = null;
         modelView.setViewName("redirect:startup.htm");
         /*
         try{
