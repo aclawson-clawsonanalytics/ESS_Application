@@ -168,6 +168,8 @@ public class Account extends SQLModel {
             
         }catch(SQLException e){
             
+        }finally{
+            mysqlManager.Connector.CloseResources();
         }
         return count;
     }
@@ -187,8 +189,9 @@ public class Account extends SQLModel {
                 allAccounts.add(newAccount);
             }
         }catch(SQLException e){
-            
-            
+            //TODO Add more exception handling and loggin support here.
+        }finally{
+            mysql.Connector.CloseResources();
         }
         return allAccounts;
     }
@@ -203,7 +206,7 @@ public class Account extends SQLModel {
             newAccount.setCloseDate(result.getDate("close_date"));
             //newAccount.OnLoad();
         }catch(Exception e){
-            e.printStackTrace();
+            // TODO Add more exception and loggin support here.
         }
         return newAccount;
     }
@@ -230,7 +233,9 @@ public class Account extends SQLModel {
                 
                 
             }catch(SQLException e){
-                
+                //TODO Add more exception handling and loggin support here.
+            }finally{
+                mysql.Connector.CloseResources();
             }
         }
         
@@ -251,7 +256,9 @@ public class Account extends SQLModel {
                 preparedStatement = PrepareStatementForUpdate(preparedStatement);
                 preparedStatement.executeUpdate();
             }catch(SQLException e){
-                e.getMessage();
+                //TODO Add more exception handling and logging support here.
+            }finally{
+                mysql.Connector.CloseResources();
             }
         }
     }
@@ -296,7 +303,9 @@ public class Account extends SQLModel {
                 _campusSet.add(Campus.MapRowToObject(results));
             }
         }catch(SQLException e){
-            e.getMessage();
+            //TODO Add more exception handling and logging support here.
+        }finally{
+            mysql.Connector.CloseResources();
         }
         this.CampusSet = _campusSet;
     }
@@ -314,7 +323,7 @@ public class Account extends SQLModel {
                 _userSet.add(User.MapRowToObject(results));
             }
         }catch(SQLException e){
-            
+            //TODO Add more exception handling and logging support here.
         }finally{
             mysql.Connector.CloseResources();
         }
@@ -343,6 +352,8 @@ public class Account extends SQLModel {
             }
         }catch(SQLException e){
             e.getMessage();
+        }finally{
+            mysql.Connector.CloseResources();
         }
         CampusSet = _campusSet;
             
