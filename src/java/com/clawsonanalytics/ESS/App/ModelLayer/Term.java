@@ -87,7 +87,11 @@ public class Term extends SQLModel {
                 Term newTerm = Term.MapRowToObject(results);
                 allTerms.add(newTerm);
             }
-        }catch(SQLException e){}
+        }catch(SQLException e){
+            //TODO add more exception handling and logging support here.
+        }finally{
+            mysql.Connector.CloseResources();
+        }
         return allTerms;
     }
     
@@ -115,7 +119,9 @@ public class Term extends SQLModel {
             }
             
         }catch(SQLException e){
-            
+            //TODO Add more exception handling and logging support here.
+        }finally{
+            mysql.Connector.CloseResources();
         }
         return count;
     }
@@ -138,8 +144,10 @@ public class Term extends SQLModel {
                 this.setID(id);
                 mysql.Connector.CloseResources();
             }catch(SQLException e){
-                e.getMessage();
+                //TODO Add more exception handling and logging support here.
                 
+            }finally{
+                mysql.Connector.CloseResources();
             }
         }
         
@@ -162,7 +170,9 @@ public class Term extends SQLModel {
                 preparedStatement = PrepareStatementForUpdate(preparedStatement);
                 preparedStatement.executeUpdate();
             }catch(SQLException e){
-                e.getMessage();
+                //TODO Add more exception handling and logging support here
+            }finally{
+                mysql.Connector.CloseResources();
             }
         }
     }
