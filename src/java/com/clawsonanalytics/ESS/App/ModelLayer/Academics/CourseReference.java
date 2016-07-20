@@ -109,7 +109,9 @@ public class CourseReference extends SQLModel {
             }
             
         }catch(SQLException e){
-            
+            //TODO Add exception handling and logging support here
+        }finally{
+            mysqlManager.Connector.CloseResources();
         }
         return count;
     }
@@ -129,7 +131,9 @@ public class CourseReference extends SQLModel {
                 all.add(newUser);
             }
         }catch(SQLException e){
-            
+            //TODO Add exception handling and logging support here.
+        }finally{
+            mysqlManager.Connector.CloseResources();
         }
         
         return all;
@@ -161,9 +165,11 @@ public class CourseReference extends SQLModel {
                 keys.next();
                 int id = keys.getInt(1);
                 this.setID(id);
-                mysql.Connector.CloseResources();
-            }catch(SQLException e){
                 
+            }catch(SQLException e){
+                //TODO Add exception handling and logging support here.
+            }finally{
+                mysql.Connector.CloseResources();
             }
         }
     }
@@ -183,7 +189,9 @@ public class CourseReference extends SQLModel {
                 preparedStatement = PrepareStatementForUpdate(preparedStatement);
                 preparedStatement.executeUpdate();
             }catch(SQLException e){
-                e.getMessage();
+                //TODO Add exception handling and loggin support here.
+            }finally{
+                mysql.Connector.CloseResources();
             }
         }
     }
@@ -196,7 +204,7 @@ public class CourseReference extends SQLModel {
             preparedStatement.setString(5,this.getDescription());
             
         }catch(SQLException e){
-            e.getMessage();
+            //e.getMessage();
         }
         return preparedStatement;
     }
@@ -208,7 +216,7 @@ public class CourseReference extends SQLModel {
             preparedStatement.setString(3,this.getTitle());
             preparedStatement.setString(4,this.getDescription());
             preparedStatement.setInt(5,this.getID());
-        }catch(SQLException e){e.getMessage();}
+        }catch(SQLException e){}
         return preparedStatement;
     }
     
