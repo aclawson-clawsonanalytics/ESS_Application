@@ -20,6 +20,7 @@
             <jsp:include page="/WEB-INF/views/dashboard/account/info/fragments/control_bar.jsp"/>
         </div>
         
+        <div class="small-10 small-centered large-8 large-centered">
         <div class="tabs-content" data-tabs-content="account-info-tabs">
             <div class="tabs-panel" id="infoPanel">
                 <form>
@@ -45,8 +46,14 @@
                                 </select>
                             </td>
                         </tr>
+                        <tr>
+                            <td></td>
+                            <td><a class="button" id="SaveAccountInfoChangesButton">Save Changes</a></td>
+                        </tr>
                     </table>
+                            
                 </form>
+            </div>
             </div>
             
             <div class="tabs-panel" id="campusesPanel">

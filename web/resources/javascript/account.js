@@ -11,6 +11,11 @@ $(document).ready(function(){
     $("#ChangeManagerButton").click(function(){
         $("#managerSelector").show();
     });
+    
+    $("#SaveAccountInfoChangesButton").click(function(){
+        
+    });
+    
 });
 function showManagerSelector(){
     $("#managerSelector").show();
