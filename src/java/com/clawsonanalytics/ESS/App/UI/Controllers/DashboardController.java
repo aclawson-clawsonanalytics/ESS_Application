@@ -151,6 +151,8 @@ public class DashboardController {
         
         //model variables
         modelView.addObject("account",account);
+        modelView.addObject("userList", account.UserSet);
+        modelView.addObject("campusList",account.CampusSet);
         
         return modelView;
     }

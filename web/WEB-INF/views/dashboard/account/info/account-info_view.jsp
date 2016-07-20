@@ -43,7 +43,9 @@
                             <td colspan="2">
                                 <select id="managerSelector" name="changeManager">
                                     <option value="-1">Choose a new account manager</option>
-                                    
+                                    <c:forEach var="user" items="${userList}">
+                                        <option value="${user.getID()}">${user.getFirstname()} ${user.getLastname()}</option>
+                                    </c:forEach>
                                 </select>
                             </td>
                         </tr>
