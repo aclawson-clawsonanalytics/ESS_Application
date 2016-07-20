@@ -165,7 +165,9 @@ public class Campus extends SQLModel {
                 all.add(newCampus);
             }
         }catch(SQLException e){
-            
+            //TODO Add exception handling and logging support here.
+        }finally{
+            mysqlManager.Connector.CloseResources();
         }
         
         return all;
@@ -197,9 +199,11 @@ public class Campus extends SQLModel {
                 keys.next();
                 int id = keys.getInt(1);
                 this.setID(id);
-                mysql.Connector.CloseResources();
+                //mysql.Connector.CloseResources();
             }catch(SQLException e){
-                
+                //TODO Add more exception handling and logging support here.
+            }finally{
+                mysql.Connector.CloseResources();
             }
         }
     }
@@ -222,7 +226,10 @@ public class Campus extends SQLModel {
                 preparedStatement = PrepareStatementForUpdate(preparedStatement);
                 preparedStatement.executeUpdate();
             }catch(SQLException e){
-                e.getMessage();
+                //TODO Add exception handling and logging support here.
+                
+            }finally{
+                mysql.Connector.CloseResources();
             }
                     
         }
@@ -274,7 +281,7 @@ public class Campus extends SQLModel {
             newCampus.setPO(results.getString("po"));
             newCampus.setAccountID(results.getInt("account_id"));
         }catch(SQLException e){
-           e.getMessage();
+           //TODO Add exception handling and logging support here.
         }
         return newCampus;
     }
