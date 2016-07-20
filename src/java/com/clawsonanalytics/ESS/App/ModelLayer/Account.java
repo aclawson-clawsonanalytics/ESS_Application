@@ -119,6 +119,11 @@ public class Account extends SQLModel {
     public String getName(){
         return this.name;
     }
+    
+    public String getManagerName(){
+        String managerName = manager.getFirstname() + " " + manager.getLastname();
+        return managerName;
+    }
     private void setCreationDate(Date date){
         this.creation_date = date;
     }

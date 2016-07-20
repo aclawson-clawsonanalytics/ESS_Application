@@ -89,7 +89,7 @@
             <button class="close-button" aria-label="Close menu" type="button" data-close>
                 <span aria-hidden="true">&times;</span>
             </button>
-          <ul class="vertical accordion-menu menu" data-accordion-menu>
+          <ul class="vertical accordion-menu menu tabs" data-accordion-menu data-tabs id="${mobileTabsContentID}">
               <jsp:include page="${mobileMenuOptions}"/>
           </ul>
         </div>
@@ -161,4 +161,5 @@
   </div>
 </div>
         <script src="js/dashboard.js"></script>
+        <script src="js/account.js"></script>
 </html>

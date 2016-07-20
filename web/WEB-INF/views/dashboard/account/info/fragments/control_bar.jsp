@@ -7,9 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <ul class= "menu" data-accordion-menu>
-        <li><a href="#">Info</a></li>
-        <li><a href="#">Campuses</a></li>
+    <ul class= "menu tabs" data-tabs data-accordion-menu id="${mobileTabsContentID}">
+        <li class="tabs-title"><a href="#infoPanel">Info</a></li>
+        <li class="tabs-title"><a href="#campusesPanel">Campuses</a></li>
         <li><a>Users</a></li>
         <li><a>Employees</a></li>
         

@@ -136,11 +136,22 @@ public class DashboardController {
     
     @RequestMapping(value="/dashboard-account-info.htm")
     public ModelAndView Account(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        User activeUser = (User) session.getAttribute("activeUser");
+        Account account = Account.GetByID(activeUser.getAccountID());
+        
         ModelAndView modelView = new ModelAndView();
         modelView.setViewName("dashboard/dashboard");
+        
+        //ui components
         modelView.addObject("dynamicContent","/WEB-INF/views/dashboard/account/info/account-info_view.jsp");
         modelView.addObject("mobileMenu","/WEB-INF/views/dashboard/account/info/fragments/mobile_menu.jsp");
         modelView.addObject("mobileMenuOptions","/WEB-INF/views/dashboard/account/info/fragments/menu_options.jsp");
+        modelView.addObject("mobileTabsContentID","account-info-tabs");
+        
+        //model variables
+        modelView.addObject("account",account);
+        
         return modelView;
     }
 } 

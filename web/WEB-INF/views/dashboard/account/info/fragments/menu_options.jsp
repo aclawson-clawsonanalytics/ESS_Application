@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <html>
         <li><br><br></li>
-        <li><a href="#">Info</a></li>
-        <li><a href="#">Campuses</a></li>
+        <li class="tabs-title" data-close="dashboard-mobile-right"><a href="#infoPanel">Info</a></li>
+        <li class="tabs-title" data-close="dashboard-mobile-right"><a href="#campusesPanel">Campuses</a></li>
         <li><a href="#">Users</a></li>
         <li><a href="#">Emplyees</a></li>
         
