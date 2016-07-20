@@ -60,8 +60,40 @@
             </div>
             
             <div class="tabs-panel" id="campusesPanel">
-                Campuses panel here.
+                <div class="small-10 small-centered large-8 large-centered">
+                    
+                        <c:forEach var="campus" items="${campusList}">
+                           
+                            <form>
+                                <table>
+                                    <tr>
+                                        <td colspan="2">
+                                            <b>Campus Name:</b><br>
+                                            <input type="text" value="${campus.getName()}">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b>Address:</b><br>
+                                            <input type="text" value="${campus.getAddress()}">
+                                        </td>
+                                        <td>
+                                            <b>City:</b><br>
+                                            <input type="text" value="${campus.getCity()}">
+                                        </td>
+                                        <td>
+                                            <b>State:</b><br>
+                                            <input type="text" value="${campus.getState()}">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                            
+                        </c:forEach>
+                    
+                </div>
             </div>
+                
         </div>
                             <!--
         <script src="resources/javascript/account.js"></script>
