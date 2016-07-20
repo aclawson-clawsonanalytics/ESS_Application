@@ -212,6 +212,8 @@ public class User extends SQLModel {
             
         }catch(SQLException e){
             
+        }finally{
+            mysqlManager.Connector.CloseResources();
         }
         return count;
     }
@@ -232,6 +234,8 @@ public class User extends SQLModel {
             }
         }catch(SQLException e){
             
+        }finally{
+            mysqlManager.Connector.CloseResources();
         }
         
         return all;
@@ -280,6 +284,8 @@ public class User extends SQLModel {
 
             }catch(SQLException e){
                 e.getMessage();
+            }finally{
+                mysql.Connector.CloseResources();
             }
         }
         
@@ -307,6 +313,8 @@ public class User extends SQLModel {
                 preparedStatement.executeUpdate();
             }catch(SQLException e){
                 e.printStackTrace();
+            }finally{
+                mysql.Connector.CloseResources();
             }
         }
                 

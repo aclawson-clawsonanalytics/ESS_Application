@@ -105,7 +105,7 @@ public class TestEnvironment {
     public void TearDown(){
         mysqlManager.SetProductionMode();
         this.UseProductionDB();
-        //mysqlManager.Connector.CloseResources();
+        mysqlManager.Connector.CloseResources();
     }
     
     
