@@ -20,13 +20,13 @@
             <jsp:include page="/WEB-INF/views/dashboard/account/info/fragments/control_bar.jsp"/>
         </div>
         
-        <div class="small-10 small-centered large-8 large-centered">
+        <div class="small-10 small-centered large-10 large-centered">
         <div class="tabs-content" data-tabs-content="account-info-tabs">
             <div class="tabs-panel" id="infoPanel">
                 <form>
                     <table>
                         <tr>
-                            <td><b>Campus: </b></td>
+                            <td><b>Account: </b></td>
                             <td><input type="text" name="accountName" value="${account.getName()}"></td>
                         </tr>
                         <tr>
@@ -67,24 +67,32 @@
                             <form>
                                 <table>
                                     <tr>
-                                        <td colspan="2">
-                                            <b>Campus Name:</b><br>
-                                            <input type="text" value="${campus.getName()}">
-                                        </td>
+                                        <td colspan="1">Campus</td>
+                                        <td colspan="3"> <input type="text" value="${campus.getName()}"></td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <b>Address:</b><br>
-                                            <input type="text" value="${campus.getAddress()}">
-                                        </td>
-                                        <td>
-                                            <b>City:</b><br>
-                                            <input type="text" value="${campus.getCity()}">
-                                        </td>
-                                        <td>
-                                            <b>State:</b><br>
-                                            <input type="text" value="${campus.getState()}">
-                                        </td>
+                                        <td colspan="1"><b>Address</td>
+                                        <td colspan="3"> <input type="text" value="${campus.getAddress()}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"><b>City</b></td>
+                                        <td colspan="3"> <input type="text" value="${campus.getCity()}">
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"><b>State</b></td>
+                                        <td colspan="2"><input type="text" value="${campus.getState()}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"><b>Zip</b></td>
+                                        <td colspan="2"><input type="text" value="${campus.getZip()}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"><b>P.O. Box</b></td>
+                                        <td colspan="3"><input type="text" value="${campus.getPO()}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" text-centered><a class="button">Reset</a></td>
+                                        <td colspan="2" text-centered><a class="button">Save Changes</a></td>
                                     </tr>
                                 </table>
                             </form>
