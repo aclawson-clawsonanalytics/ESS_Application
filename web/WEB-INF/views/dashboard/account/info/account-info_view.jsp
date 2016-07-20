@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <!--
@@ -41,8 +41,9 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <select id="managerSelector">
+                                <select id="managerSelector" name="changeManager">
                                     <option value="-1">Choose a new account manager</option>
+                                    
                                 </select>
                             </td>
                         </tr>

@@ -37,7 +37,7 @@ public class Account extends SQLModel {
     private Date close_date;
     
     private User manager;
-    private ArrayList<User> UserSet;
+    public ArrayList<User> UserSet;
     public ArrayList<Campus> CampusSet;
     
     public CampusSetManager CampusManager;
@@ -72,6 +72,7 @@ public class Account extends SQLModel {
             results = statement.executeQuery(SELECT);
             while(results.next()){
                 account = Account.MapRowToObject(results);
+                //account.OnLoad();
                 return account;
             }
         }catch(SQLException e){

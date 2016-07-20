@@ -139,7 +139,7 @@ public class DashboardController {
         HttpSession session = request.getSession();
         User activeUser = (User) session.getAttribute("activeUser");
         Account account = Account.GetByID(activeUser.getAccountID());
-        
+        account.OnLoad();
         ModelAndView modelView = new ModelAndView();
         modelView.setViewName("dashboard/dashboard");
         
