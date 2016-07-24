@@ -26,17 +26,20 @@
                 <form>
                     <table>
                         <tr>
-                            <td><b>Account: </b></td>
-                            <td><input type="text" name="accountName" value="${account.getName()}"></td>
+                            <td colspan="1"><b>Account: </b></td>
+                            <td colspan="3"><input type="text" name="accountName" value="${account.getName()}"></td>
                         </tr>
                         <tr>
-                            <td><b>Open Date: </b></td>
-                            <td>${account.getCreationDate()}</td>
+                            <td colspan="1"><b>Open Date: </b></td>
+                            <td colspan="3">${account.getCreationDate()}</td>
                         </tr>
                         <tr>
-                            <td><b>Manager: </b></td>
-                            <td>
+                            <td colspan="1"><b>Manager: </b></td>
+                            <td colspan="1">
                                 ${account.getManagerName()} <a class="button" id="ChangeManagerButton" onclick="showManagerSelector();">Change</a>
+                            </td>
+                            <td colspan="1">
+                                
                             </td>
                         </tr>
                         <tr>
@@ -67,7 +70,7 @@
                             <form>
                                 <table>
                                     <tr>
-                                        <td colspan="1">Campus</td>
+                                        <td colspan="1"><b>Campus</b></td>
                                         <td colspan="3"> <input type="text" value="${campus.getName()}"></td>
                                     </tr>
                                     <tr>
