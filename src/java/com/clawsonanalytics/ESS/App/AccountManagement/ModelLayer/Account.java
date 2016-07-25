@@ -33,6 +33,7 @@ public class Account extends SQLModel {
     // non-static variables
     private int manager_id;
     private String name;
+    private String type;
     private Date creation_date;
     private Date close_date;
     
@@ -121,6 +122,14 @@ public class Account extends SQLModel {
         return this.name;
     }
     
+    public void setType(String _type){
+        this.type = _type;
+    }
+    
+    public String getType(){
+        return this.type;
+    }
+    
     public String getManagerName(){
         String managerName = manager.getFirstname() + " " + manager.getLastname();
         return managerName;
@@ -202,6 +211,7 @@ public class Account extends SQLModel {
             newAccount.setID(result.getInt("id"));
             newAccount.setManager(result.getInt("manager_id"));
             newAccount.setName(result.getString("name"));
+            newAccount.setName(result.getString("type"));
             newAccount.setCreationDate(result.getDate("creation_date"));
             newAccount.setCloseDate(result.getDate("close_date"));
             //newAccount.OnLoad();
@@ -214,7 +224,7 @@ public class Account extends SQLModel {
     public void Insert(){
         if(this.IsValid()){
             String insertString = "INSERT INTO " + Account.getTablename()
-                    + " VALUES (?,?,?,?,?);";
+                    + " VALUES (?,?,?,?,?,?);";
             MySQLManager mysql = new MySQLManager();
             PreparedStatement preparedStatement;
             ResultSet keys;
@@ -268,8 +278,9 @@ public class Account extends SQLModel {
             preparedStatement.setInt(1, 0);
             preparedStatement.setInt(2,this.getManagerID());
             preparedStatement.setString(3, this.getName());
-            preparedStatement.setDate(4,this.getCreationDate());
-            preparedStatement.setDate(5,this.getCloseDate());
+            preparedStatement.setString(4,this.getType());
+            preparedStatement.setDate(5,this.getCreationDate());
+            preparedStatement.setDate(6,this.getCloseDate());
             //preparedStatement.setDate(5, this.getCloseDate());
         }catch(SQLException e){
             
@@ -281,9 +292,10 @@ public class Account extends SQLModel {
         try{
             preparedStatement.setInt(1,this.getManagerID());
             preparedStatement.setString(2, this.getName());
-            preparedStatement.setDate(3, this.getCreationDate());
-            preparedStatement.setDate(4, this.getCloseDate());
-            preparedStatement.setInt(5, this.getID());
+            preparedStatement.setString(3,this.getType());
+            preparedStatement.setDate(4, this.getCreationDate());
+            preparedStatement.setDate(5, this.getCloseDate());
+            preparedStatement.setInt(6, this.getID());
         }catch(SQLException e){
             
         }
