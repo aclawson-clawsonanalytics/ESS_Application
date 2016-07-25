@@ -8,7 +8,7 @@ package com.clawsonanalytics.ESS.Tests.ModelLayer;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLDataSource;
-import com.clawsonanalytics.ESS.App.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.User;
 import com.clawsonanalytics.ESS.App.ModelLayer.Lists.UserList;
 
 import java.util.List;

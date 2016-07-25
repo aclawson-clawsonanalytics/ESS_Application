@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package com.clawsonanalytics.ESS.Test;
-import com.clawsonanalytics.ESS.App.ModelLayer.Account;
-import com.clawsonanalytics.ESS.App.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.Account;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.User;
 /**
  *
  * @author andrewclawson

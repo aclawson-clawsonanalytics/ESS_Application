@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.ESS.App.ModelLayer;
+package com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLManager;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.Interface.SQLModel;
 import java.sql.Date;

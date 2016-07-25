@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package com.clawsonanalytics.ESS.App.ModelLayer.Managers;
-import com.clawsonanalytics.ESS.App.ModelLayer.Campus;
-import com.clawsonanalytics.ESS.App.ModelLayer.Account;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.Campus;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.Account;
 
 import java.util.ArrayList;
 /**

@@ -5,8 +5,8 @@
  */
 package com.clawsonanalytics.ESS.Test;
 
-import com.clawsonanalytics.ESS.App.ModelLayer.Term;
-import com.clawsonanalytics.ESS.App.ModelLayer.Account;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.Term;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.Account;
 /**
  *
  * @author andrewclawson

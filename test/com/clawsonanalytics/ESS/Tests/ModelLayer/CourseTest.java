@@ -5,8 +5,8 @@
  */
 package com.clawsonanalytics.ESS.Tests.ModelLayer;
 
-import com.clawsonanalytics.ESS.App.ModelLayer.Academics.Course;
-import com.clawsonanalytics.ESS.App.ModelLayer.Academics.CourseReference;
+import com.clawsonanalytics.ESS.App.Academics.ModelLayer.Course;
+import com.clawsonanalytics.ESS.App.Academics.ModelLayer.CourseReference;
 import com.clawsonanalytics.ESS.Test.Entity;
 
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;

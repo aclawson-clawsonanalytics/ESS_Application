@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.ESS.App.ModelLayer.Academics;
+package com.clawsonanalytics.ESS.App.Academics.ModelLayer;
 
 import com.clawsonanalytics.ESS.App.ModelLayer.Interface.IValidatable;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.Interface.SQLModel;

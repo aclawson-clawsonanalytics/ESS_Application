@@ -5,7 +5,7 @@
  */
 package com.clawsonanalytics.ESS.App.ModelLayer.Lists;
 
-import com.clawsonanalytics.ESS.App.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.User;
 import java.util.List;
 import java.util.ArrayList;
 /**

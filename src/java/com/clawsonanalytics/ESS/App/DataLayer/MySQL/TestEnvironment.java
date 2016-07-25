@@ -9,9 +9,9 @@ import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLManager;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLDataConnector;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLDataSource;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.Interface.SQLModel;
-import com.clawsonanalytics.ESS.App.ModelLayer.User;
-import com.clawsonanalytics.ESS.App.ModelLayer.Account;
-import com.clawsonanalytics.ESS.App.ModelLayer.Campus;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.Account;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.Campus;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;

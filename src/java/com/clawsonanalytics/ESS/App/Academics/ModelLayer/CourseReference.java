@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.clawsonanalytics.ESS.App.ModelLayer.Academics;
+package com.clawsonanalytics.ESS.App.Academics.ModelLayer;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.Interface.SQLModel;
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.MySQLManager;
-import com.clawsonanalytics.ESS.App.ModelLayer.User;
-import com.clawsonanalytics.ESS.App.ModelLayer.Account;
-import static com.clawsonanalytics.ESS.App.ModelLayer.User.getTablename;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.User;
+import com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.Account;
+import static com.clawsonanalytics.ESS.App.AccountManagement.ModelLayer.User.getTablename;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
