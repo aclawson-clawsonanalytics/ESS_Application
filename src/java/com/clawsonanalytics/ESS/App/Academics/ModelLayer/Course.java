@@ -23,7 +23,7 @@ import java.util.ArrayList;
  */
 public class Course extends SQLModel {
     private static String tablename = "COURSES";
-    private static int REFERENCE_ID;
+    private int REFERENCE_ID;
     public Course(){
         
     }
@@ -31,6 +31,8 @@ public class Course extends SQLModel {
     public static String getTablename(){
         return Course.tablename;
     }
+    
+    
     
     
 }
