@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="com.clawsonanalytics.ESS.App.ModelLayer.Campus" %>
 <!DOCTYPE html>
 <html>
     <!--
@@ -20,7 +21,7 @@
             <jsp:include page="/WEB-INF/views/dashboard/account/info/fragments/control_bar.jsp"/>
         </div>
         
-        <div class="small-10 small-centered large-10 large-centered">
+        <div class="small-10 large-10 ">
         <div class="tabs-content" data-tabs-content="account-info-tabs">
             <div class="tabs-panel" id="infoPanel">
                 <form>
@@ -63,46 +64,54 @@
             </div>
             
             <div class="tabs-panel" id="campusesPanel">
-                <div class="small-10 small-centered large-8 large-centered">
-                    
-                        <c:forEach var="campus" items="${campusList}">
-                           
-                            <form>
+                <div class="small-10 large-8 columns">
+                    <div class="row">
+                        <select id="campus-selector">
+                            <option value="-1">Select a campus</option>
+                            <c:forEach var="campus" items="${campusList}">
+                                <option value="${campus.getID()}">${campus.getName()}</option>
+                                
+                            </c:forEach>
+                            <option value="0">Add new campus</option>
+                        </select>
+                    </div>
+                    <form>
                                 <table>
                                     <tr>
                                         <td colspan="1"><b>Campus</b></td>
-                                        <td colspan="3"> <input type="text" value="${campus.getName()}"></td>
+                                        <td colspan="3"> <input type="text" name="campusName" id="campusInfoNameField"></td>
                                     </tr>
                                     <tr>
                                         <td colspan="1"><b>Address</td>
-                                        <td colspan="3"> <input type="text" value="${campus.getAddress()}"></td>
+                                        <td colspan="3"> <input type="text" name="campusAddress" id="campusInfoAddressField"></td>
                                     </tr>
                                     <tr>
                                         <td colspan="1"><b>City</b></td>
-                                        <td colspan="3"> <input type="text" value="${campus.getCity()}">
+                                        <td colspan="3"> <input type="text" name="campusCity" id="campusInfoCityField">
                                     </tr>
                                     <tr>
                                         <td colspan="1"><b>State</b></td>
-                                        <td colspan="2"><input type="text" value="${campus.getState()}"></td>
+                                        <td colspan="2"><input type="text" name="campusState" id="campusInfoStateField"></td>
                                     </tr>
                                     <tr>
                                         <td colspan="1"><b>Zip</b></td>
-                                        <td colspan="2"><input type="text" value="${campus.getZip()}"></td>
+                                        <td colspan="2"><input type="text" name="campusZip" id="campusInfoZipField"></td>
                                     </tr>
                                     <tr>
                                         <td colspan="1"><b>P.O. Box</b></td>
-                                        <td colspan="3"><input type="text" value="${campus.getPO()}"></td>
+                                        <td colspan="3"><input type="text" name="campusPO" id="campusInfoPOField"></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" text-centered><a class="button">Reset</a></td>
-                                        <td colspan="2" text-centered><a class="button">Save Changes</a></td>
+                                        <td colspan="1" text-centered><a id="clearCampusInfoButton" class="button">Clear</a></td>
+                                        <td colspan="1" text-centered><a id="saveCampusInfoButton" class="button">Save Campus</a></td>
+                                        <td colspan="1" text-centered><a id="addCampusButton" class="button">Add Campus</a></td>
                                     </tr>
                                 </table>
                             </form>
-                            
-                        </c:forEach>
+                        
                     
                 </div>
+                
             </div>
                 
         </div>

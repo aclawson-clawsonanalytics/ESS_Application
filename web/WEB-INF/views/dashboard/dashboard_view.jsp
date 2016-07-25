@@ -58,6 +58,6 @@
       //$("#managerSelector").hide();
     </script>
     <script src="resources/javascript/dashboard.js"></script>
-    <script src="resources/javascript/account.js"></script>
+    <script src="resources/javascript/account-info.js"></script>
     </body>
 </html>
