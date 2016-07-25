@@ -14,13 +14,13 @@ import com.clawsonanalytics.ESS.Test.ValidCampus;
  *
  * @author andrewclawson
  */
-public class Entity {
+public class AccountContext {
     private Account account = new ValidAccount();
     private Campus campus = new ValidCampus();
     private User accountManager = new ValidUser();
     private User principal = new ValidUser();
     
-    public Entity(){
+    public AccountContext(){
         account.Insert();
         campus.Insert();
         campus.setAccountID(account.getID());

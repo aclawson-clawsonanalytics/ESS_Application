@@ -7,7 +7,7 @@ package com.clawsonanalytics.ESS.Tests.ModelLayer;
 
 import com.clawsonanalytics.ESS.App.Academics.ModelLayer.Course;
 import com.clawsonanalytics.ESS.App.Academics.ModelLayer.CourseReference;
-import com.clawsonanalytics.ESS.Test.Entity;
+import com.clawsonanalytics.ESS.Test.AccountContext;
 
 import com.clawsonanalytics.ESS.App.DataLayer.MySQL.TestEnvironment;
 
@@ -26,7 +26,7 @@ import static org.junit.Assert.*;
 public class CourseTest {
     // Static variables
     private static Course SUT;
-    private static Entity entity;
+    private static AccountContext entity;
     private static TestEnvironment environment;
     
     // Class properties
