@@ -211,7 +211,7 @@ public class Account extends SQLModel {
             newAccount.setID(result.getInt("id"));
             newAccount.setManager(result.getInt("manager_id"));
             newAccount.setName(result.getString("name"));
-            newAccount.setName(result.getString("type"));
+            newAccount.setType(result.getString("type"));
             newAccount.setCreationDate(result.getDate("creation_date"));
             newAccount.setCloseDate(result.getDate("close_date"));
             //newAccount.OnLoad();
@@ -259,6 +259,7 @@ public class Account extends SQLModel {
             String updateString = "UPDATE ACCOUNTS SET "
                     + "manager_id = ?, "
                     + "name = ?, "
+                    + "type = ?, "
                     + "creation_date = ?, "
                     + "close_date = ? WHERE id = ?;";
             try{

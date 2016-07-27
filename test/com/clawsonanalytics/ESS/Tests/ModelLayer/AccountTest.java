@@ -121,6 +121,8 @@ public class AccountTest {
         SUT.setName(sutName);
         Assert.assertEquals(SUT.getName(),sutName);
     }
+    
+    
     @Test
     public void AccountHasCreationDate(){
         Assert.assertNotNull(SUT.getCreationDate());
@@ -136,6 +138,7 @@ public class AccountTest {
         int firstCount = Account.Count();
         SUT.setManager(sutManager.getID());
         SUT.setName(sutName);
+        SUT.setType("School");
         SUT.Insert();
         Assert.assertEquals(firstCount + 1,Account.Count());
     }
@@ -150,6 +153,7 @@ public class AccountTest {
     public void CanUpdateAccountName(){
         SUT.setManager(sutManager.getID());
         SUT.setName(sutName);
+        SUT.setType("District");
         String secondName = "secondName";
         SUT.Insert();
         int sutID = SUT.getID();
@@ -158,6 +162,20 @@ public class AccountTest {
         SUT = null;
         SUT = Account.GetByID(sutID);
         Assert.assertEquals(SUT.getName(), secondName);
+    }
+    
+    @Test
+    public void CanUpdateAccountType(){
+        SUT.setManager(sutManager.getID());
+        SUT.setName(sutName);
+        SUT.setType("District");
+        SUT.Insert();
+        int sutID = SUT.getID();
+        SUT.setType("Homeschool");
+        SUT.Update();
+        SUT = null;
+        SUT = Account.GetByID(sutID);
+        Assert.assertEquals(SUT.getType(), "Homeschool");
     }
     
     
