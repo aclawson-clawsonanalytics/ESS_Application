@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -29,6 +30,15 @@
                         <tr>
                             <td colspan="1"><b>Account: </b></td>
                             <td colspan="3"><input type="text" name="accountName" value="${account.getName()}"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="1"><b>Type: </b></td>
+                            <td colspan="3">
+                                <select type="text" name="accountType" id="accountInfoTypeSelector">
+                                    <option value="District">District</option>
+                                    <option value="School">School</option>
+                                    <option value="Homeschool">Homeschool</option>
+                                </select></td>
                         </tr>
                         <tr>
                             <td colspan="1"><b>Open Date: </b></td>
@@ -69,7 +79,7 @@
                         <select id="campus-selector">
                             <option value="-1">Select a campus</option>
                             <c:forEach var="campus" items="${campusList}">
-                                <option value="${campus.getID()}">${campus.getName()}</option>
+                                <option value="${campus}">${campus.getName()}</option>
                                 
                             </c:forEach>
                             <option value="0">Add new campus</option>
@@ -79,7 +89,9 @@
                                 <table>
                                     <tr>
                                         <td colspan="1"><b>Campus</b></td>
-                                        <td colspan="3"> <input type="text" name="campusName" id="campusInfoNameField"></td>
+                                        <td colspan="3"> <input type="text" name="campusName" id="campusInfoNameField">
+                                           
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td colspan="1"><b>Address</td>

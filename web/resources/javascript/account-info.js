@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function(){
-    importClass(com.clawsonanalytics.ESS.App.ModelLayer.Campus);;
+    
     SetupAccountInfoUI();
     SetupCampusListUI();
     
@@ -21,6 +21,13 @@ function showManagerSelector(){
 }
 
 function SetupAccountInfoUI(){
+    var accountTypeSelector = document.getElementById("accountInfoTypeSelector");
+    for(i=0; i < accountTypeSelector.options.length ; i++){
+        if (accountTypeSelector.options[i].value === '${account.getType()}'){
+            accountTypeSelector.selectedIndex = i;
+            break;
+        }
+    }
     $("#managerSelector").hide();
     $("#ChangeManagerButton").click(function(){
         $("#managerSelector").show();
@@ -38,16 +45,20 @@ function SetupCampusListUI(){
     });
     
     $("#campus-selector").on('change',function(){
-        var selectedCampusID = $("#campus-selector").val();
-        if (selectedCampusID > 0){
+        var selectedCampus = $("#campus-selector").val();
+        var campusInfoNameField = document.getElementById("campusInfoNameField");
+        <c:forEach var="campus" items="${campusList}">
+            if(selectedCampus === ${campus.getID()}{
+                
+        }
+        </c:forEach>
+        if (selectedCampus){
             $("#addCampusButton").hide();
             $("#clearCampusInfoButton").show();
             $("#saveCampusInfoButton").show();
-            var campus = Java.type("com.clawsonanalytics.ESS.App.ModelLayer.Campus");
-            campus = Campus.GetByID(selectedCampusID);
-            campusInfoNameField.innerHTML = campus.getName();
+            
         }
-        if (selectedCampusID <= 0){
+        if (!selectedCampus){
             $("#addCampusButton").show();
             $("#clearCampusInfoButton").hide();
             $("#saveCampusInfoButton").hide();
